@@ -1,13 +1,26 @@
-import { NavigationContainer, NavigationWrapper } from "./styled";
+import { NavigationContainer, NavigationWrapper, List, Item, StyledNavLink } from "./styled";
 import { NavigationLogo } from "./Logo";
+import { Container } from "../Container";
+import { Search } from "./Search";
 
-export const Navigation = () => {
+export const Navigation = ({ toMovies, toPeople }) => {
 
     return (
         <NavigationContainer>
-            <NavigationWrapper>
-                <NavigationLogo />
-            </NavigationWrapper>
+            <Container>
+                <NavigationWrapper>
+                    <NavigationLogo />
+                    <List>
+                        <Item>
+                            <StyledNavLink to={toMovies}>Movies</StyledNavLink>
+                        </Item>
+                        <Item>
+                            <StyledNavLink to={toPeople}>People</StyledNavLink>
+                        </Item>
+                    </List>
+                    <Search />
+                </NavigationWrapper>
+            </Container>
         </NavigationContainer>
     );
 };
