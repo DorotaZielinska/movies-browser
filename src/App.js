@@ -1,9 +1,11 @@
-
+import { Navigation } from "./common/Navigation";
 
 function App() {
+  
   return (
-    <div >
-    </div>
+    < >
+      <Navigation />
+    </>
   );
 }
 
