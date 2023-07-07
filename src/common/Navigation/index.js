@@ -1,12 +1,12 @@
 import { NavigationContainer, NavigationWrapper } from "./styled";
-import { NavigationHeader } from "./Header";
+import { NavigationLogo } from "./Logo";
 
 export const Navigation = () => {
 
     return (
         <NavigationContainer>
             <NavigationWrapper>
-                <NavigationHeader />
+                <NavigationLogo />
             </NavigationWrapper>
         </NavigationContainer>
     );

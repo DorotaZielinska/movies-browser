@@ -1,7 +1,7 @@
 import { Wrapper } from "./styled";
 import { ReactComponent as CameraIcon } from "../Images/camera.svg";
 
-export const NavigationHeader = () => {
+export const NavigationLogo = () => {
 
     return (
         <Wrapper>
