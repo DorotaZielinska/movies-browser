@@ -1,12 +1,12 @@
-import { Title, Container } from "./styled";
+import { Title, Container, Content } from "./styled";
 
 const AsideAction = ({ title, content, extraBodyContent }) => (
   <Container>
     <Title>{title}</Title>
-    <div>
+    <Content>
       {content}
       {extraBodyContent}
-    </div>
+    </Content>
   </Container>
 );
 
