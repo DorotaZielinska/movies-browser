@@ -6,7 +6,6 @@ export const NavigationContainer = styled.div`
     color: ${({ theme }) => theme.color.white};
     min-height: 94px;
     width: 100%;
-    padding: 23px;
 `;
 
 export const NavigationWrapper = styled.nav`
