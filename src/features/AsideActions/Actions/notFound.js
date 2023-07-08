@@ -1,8 +1,8 @@
-import AssideAction from "../../../common/Asside_actions";
+import AsideAction from "../../../common/Aside_actions";
 import { Image } from "../styled";
 
 const NotFound = ({ props }) => (
-  <AssideAction
+  <AsideAction
     title={`Sorry, there are no results for "${props}"`}
     content={<Image />}
   />

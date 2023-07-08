@@ -1,6 +1,6 @@
 import { Title, Container } from "./styled";
 
-const AssideAction = ({ title, content, extraBodyContent }) => (
+const AsideAction = ({ title, content, extraBodyContent }) => (
   <Container>
     <Title>{title}</Title>
     <div>
@@ -10,4 +10,4 @@ const AssideAction = ({ title, content, extraBodyContent }) => (
   </Container>
 );
 
-export default AssideAction;
+export default AsideAction;
