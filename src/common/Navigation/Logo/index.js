@@ -1,12 +1,12 @@
-import { Wrapper } from "./styled";
+import { Wrapper, Title } from "./styled";
 import { ReactComponent as CameraIcon } from "../Images/camera.svg";
 
-export const NavigationHeader = () => {
+export const NavigationLogo = () => {
 
     return (
         <Wrapper>
            <CameraIcon />
-            <h2>Movies Browser</h2>
+            <Title>Movies Browser</Title>
         </Wrapper>
     );
 };

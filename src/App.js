@@ -1,10 +1,14 @@
+import { HashRouter } from "react-router-dom"
+
 import { Navigation } from "./common/Navigation";
 
 function App() {
-  
+
   return (
     < >
-      <Navigation />
+      <HashRouter>
+        <Navigation toMovies={"/movies"} toPeople={"/people"} />
+      </HashRouter>
     </>
   );
 }
