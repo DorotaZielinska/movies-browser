@@ -1,9 +1,9 @@
-import { GenresContainer } from "./styled";
+import { GenresContainer, Genre } from "./styled";
 
 export const Genres = () => (
     <GenresContainer>
-        <Genres>Action</Genres>
-        <Genres>Adventure</Genres>
-        <Genres>Drama</Genres>
+        <Genre>Action</Genre>
+        <Genre>Adventure</Genre>
+        <Genre>Drama</Genre>
     </GenresContainer>
 );
