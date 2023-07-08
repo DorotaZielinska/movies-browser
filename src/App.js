@@ -1,6 +1,7 @@
 import { HashRouter } from "react-router-dom"
 
 import { Navigation } from "./common/Navigation";
+import { TileList } from "./common/TileList";
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <HashRouter>
         <Navigation toMovies={"/movies"} toPeople={"/people"} />
       </HashRouter>
+      <TileList />
     </>
   );
 }
