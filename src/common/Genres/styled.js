@@ -1,0 +1,18 @@
+import styled from "styled-components";
+
+export const GenresContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0px;
+    margin: -8px;
+`;
+
+export const Genre = styled.li`
+    background-color: ${({ theme }) => theme.color.mystic};
+    color: ${({ theme }) => theme.color.woodsmoke};
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 8px 16px;
+    margin: 8px 0 0 8px;
+`;
