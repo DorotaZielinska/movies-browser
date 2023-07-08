@@ -12,6 +12,9 @@ export const theme = {
         black: "#000000",
     },
     breakpoint: {
-        mobileMax: 767,
+        desktop: "1200px",
+        ipod: "1024px",
+        small: "767px",
+        mobile: "320px",
     }
 }
