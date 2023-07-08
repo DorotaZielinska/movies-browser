@@ -39,7 +39,6 @@ export const StyledNavLink = styled(NavLink)`
     height: 48px;
     padding: 8px 24px;
     align-items: center;
-    gap: 10px;
     flex-shrink: 0;
     border-radius: 24px;
     border: 1px solid transparent;
