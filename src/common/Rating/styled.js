@@ -9,9 +9,6 @@ export const RatingContainer = styled.div`
     align-items: center;
 `;
 
-export const RatingIcon = styled.img`
-`;
-
 export const Vote = styled.span`
     font-size: 16px;
     font-weight: 600;
