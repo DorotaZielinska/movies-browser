@@ -10,8 +10,6 @@ export const RatingContainer = styled.div`
 `;
 
 export const RatingIcon = styled.img`
-    width: 24px;
-    height: 24px;
 `;
 
 export const Vote = styled.span`
