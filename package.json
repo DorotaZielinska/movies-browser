@@ -2,9 +2,10 @@
   "name": "movies-browser",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://dorotazielinska.github.io/movies-browser/",
-  "proxy":"http://localhost:5000",
+  "homepage": "https://dorotazielinska.github.io/movies-browser/",
+  "proxy": "http://localhost:3000",
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
