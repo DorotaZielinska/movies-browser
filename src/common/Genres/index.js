@@ -2,6 +2,8 @@ import { GenresContainer } from "./styled";
 
 export const Genres = () => (
     <GenresContainer>
-        <Genres></Genres>
+        <Genres>Action</Genres>
+        <Genres>Adventure</Genres>
+        <Genres>Drama</Genres>
     </GenresContainer>
 );
