@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TileList = styled.article`
+export const MovieTileList = styled.article`
     width: 324px;
     height: 650px;
     background-color: ${({ theme }) => theme.color.white};

@@ -1,9 +1,9 @@
 import { Genres } from "../Genres"
 import { Rating } from "../Rating"
-import { Content, Poster, StyledSubbTitle, StyledTitle, TileList } from "./styled"
+import { Content, MovieTileList, Poster, StyledSubbTitle, StyledTitle } from "./styled"
 
 export const TileList = () => (
-    <TileList>
+    <MovieTileList>
         <Poster />
         <Content>
             <StyledTitle />
@@ -11,5 +11,5 @@ export const TileList = () => (
             <Genres />
             <Rating />
         </Content>
-    </TileList>
+    </MovieTileList>
 )
