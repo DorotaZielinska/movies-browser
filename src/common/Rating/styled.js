@@ -16,13 +16,13 @@ export const RatingIcon = styled.img`
 
 export const Vote = styled.span`
     font-size: 16px;
-    font-weight: 600px;
+    font-weight: 600;
     color:${({ theme }) => theme.color.woodsmoke};
 `;
 
 export const Votes = styled.span`
     width: 68px;
     font-size: 16px;
-    font-weight: 400px;
+    font-weight: 400;
     color: ${({ theme }) => theme.color.waterloo}
 `;
