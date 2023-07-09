@@ -1,4 +1,4 @@
-import { debounce, call, put, select } from "redux-saga/effects";
+import { call, put, select } from "redux-saga/effects";
 import { fetchMoviesList, selectPage } from "./movieListSlice";
 import { getGenres, getPopularMovies } from "./getDataApi";
 
@@ -16,5 +16,5 @@ function* fetchMoviesListHandler() {
 }
 
 export function* watchFetchMoviesList() {
-    yield debounce(3000, fetchMoviesListHandler);
+    yield fetchMoviesListHandler();
 }
