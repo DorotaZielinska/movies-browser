@@ -1,11 +1,11 @@
-import { Warning, Container, Title, Button, Content } from "../styled";
+import { Warning, Container, Title, Info, Button, Content } from "../styled";
 
 const Error = () => (
   <>
     <Warning />
     <Container>
       <Title>Ooops! Something went wrong... </Title>
-      <span>Please check your network connection and try again</span>
+      <Info>Please check your network connection and try again</Info>
       <Button>
         <Content>Back to home page</Content>
       </Button>

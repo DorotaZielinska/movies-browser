@@ -59,3 +59,9 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const Info = styled.span`
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+`;
