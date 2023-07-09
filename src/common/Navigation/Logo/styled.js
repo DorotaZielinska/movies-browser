@@ -26,7 +26,7 @@ export const Title = styled.p`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         font-size: 13px;
-        line-height: 130%;
+        line-height: 1,3;
         letter-spacing: -0.5px;
     };
 `;
