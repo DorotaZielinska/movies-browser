@@ -1,11 +1,21 @@
-import { ItemMoviesList, MovieListContainer, MovieListTitle } from "./styled";
+import { Container } from "../../common/Container";
+import { TileList } from "../../common/TileList";
+import { ItemMoviesList, MovieListTitle, MoviesList } from "./styled";
 
 export const MovieList = () => (
-    <MovieListContainer>
-        <MovieListTitle></MovieListTitle>
-        <MovieList>
-            <ItemMoviesList></ItemMoviesList>
-        </MovieList>
-
-    </MovieListContainer>
+    <Container>
+        <MovieListTitle>Popular movies</MovieListTitle>
+            <MoviesList>
+                <ItemMoviesList>
+                    <TileList />
+                    <TileList />
+                    <TileList />
+                    <TileList />
+                    <TileList />
+                    <TileList />
+                    <TileList />
+                    <TileList />
+                </ItemMoviesList>
+            </MoviesList>
+    </Container>
 )

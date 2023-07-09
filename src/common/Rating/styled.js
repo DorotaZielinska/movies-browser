@@ -19,5 +19,5 @@ export const Votes = styled.span`
     width: 68px;
     font-size: 16px;
     font-weight: 400;
-    color: ${({ theme }) => theme.color.waterloo}
+    color: ${({ theme }) => theme.color.waterloo};
 `;

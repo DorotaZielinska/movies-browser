@@ -7,10 +7,15 @@ export const TileList = () => (
     <MovieTileList>
         <Poster src={poster} alt="" />
         <Content>
-            <StyledTitle>Mulan</StyledTitle>
-            <StyledSubbTitle>2020</StyledSubbTitle>
-            <Genres />
-            <Rating />
+            <div>
+                <StyledTitle>Mulan</StyledTitle>
+                <StyledSubbTitle>2020</StyledSubbTitle>
+                <Genres />
+            </div>
+            <div>
+                <Rating />
+            </div>
+
         </Content>
     </MovieTileList>
 )
