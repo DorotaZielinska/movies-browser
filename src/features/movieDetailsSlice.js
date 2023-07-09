@@ -16,8 +16,8 @@ const movieDetailsSlice = createSlice({
         getMovieId: (state, { payload }) => {
             state.status = "loading";
             state.movieId = payload.movieId;
-        }
-    }
+        },
+    },
 })
 
 export const { fetchMovieDetails, getMovieId } = movieDetailsSlice.actions;
