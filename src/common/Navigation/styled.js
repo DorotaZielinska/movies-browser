@@ -65,6 +65,7 @@ export const StyledNavLink = styled(NavLink)`
     @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         padding: 8px 12px;
         border-radius: 29px;
+        height: 34px;
     };
 
     &.active {
