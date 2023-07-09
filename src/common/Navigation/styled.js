@@ -6,13 +6,22 @@ export const NavigationContainer = styled.div`
     color: ${({ theme }) => theme.color.white};
     min-height: 94px;
     width: 100%;
-    padding: 23px;
+   
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+        min-height: 142px;
+        padding-top: 24px;
+    };
 `;
 
 export const NavigationWrapper = styled.nav`
     display:flex;
     align-items: center;
     flex-shrink: 0;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+        display: flex;
+        flex-wrap: wrap;
+    };
 `;
 
 export const List = styled.ul`
@@ -22,6 +31,12 @@ export const List = styled.ul`
     gap: 16px;
     flex-shrink: 0;
     padding-left: 80px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+        gap: 12px;
+        padding-left: 19px;
+        margin: 0;
+    };
 `;
 
 export const Item = styled.li`
@@ -30,7 +45,11 @@ export const Item = styled.li`
     font-weight: 600;
     line-height: normal;
     text-transform: uppercase;
-    `;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+        font-size: 12px;
+    };
+ `;
 
 export const StyledNavLink = styled(NavLink)`
     text-decoration-line: none;
@@ -43,7 +62,12 @@ export const StyledNavLink = styled(NavLink)`
     border-radius: 24px;
     border: 1px solid transparent;
 
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+        padding: 8px 12px;
+        border-radius: 29px;
+    };
+
     &.active {
-         border: 1px solid ${({ theme }) => theme.color.white};
+        border: 1px solid ${({ theme }) => theme.color.white};
     }
 `;
