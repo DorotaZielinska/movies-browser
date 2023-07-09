@@ -22,7 +22,7 @@ export const getPopularMovies = async ({ page }) => {
     const response = await axios.get(
         `${URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`
     );
- 
+
     return await response.data;
 };
 
@@ -30,6 +30,6 @@ export const getGenres = async () => {
     const response = await axios.get(
         `${URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`
     )
-   
+    
     return await response.data.genres;
 };
