@@ -12,7 +12,7 @@ const store = configureStore({
         moviesList: moviesListReducer,
         movieDetails: movieDetailsReducer,
     },
-    middleware: [sagaMiddleware]
+    middleware: [sagaMiddleware],
 });
 
 sagaMiddleware.run(rootSaga);

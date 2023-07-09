@@ -1,10 +1,10 @@
 import { RatingContainer, Vote, Votes } from "./styled";
 import { ReactComponent as RatingIcon } from "./shape-star.svg";
 
-export const Rating = () => (
+export const Rating = ({ vote, votes}) => (
     <RatingContainer>
         <RatingIcon />
-        <Vote>7,8</Vote>
-        <Votes>35 votes</Votes>
+        <Vote>{ vote }</Vote>
+        <Votes>{ votes }</Votes>
     </RatingContainer>
 );
