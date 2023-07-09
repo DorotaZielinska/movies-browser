@@ -1,7 +1,8 @@
 import { HashRouter } from "react-router-dom"
 
 import { Navigation } from "./common/Navigation";
-import { MovieList } from "./features/MovieList";
+import MovieList from "./features/MovieList";
+
 
 
 
