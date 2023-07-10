@@ -1,6 +1,7 @@
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom"
 import { Navigation } from "./common/Navigation";
 import { TileList } from "./common/TileList";
+import NotFound from "./features/AsideActions/NotFound/notFound";
 
 function App() {
   return (
