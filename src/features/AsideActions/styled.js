@@ -3,7 +3,8 @@ import { ReactComponent as spinnerIcon } from "./Loading/spinner.svg";
 import { ReactComponent as image } from "../AsideActions/NotFound/Picture.svg";
 
 export const Spinner = styled(spinnerIcon)`
-  align-self: center;
+  display: block;
+  margin: 0 auto;
   margin-top: 120px;
   animation: spin 2s linear infinite;
   @keyframes spin {
