@@ -22,7 +22,7 @@ const MovieList = () => {
                             year={movie.release_date}
                             vote={movie.vote_average}
                             votes={movie.vote_count}
-                            genres={movie.genres_ids}
+                            genres={movie.genre_ids}
                         />
                     </ItemMoviesList>
                 ))}
