@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as spinnerIcon } from "./images/spinner.svg";
-import { ReactComponent as image } from "./images/Picture.svg";
-import { ReactComponent as warningIcon } from "./images/warning.svg";
+import { ReactComponent as spinnerIcon } from "./Loading/spinner.svg";
+import { ReactComponent as image } from "../AsideActions/NotFound/Picture.svg";
 
 export const Spinner = styled(spinnerIcon)`
   align-self: center;
@@ -21,5 +20,16 @@ export const Image = styled(image)`
   background-color: ${({ theme }) => theme.color.whisper};
   align-self: center;
 `;
+export const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+`;
 
-export const Warning = styled(warningIcon)``;
+export const Title = styled.h2`
+  align-self: flex-start;
+  margin-top: 56px;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: ${({ theme }) => theme.color.black};
+`;

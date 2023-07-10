@@ -1,5 +1,4 @@
-import { Wrapper, Title } from "./styled";
-import { ReactComponent as CameraIcon } from "../Images/camera.svg";
+import { Wrapper, Title, CameraIcon } from "./styled";
 
 export const NavigationLogo = () => {
 
