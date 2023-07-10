@@ -1,9 +1,7 @@
 import { GenresContainer, Genre } from "./styled";
 
-export const Genres = () => (
+export const Genres = ({ genres }) => (
     <GenresContainer>
-        <Genre>Action</Genre>
-        <Genre>Adventure</Genre>
-        <Genre>Drama</Genre>
+        <Genre>{genres}</Genre>
     </GenresContainer>
 );

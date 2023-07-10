@@ -9,7 +9,6 @@ export const MovieTileList = styled.article`
     box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
     display: grid;
     grid-template-rows: auto 1 fr;
-    grid-template-columns: 1fr; 
 `;
 
 export const Poster = styled.img`

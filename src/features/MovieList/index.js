@@ -1,11 +1,35 @@
-import { ItemMoviesList, MovieListContainer, MovieListTitle } from "./styled";
+import { useSelector } from "react-redux";
+import { Container } from "../../common/Container";
+import { TileList } from "../../common/TileList";
+import { ItemMoviesList, MovieListTitle, MoviesList } from "./styled";
+import { selectMoviesList } from "../movieListSlice";
 
-export const MovieList = () => (
-    <MovieListContainer>
-        <MovieListTitle></MovieListTitle>
-        <MovieList>
-            <ItemMoviesList></ItemMoviesList>
-        </MovieList>
 
-    </MovieListContainer>
-)
+const MovieList = () => {
+    const popularMovies = useSelector(selectMoviesList);
+   
+    return (
+        <Container>
+            <MovieListTitle>Popular movies</MovieListTitle>
+            <MoviesList>
+                {popularMovies.map((movie) => (
+                    <ItemMoviesList key={movie.id}
+                    >
+                        <TileList
+                            id={movie.id}
+                            poster={movie.poster_path}
+                            title={movie.title}
+                            year={movie.release_date}
+                            vote={movie.vote_average}
+                            votes={movie.vote_count}
+                            genres={movie.genres_ids}
+                        />
+                    </ItemMoviesList>
+                ))}
+
+            </MoviesList>
+        </Container>
+    )
+}
+
+export default MovieList;
