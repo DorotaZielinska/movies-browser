@@ -1,4 +1,4 @@
-import { call, put, select, delay } from "redux-saga/effects";
+import { call, put, select } from "redux-saga/effects";
 import {
   fetchMoviesList,
   fetchMoviesListError,
@@ -8,7 +8,6 @@ import { getGenres, getPopularMovies } from "./getDataApi";
 
 function* fetchMoviesListHandler() {
   try {
-    yield delay(2000);
     const page = yield select(selectPage);
     const genres = yield call(getGenres);
     let data;
