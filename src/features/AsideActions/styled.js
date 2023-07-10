@@ -25,13 +25,14 @@ export const Image = styled(image)`
 export const Warning = styled(warningIcon)`
   display: block;
   margin: 0 auto;
+  margin-top: 180px;
 `;
 
 export const Title = styled.h2`
   font-size: 36px;
   color: ${({ theme }) => theme.color.woodsmoke};
   font-weight: 600;
-  line-height: 120%;
+  line-height: 1.2;
   margin: 0;
 `;
 
@@ -46,6 +47,7 @@ export const Button = styled.button`
 
 export const Content = styled.p`
   font-size: 14px;
+  font-family: Open Sans;
   color: ${({ theme }) => theme.color.white};
   font-weight: 700;
   line-height: 19px;
