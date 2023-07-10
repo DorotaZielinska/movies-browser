@@ -1,4 +1,4 @@
-import { Warning, Container, Title, Info, Button, Content } from "../styled";
+import { Warning, Container, Title, Info, Button, Content } from "./styled";
 
 export const Error = () => (
   <>
