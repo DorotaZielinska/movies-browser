@@ -8,6 +8,7 @@ export const MovieListTitle = styled.h1`
 
 export const MoviesList = styled.ul` 
     padding: 0px; 
+    list-style: none;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 24px;
