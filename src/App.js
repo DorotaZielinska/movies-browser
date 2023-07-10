@@ -1,12 +1,10 @@
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom"
-
 import { Navigation } from "./common/Navigation";
 import { TileList } from "./common/TileList";
 
 function App() {
-
   return (
-    < >
+    <>
       <HashRouter>
         <Navigation toMovies={"/movies"} toPeople={"/people"} />
         <Switch>
