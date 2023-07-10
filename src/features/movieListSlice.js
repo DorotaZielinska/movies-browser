@@ -15,9 +15,14 @@ const moviesListSlice = createSlice({
       state.genres = movies.genres;
       state.status = "success";
     },
+
+    fetchMoviesListError: (state) => {
+      state.status = "error";
+    },
   },
 });
-export const { fetchMoviesList } = moviesListSlice.actions;
+export const { fetchMoviesList, fetchMoviesListError } =
+  moviesListSlice.actions;
 
 export const selectMoviesListState = (state) => state.moviesList;
 export const selectMoviesList = (state) => selectMoviesListState(state).movies;
