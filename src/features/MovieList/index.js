@@ -4,6 +4,7 @@ import { TileList } from "../../common/TileList";
 import { ItemMoviesList, MovieListTitle, MoviesList } from "./styled";
 import { selectStatus, selectMoviesList } from "../movieListSlice";
 import { Error } from "../AsideActions/Error/error";
+import { Pagination } from "../../common/Pagination";
 
 const MovieList = () => {
   const popularMovies = useSelector(selectMoviesList);
@@ -29,6 +30,7 @@ const MovieList = () => {
           </ItemMoviesList>
         ))}
       </MoviesList>
+      <Pagination />
     </Container>
   );
 };
