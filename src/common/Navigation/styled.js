@@ -7,10 +7,15 @@ export const NavigationContainer = styled.div`
     min-height: 94px;
     width: 100%;
    
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-        min-height: 142px;
-        padding-top: 24px;
+    @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+        max-height: 142px;
+       
     };
+
+        @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+            height: 142px;
+            padding-top: 24px;
+        };
 `;
 
 export const NavigationWrapper = styled.nav`
@@ -18,9 +23,10 @@ export const NavigationWrapper = styled.nav`
     align-items: center;
     flex-shrink: 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
         display: flex;
         flex-wrap: wrap;
+        padding-left: 16px;
     };
 `;
 
@@ -32,7 +38,7 @@ export const List = styled.ul`
     flex-shrink: 0;
     padding-left: 80px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
         gap: 12px;
         padding-left: 19px;
         margin: 0;
@@ -46,7 +52,7 @@ export const Item = styled.li`
     line-height: normal;
     text-transform: uppercase;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
         font-size: 12px;
     };
  `;
@@ -62,7 +68,7 @@ export const StyledNavLink = styled(NavLink)`
     border-radius: 24px;
     border: 1px solid transparent;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
         padding: 8px 12px;
         border-radius: 29px;
         height: 34px;
