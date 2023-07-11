@@ -5,6 +5,6 @@ export const Rating = ({ vote, votes}) => (
     <RatingContainer>
         <RatingIcon />
         <Vote>{ vote }</Vote>
-        <Votes>{ votes }</Votes>
+        <Votes>{ votes } votes</Votes>
     </RatingContainer>
 );
