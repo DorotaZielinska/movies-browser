@@ -8,17 +8,18 @@ export const Wrapper = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoint.desktop}){
         padding-left: 16px;
         padding-right: 16px;
-        padding-top: 24px;
+        padding-top: 16px;
         padding-bottom: 16px;
         width: 100%;
     };
 
+    @media(max-width: ${({ theme }) => theme.breakpoint.ipod}){      
+        padding-top: 6px;
+    };
+
     @media(max-width: ${({ theme }) => theme.breakpoint.small}){
         padding-left: 0;
-        padding-right: 16px;
-        padding-top: 24px;
-        padding-bottom: 16px;
-        width: 100%;
+        padding-top: 17px;  
     };
 
 `;
@@ -43,16 +44,7 @@ export const Input = styled.input`
         width: 100%;
     };
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.ipod}){
-        padding-left: 64px;
-        /* padding-right: 16px;
-        padding-top: 24px;
-        padding-bottom: 16px;
-        width: 100%; */
-    };
-
     @media(max-width: ${({ theme }) => theme.breakpoint.small}){
-       width: 100%;
         height: 44px;
         padding-left: 40px;
         background-position: 16px center;

@@ -7,13 +7,11 @@ export const NavigationContainer = styled.div`
     min-height: 94px;
     width: 100%;
    
-    @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-        max-height: 142px;
-       
+    @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
+        min-height: 142px;
     };
 
-        @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-            height: 142px;
+        @media (max-width: ${({ theme }) => theme.breakpoint.small}) {        
             padding-top: 24px;
         };
 `;
@@ -24,7 +22,6 @@ export const NavigationWrapper = styled.nav`
     flex-shrink: 0;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
-        display: flex;
         flex-wrap: wrap;
         padding-left: 16px;
     };
@@ -41,6 +38,8 @@ export const List = styled.ul`
     @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
         gap: 12px;
         padding-left: 19px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         margin: 0;
     };
 `;
