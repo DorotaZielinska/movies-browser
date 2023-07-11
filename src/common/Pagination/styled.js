@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 24px 0 100px;
+  margin: 40px 0 100px;
 `;
 
 export const Wrapper = styled.div`
