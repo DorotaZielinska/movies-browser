@@ -6,6 +6,7 @@ export const GenresContainer = styled.div`
     list-style: none;
     padding-left: 0px;
     margin: -8px;
+    margin-bottom: 10px;
 `;
 
 export const Genre = styled.li`

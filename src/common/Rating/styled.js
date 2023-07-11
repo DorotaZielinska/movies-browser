@@ -4,7 +4,7 @@ export const RatingContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     padding-left: 0px;
-    margin-top: 39px;
+    margin-top: 10px;
     gap: 12px;
     align-items: center;
 `;
@@ -16,7 +16,7 @@ export const Vote = styled.span`
 `;
 
 export const Votes = styled.span`
-    width: 68px;
+    width: auto;
     font-size: 16px;
     font-weight: 400;
     color: ${({ theme }) => theme.color.waterloo};
