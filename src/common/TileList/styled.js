@@ -13,8 +13,9 @@ export const MovieTileList = styled.article`
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
         grid-template-columns: auto 1fr;
         grid-gap: 16px;
-        width: 320px;
+        max-width: 320px;
         margin-left: 16px;
+        margin-right: 16px;
     };
 `;
 
