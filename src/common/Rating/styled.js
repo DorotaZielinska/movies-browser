@@ -31,6 +31,7 @@ export const Vote = styled.span`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
        font-size: 13px;
+       line-height: 1.3;
     };
 `;
 
@@ -43,5 +44,6 @@ export const Votes = styled.span`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
        font-size: 13px;
+       line-height: 1.3;
     };
 `;

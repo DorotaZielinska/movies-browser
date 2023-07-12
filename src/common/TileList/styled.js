@@ -63,6 +63,7 @@ export const StyledSubTitle = styled.h2`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
        font-size: 13px;
+       line-height: 1.3;
        };
 `;
 

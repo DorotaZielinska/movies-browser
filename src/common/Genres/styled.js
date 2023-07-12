@@ -21,5 +21,6 @@ export const Genre = styled.li`
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
        font-size: 10px;
        padding: 4px 8px;
+       line-height: 1.1;
     };  
 `;
