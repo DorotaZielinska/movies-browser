@@ -16,7 +16,7 @@ const MovieList = () => {
     <Container>
       <MovieListTitle>Popular movies</MovieListTitle>
       <MoviesList>
-        {popularMovies.map((movie) => (
+        {popularMovies.slice(12).map((movie) => (
           <ItemMoviesList key={movie.id}>
             <TileList
               id={movie.id}
