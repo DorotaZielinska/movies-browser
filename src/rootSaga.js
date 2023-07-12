@@ -3,8 +3,5 @@ import { watchFetchMoviesList } from "./features/movieListSaga";
 import { watchFetchMovieDetails } from "./features/movieDetailsSaga";
 
 export default function* rootSaga() {
-    yield all([
-        watchFetchMoviesList(),
-        watchFetchMovieDetails(),
-    ]);
+  yield all([watchFetchMoviesList(), watchFetchMovieDetails()]);
 }
