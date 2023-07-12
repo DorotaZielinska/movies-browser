@@ -11,11 +11,6 @@ export const MovieTileList = styled.article`
     grid-auto-rows: auto 1fr;
 `;
 
-export const Poster = styled.img`
-    width: 292px;
-    height: 434px;
-`;
-
 export const Content = styled.div`
     height: 100%;
     display: flex;

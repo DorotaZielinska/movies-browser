@@ -1,10 +1,9 @@
 
 import { Genres } from "../Genres"
+import { MovieImage } from "../Image"
 import { Rating } from "../Rating"
-import { Content, MovieTileList, Poster, StyledSubTitle, StyledTitle } from "./styled"
+import { Content, MovieTileList, StyledSubTitle, StyledTitle } from "./styled"
  
-const images = "https://image.tmdb.org/t/p/w300";
-
 export const TileList = ({ title, year, genres, vote, votes, poster }) => {
     const getYear = (string) => {
         return string.split("-")[0];
@@ -13,7 +12,7 @@ export const TileList = ({ title, year, genres, vote, votes, poster }) => {
     return(
         (
             <MovieTileList>
-                <Poster src={`${images}${poster}`} alt="photo"/>
+                <MovieImage poster={poster} />
                 <Content>
                     <div>
                         <StyledTitle>{title}</StyledTitle>
