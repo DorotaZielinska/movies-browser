@@ -50,8 +50,7 @@ export const StyledTitle = styled.h1`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
        font-size: 16px;
-       margin-bottom: 4px;
-       margin-top: 0px;
+       margin:  0 0 4px;
     };
 `;
 

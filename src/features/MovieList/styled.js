@@ -24,6 +24,7 @@ export const MoviesList = styled.ul`
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
         grid-template-columns: 1fr;
         padding-right: 13px;
+        grid-gap: 16px;
     }
 `;
 
