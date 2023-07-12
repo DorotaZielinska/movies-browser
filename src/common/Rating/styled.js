@@ -26,6 +26,7 @@ export const IconWrapper = styled.div`
 export const Vote = styled.span`
     font-size: 16px;
     font-weight: 600;
+    line-height: 1.5;
     color:${({ theme }) => theme.color.woodsmoke};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
@@ -37,6 +38,7 @@ export const Votes = styled.span`
     width: auto;
     font-size: 16px;
     font-weight: 400;
+    line-height: 1.5;
     color: ${({ theme }) => theme.color.waterloo};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {

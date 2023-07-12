@@ -16,6 +16,7 @@ export const Genre = styled.li`
     font-size: 14px;
     padding: 8px 16px;
     margin: 8px 0 0 8px;
+    line-height: 1.4;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
        font-size: 10px;

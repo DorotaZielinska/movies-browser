@@ -20,13 +20,13 @@ export const MovieTileList = styled.article`
 `;
 
 export const Poster = styled.img`
-    width: 292px;
-    height: 434px;
+    max-width: 292px;
+    max-height: 434px;
     border-radius: 5px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-        width: 114px;
-        height: 169px;
+        max-width: 114px;
+        max-height: 169px;
     };
 `;
 
@@ -46,6 +46,7 @@ export const StyledTitle = styled.h1`
     font-size : 22px;
     color: ${({ theme }) => theme.color.woodsmoke};
     margin-bottom: 8px;
+    line-height: 1.3;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
        font-size: 16px;
@@ -57,6 +58,7 @@ export const StyledTitle = styled.h1`
 export const StyledSubTitle = styled.h2`
     font-weight: 400;
     font-size: 16px;
+    line-height: 1.5;
     color: ${({ theme }) => theme.color.waterloo};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
