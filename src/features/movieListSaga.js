@@ -10,8 +10,8 @@ function* fetchMoviesListHandler() {
   try {
     const page = yield select(selectPage);
     const genres = yield call(getGenres);
-    let data;
-    data = yield call(getPopularMovies, { page: page });
+    const data = yield call(getPopularMovies, page);
+
     yield put(fetchMoviesList({ data, genres }));
   } catch (error) {
     yield put(fetchMoviesListError());
