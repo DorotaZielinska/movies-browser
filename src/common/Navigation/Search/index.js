@@ -1,10 +1,13 @@
 import { useRouteMatch } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { debounce } from 'lodash';
+
 
 import { Wrapper, Input } from "./styled";
 import { searchQueryParamName } from "./searchQueryParamName";
 import { useQueryParameter, useReplaceQueryParameter } from "./queryParameter";
-import { setSearchQuery } from "../../../features/movieListSlice"
+import { fetchMoviesListLoad, setSearchQuery } from "../../../features/movieListSlice";
+import { useCallback } from "react";
 
 export const Search = () => {
     const moviesMatch = useRouteMatch("/movies");
@@ -15,6 +18,11 @@ export const Search = () => {
     const query = useQueryParameter(searchQueryParamName);
     const replaceQueryParameter = useReplaceQueryParameter();
 
+    const fetchMovies = useCallback(
+        debounce(() => dispatch(fetchMoviesListLoad()), 1000),
+        []
+    );
+
     const onInputChange = ({ target }) => {
         replaceQueryParameter(
             searchQueryParamName,
@@ -22,20 +30,17 @@ export const Search = () => {
             peopleMatch ? 'people' : undefined,
             moviesMatch ? 'movies' : undefined,
         );
-        console.log("Testing dispatch value ", target.value);
-        dispatch(setSearchQuery(target.value))
+        dispatch(setSearchQuery(target.value));
+        fetchMovies();
     };
 
-
     return (
-        <>
-            <Wrapper>
-                <Input
-                    placeholder={placeholder}
-                    value={query || ""}
-                    onChange={onInputChange}
-                />
-            </Wrapper>
-        </>
+        <Wrapper>
+            <Input
+                placeholder={placeholder}
+                value={query || ""}
+                onChange={onInputChange}
+            />
+        </Wrapper>
     );
 };
