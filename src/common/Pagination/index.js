@@ -1,4 +1,13 @@
 import {
+  firstPage,
+  lastPage,
+  nextPage,
+  previousPage,
+} from "../../features/movieListSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectPage } from "../../features/movieListSlice";
+import { getPopularMovies } from "../../features/getDataApi";
+import {
   Container,
   Wrapper,
   Button,
@@ -10,39 +19,54 @@ import {
 } from "./styled";
 
 export const Pagination = () => {
+  const dispatch = useDispatch();
+  const currentPage = useSelector(selectPage);
+  console.log(currentPage);
   return (
     <Container>
       <Wrapper>
-        <Button disabled>
+        <Button
+          disabled={currentPage <= 1}
+          onClick={() => dispatch(firstPage(currentPage))}
+        >
           <ButtonText>
-            <BackIcon disabled />
+            <BackIcon disabled={currentPage <= 1} />
             First
           </ButtonText>
         </Button>
-        <Button disabled>
+        <Button
+          disabled={currentPage <= 1}
+          onClick={() => dispatch(previousPage(currentPage))}
+        >
           <ButtonText>
-            <BackIcon disabled />
+            <BackIcon disabled={currentPage <= 1} />
             Previous
           </ButtonText>
         </Button>
       </Wrapper>
       <Counter>
         <span>Page</span>
-        <Page>1</Page>
+        <Page>{currentPage}</Page>
         <span>of</span>
         <Page>500</Page>
       </Counter>
       <Wrapper>
-        <Button>
+        <Button
+          onClick={() => dispatch(nextPage(currentPage))}
+          disabled={currentPage >= 500}
+        >
           <ButtonText>
             Next
-            <NextIcon />
+            <NextIcon disabled={currentPage >= 500} />
           </ButtonText>
         </Button>
-        <Button>
+        <Button
+          disabled={currentPage >= 500}
+          onClick={() => dispatch(lastPage(currentPage))}
+        >
           <ButtonText>
             Last
-            <NextIcon />
+            <NextIcon disabled={currentPage >= 500} />
           </ButtonText>
         </Button>
       </Wrapper>

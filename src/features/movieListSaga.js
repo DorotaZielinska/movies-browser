@@ -1,23 +1,35 @@
-import { call, put, select } from "redux-saga/effects";
+import { call, put, select, takeEvery, all, delay } from "redux-saga/effects";
 import {
   fetchMoviesList,
   fetchMoviesListError,
   selectPage,
+  fetchMoviesListSuccess,
+  nextPage,
+  previousPage,
 } from "./movieListSlice";
-import { getGenres, getPopularMovies } from "./getDataApi";
+import { getGenres, getPopularMovies, getPopularPages } from "./getDataApi";
 
 function* fetchMoviesListHandler() {
   try {
-    const page = yield select(selectPage);
+    yield delay(1000);
+    const currentPage = yield select(selectPage);
+    console.log(currentPage);
     const genres = yield call(getGenres);
     let data;
-    data = yield call(getPopularMovies, { page: page });
-    yield put(fetchMoviesList({ data, genres }));
+    if (currentPage > 1) {
+      data = yield call(getPopularPages, { currentPage });
+    } else {
+      data = yield call(getPopularMovies);
+    }
+    yield put(fetchMoviesListSuccess({ data, genres, currentPage }));
   } catch (error) {
     yield put(fetchMoviesListError());
   }
 }
 
 export function* watchFetchMoviesList() {
-  yield fetchMoviesListHandler();
+  yield all([
+    (nextPage.type, fetchMoviesListHandler()),
+    (fetchMoviesListSuccess.type, fetchMoviesListHandler()),
+  ]);
 }

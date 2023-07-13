@@ -2,13 +2,14 @@ import { useSelector } from "react-redux";
 import { Container } from "../../common/Container";
 import { TileList } from "../../common/TileList";
 import { ItemMoviesList, MovieListTitle, MoviesList } from "./styled";
-import { selectStatus, selectMoviesList } from "../movieListSlice";
+import { selectStatus, selectMoviesList, selectPage } from "../movieListSlice";
 import { Error } from "../AsideActions/Error/error";
 import { Pagination } from "../../common/Pagination";
 
 const MovieList = () => {
   const popularMovies = useSelector(selectMoviesList);
   const status = useSelector(selectStatus);
+  const currentPage = useSelector(selectPage);
 
   return status === "error" ? (
     <Error />
@@ -16,7 +17,7 @@ const MovieList = () => {
     <Container>
       <MovieListTitle>Popular movies</MovieListTitle>
       <MoviesList>
-        {popularMovies.slice(12).map((movie) => (
+        {popularMovies.map((movie) => (
           <ItemMoviesList key={movie.id}>
             <TileList
               id={movie.id}
@@ -30,7 +31,7 @@ const MovieList = () => {
           </ItemMoviesList>
         ))}
       </MoviesList>
-      <Pagination />
+      <Pagination currentPage={currentPage} />
     </Container>
   );
 };
