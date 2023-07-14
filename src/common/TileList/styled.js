@@ -19,17 +19,6 @@ export const MovieTileList = styled.article`
     };
 `;
 
-export const Poster = styled.img`
-    max-width: 292px;
-    max-height: 434px;
-    border-radius: 5px;
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-        max-width: 114px;
-        max-height: 169px;
-    };
-`;
-
 export const Content = styled.div`
     height: 100%;
     display: flex;
