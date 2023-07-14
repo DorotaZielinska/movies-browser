@@ -5,7 +5,8 @@ import { ItemMoviesList, MovieListTitle, MoviesList } from "./styled";
 import {
   selectStatus,
   selectMoviesList,
-  fetchMoviesListSuccess,
+  fetchMoviesListLoad,
+  selectPage,
 } from "../movieListSlice";
 import { Error } from "../AsideActions/Error/error";
 import { Pagination } from "../../common/Pagination";
@@ -15,10 +16,11 @@ const MovieList = () => {
   const popularMovies = useSelector(selectMoviesList);
   const status = useSelector(selectStatus);
   const dispatch = useDispatch();
+  const page = useSelector(selectPage);
 
   useEffect(() => {
-    dispatch(fetchMoviesListSuccess());
-  }, [dispatch]);
+    dispatch(fetchMoviesListLoad(page));
+  }, [dispatch, page]);
 
   return status === "error" ? (
     <Error />
