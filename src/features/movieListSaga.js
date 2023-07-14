@@ -32,5 +32,5 @@ function* getPopularMoviesHandler() {
 
 export function* watchFetchMoviesList() {
   yield takeLatest(changePage.type, fetchChangePageHandler);
-  yield (fetchMoviesListSuccess, getPopularMoviesHandler());
+  yield (fetchMoviesListSuccess.type, getPopularMoviesHandler());
 }
