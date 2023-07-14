@@ -8,41 +8,62 @@ import {
   Counter,
   Page,
 } from "./styled";
+import { useSelector, useDispatch } from "react-redux";
+import { changePage, selectPage } from "../../features/movieListSlice";
 
 export const Pagination = () => {
+  const page = useSelector(selectPage);
+  const dispatch = useDispatch();
+  const nextPage = page + 1;
+  const prevPage = page - 1;
+  const lastPage = 500;
+  const firstPage = 1;
+
   return (
     <Container>
       <Wrapper>
-        <Button disabled>
+        <Button
+          disabled={page <= 1}
+          onClick={() => dispatch(changePage(firstPage))}
+        >
           <ButtonText>
-            <BackIcon disabled />
+            <BackIcon disabled={page <= 1} />
             First
           </ButtonText>
         </Button>
-        <Button disabled>
+        <Button
+          disabled={page <= 1}
+          onClick={() => dispatch(changePage(prevPage))}
+        >
           <ButtonText>
-            <BackIcon disabled />
+            <BackIcon disabled={page <= 1} />
             Previous
           </ButtonText>
         </Button>
       </Wrapper>
       <Counter>
         <span>Page</span>
-        <Page>1</Page>
+        <Page>{page}</Page>
         <span>of</span>
         <Page>500</Page>
       </Counter>
       <Wrapper>
-        <Button>
+        <Button
+          disabled={page >= 500}
+          onClick={() => dispatch(changePage(nextPage))}
+        >
           <ButtonText>
             Next
-            <NextIcon />
+            <NextIcon disabled={page >= 500} />
           </ButtonText>
         </Button>
-        <Button>
+        <Button
+          disabled={page >= 500}
+          onClick={() => dispatch(changePage(lastPage))}
+        >
           <ButtonText>
             Last
-            <NextIcon />
+            <NextIcon disabled={page >= 500} />
           </ButtonText>
         </Button>
       </Wrapper>
