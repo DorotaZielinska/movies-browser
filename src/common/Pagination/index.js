@@ -14,6 +14,7 @@ import { changePage, selectPage } from "../../features/movieListSlice";
 export const Pagination = () => {
   const page = useSelector(selectPage);
   const dispatch = useDispatch();
+  const screenWidth = window.innerWidth;
   const nextPage = page + 1;
   const prevPage = page - 1;
   const lastPage = 500;
@@ -28,6 +29,7 @@ export const Pagination = () => {
         >
           <ButtonText>
             <BackIcon disabled={page <= 1} />
+            {screenWidth <= 767 ? <BackIcon disabled={page <= 1} /> : ""}
             First
           </ButtonText>
         </Button>
@@ -64,6 +66,7 @@ export const Pagination = () => {
           <ButtonText>
             Last
             <NextIcon disabled={page >= 500} />
+            {screenWidth <= 767 ? <NextIcon disabled={page >= 500} /> : ""}
           </ButtonText>
         </Button>
       </Wrapper>
