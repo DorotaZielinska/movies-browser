@@ -11,6 +11,10 @@ export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     gap: 8px;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    gap: 8px;
+    flex-direction: column;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -18,7 +22,7 @@ export const Wrapper = styled.div`
   gap: 12px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    gap: 8px;
+    gap: 4px;
   }
 `;
 
@@ -49,7 +53,8 @@ export const ButtonText = styled.p`
   line-height: 1.4;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    font-size: 0px;
+    display: flex;
+    gap: 4px;
   }
 `;
 
@@ -63,6 +68,7 @@ export const BackIcon = styled(backIcon)`
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     width: 5px;
     height: 8px;
+    margin-right: 0px;
   }
 `;
 
@@ -74,6 +80,7 @@ export const NextIcon = styled(nextIcon)`
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     width: 5px;
     height: 8px;
+    margin-left: 0;
   }
 `;
 
