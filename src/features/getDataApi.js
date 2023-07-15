@@ -15,6 +15,7 @@ export const getMovieCredits = async ({ movieId }) => {
   const response = await axios.get(
     `${URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
   );
+
   return await response.data;
 };
 
@@ -32,4 +33,12 @@ export const getGenres = async () => {
   );
 
   return await response.data.genres;
+};
+
+export const getSearch = async ({ query, page }) => {
+  const response = await axios.get(
+    `${URL}/search/movie?api_key=${API_KEY}&query=${query}&include_adult=false&language=en-US&page=${page}`
+  );
+
+  return await response.data;
 };
