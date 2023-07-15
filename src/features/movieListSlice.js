@@ -27,10 +27,9 @@ const moviesListSlice = createSlice({
       state.page = action;
     },
 
-    fetchSearchMoviesLoad: (state, query) => {
+    fetchSearchMoviesLoad: (state) => {
       state.status = "loading";
     },
-    
   },
 });
 export const {
