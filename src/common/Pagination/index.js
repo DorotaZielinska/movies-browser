@@ -30,7 +30,7 @@ export const Pagination = () => {
           <ButtonText>
             <BackIcon disabled={page <= 1} />
             {screenWidth <= 767 ? <BackIcon disabled={page <= 1} /> : ""}
-            First
+            {screenWidth <= 767 ? "" : "First"}
           </ButtonText>
         </Button>
         <Button
@@ -39,7 +39,7 @@ export const Pagination = () => {
         >
           <ButtonText>
             <BackIcon disabled={page <= 1} />
-            Previous
+            {screenWidth <= 767 ? "" : "Previous"}
           </ButtonText>
         </Button>
       </Wrapper>
@@ -55,7 +55,7 @@ export const Pagination = () => {
           onClick={() => dispatch(changePage(nextPage))}
         >
           <ButtonText>
-            Next
+            {screenWidth <= 767 ? "" : "Next"}
             <NextIcon disabled={page >= 500} />
           </ButtonText>
         </Button>
@@ -64,7 +64,7 @@ export const Pagination = () => {
           onClick={() => dispatch(changePage(lastPage))}
         >
           <ButtonText>
-            Last
+            {screenWidth <= 767 ? "" : "Last"}
             <NextIcon disabled={page >= 500} />
             {screenWidth <= 767 ? <NextIcon disabled={page >= 500} /> : ""}
           </ButtonText>
