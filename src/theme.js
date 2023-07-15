@@ -16,6 +16,6 @@ export const theme = {
     desktop: "1200px",
     ipod: "1024px",
     small: "767px",
-    mobile: "320px",
+    mobile: "450px",
   },
 };
