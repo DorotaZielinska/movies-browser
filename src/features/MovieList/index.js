@@ -7,20 +7,36 @@ import {
   selectMoviesList,
   fetchMoviesListLoad,
   selectPage,
+  fetchSearchMoviesLoad,
 } from "../movieListSlice";
 import { Error } from "../AsideActions/Error/error";
 import { Pagination } from "../../common/Pagination";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { searchQueryParamName } from "../../common/Navigation/Search/searchQueryParamName";
+import debounce from "lodash/debounce";
 
 const MovieList = () => {
   const popularMovies = useSelector(selectMoviesList);
   const status = useSelector(selectStatus);
   const dispatch = useDispatch();
   const page = useSelector(selectPage);
+  const location = useLocation();
+  const query = new URLSearchParams(location.search).get(searchQueryParamName);
+ 
+  const debouncedLoad = useCallback(
+    debounce((query) => {dispatch(fetchSearchMoviesLoad(query))}, 1000),
+    [dispatch]
+  );
 
   useEffect(() => {
-    dispatch(fetchMoviesListLoad(page));
-  }, [dispatch, page]);
+    if (query !== "" && query !== null) {
+      debouncedLoad(query);
+    } else {
+      debouncedLoad.cancel();
+      dispatch(fetchMoviesListLoad(page));
+    }
+  }, [dispatch, query, debouncedLoad, page]);
 
   return status === "error" ? (
     <Error />
