@@ -4,14 +4,28 @@ import {
   fetchMoviesListSuccess,
   fetchMoviesListError,
   selectPage,
+  fetchSearchMoviesLoad,
 } from "./movieListSlice";
-import { getGenres, getPopularMovies } from "./getDataApi";
+import { getGenres, getPopularMovies, getSearch } from "./getDataApi";
 
 function* getPopularMoviesHandler() {
   try {
     const page = yield select(selectPage);
     const genres = yield call(getGenres);
     const data = yield call(getPopularMovies, page);
+
+    yield put(fetchMoviesListSuccess({ data, genres }));
+  } catch (error) {
+    yield put(fetchMoviesListError());
+  }
+}
+
+function* getSearchMoviesHandler({ payload: query }) {
+  try {
+    const page = yield select(selectPage);
+    const genres = yield call(getGenres);
+    const data = yield call(getSearch, { query, page, genres });
+
     yield put(fetchMoviesListSuccess({ data, genres }));
   } catch (error) {
     yield put(fetchMoviesListError());
@@ -20,4 +34,5 @@ function* getPopularMoviesHandler() {
 
 export function* watchFetchMoviesList() {
   yield takeLatest(fetchMoviesListLoad.type, getPopularMoviesHandler);
+  yield takeLatest(fetchSearchMoviesLoad.type, getSearchMoviesHandler);
 }
