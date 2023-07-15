@@ -26,6 +26,11 @@ const moviesListSlice = createSlice({
     changePage: (state, { payload: action }) => {
       state.page = action;
     },
+
+    fetchSearchMoviesLoad: (state, query) => {
+      state.status = "loading";
+    },
+    
   },
 });
 export const {
@@ -33,6 +38,7 @@ export const {
   fetchMoviesListSuccess,
   fetchMoviesListError,
   fetchMoviesListLoad,
+  fetchSearchMoviesLoad,
 } = moviesListSlice.actions;
 
 export const selectMoviesListState = (state) => state.moviesList;
