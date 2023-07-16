@@ -10,8 +10,9 @@ export const Wrapper = styled.div`
     padding-left: 12px;
     flex-shrink: 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
       gap: 8px;
+      padding-left: 0;
     };
     
 `;
@@ -23,17 +24,22 @@ export const Title = styled.p`
     line-height: 40px;
     letter-spacing: -1.5px;
     text-transform: capitalize;
+   
+    
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
         font-size: 13px;
         line-height: 1,3;
         letter-spacing: -0.5px;
+        padding-bottom: 0;
+        margin: 0;
     };
+
 `;
 
 export const CameraIcon = styled(Camera)`
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
         width: 17px;
         height: 17px;
     };
