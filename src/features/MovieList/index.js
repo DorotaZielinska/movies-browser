@@ -1,4 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
+import debounce from "lodash/debounce";
+import { useCallback, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import { Container } from "../../common/Container";
 import { TileList } from "../../common/TileList";
 import { ItemMoviesList, MovieListTitle, MoviesList } from "./styled";
@@ -8,13 +12,13 @@ import {
   fetchMoviesListLoad,
   selectPage,
   fetchSearchMoviesLoad,
+  selectTotalResult,
 } from "../movieListSlice";
+import { Loading } from "../AsideActions/Loading/loading";
 import { Error } from "../AsideActions/Error/error";
+import { NotFound } from "../AsideActions/NotFound/notFound";
 import { Pagination } from "../../common/Pagination";
-import { useCallback, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { searchQueryParamName } from "../../common/Navigation/Search/searchQueryParamName";
-import debounce from "lodash/debounce";
 
 const MovieList = () => {
   const popularMovies = useSelector(selectMoviesList);
@@ -23,9 +27,12 @@ const MovieList = () => {
   const page = useSelector(selectPage);
   const location = useLocation();
   const query = new URLSearchParams(location.search).get(searchQueryParamName);
- 
+  const totalResults = useSelector(selectTotalResult);
+
   const debouncedLoad = useCallback(
-    debounce((query) => {dispatch(fetchSearchMoviesLoad(query))}, 1000),
+    debounce((query) => {
+      dispatch(fetchSearchMoviesLoad(query));
+    }, 1000),
     [dispatch]
   );
 
@@ -40,11 +47,19 @@ const MovieList = () => {
 
   return status === "error" ? (
     <Error />
+  ) : status === "loading" ? (
+    <Loading query={query} totalResults={totalResults} />
+  ) : totalResults === 0 ? (
+    <NotFound query={query} />
   ) : (
     <Container>
-      <MovieListTitle>Popular movies</MovieListTitle>
+      <MovieListTitle>
+        {query
+          ? `Search results for "${query}" (${totalResults})`
+          : "Popular Movies"}
+      </MovieListTitle>
       <MoviesList>
-        {popularMovies.slice(0, 8).map((movie) => (
+        {popularMovies.map((movie) => (
           <ItemMoviesList key={movie.id}>
             <TileList
               id={movie.id}
