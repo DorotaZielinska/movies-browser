@@ -13,7 +13,6 @@ export const Container = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     gap: 8px;
-    flex-direction: column;
   }
 `;
 
@@ -97,6 +96,10 @@ export const Counter = styled.p`
     font-size: 10px;
     line-height: 24px;
     gap: 2px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    margin: 0;
   }
 `;
 
