@@ -7,12 +7,25 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin: 40px 0 100px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    margin: 32px 0 100;
+    gap: 8px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    gap: 8px;
+  }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   gap: 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    gap: 8;
+  }
 `;
+
 export const Button = styled.button`
   border: none;
   border-radius: 5px;
@@ -23,6 +36,14 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.color.mystic};
     color: ${({ theme }) => theme.color.woodsmoke};
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    display: flex;
+    align-items: center;
+    height: 23px;
+    gap: 4px;
+    padding: 8px 12px;
+  }
 `;
 
 export const ButtonText = styled.p`
@@ -30,6 +51,11 @@ export const ButtonText = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    display: flex;
+    gap: 4px;
+  }
 `;
 
 export const BackIcon = styled(backIcon)`
@@ -38,11 +64,24 @@ export const BackIcon = styled(backIcon)`
 
   color: ${({ disabled, theme }) =>
     disabled ? theme.color.waterloo : theme.color.scienceBlue};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    width: 5px;
+    height: 8px;
+    margin-right: 0px;
+  }
 `;
+
 export const NextIcon = styled(nextIcon)`
   margin-left: 8px;
   color: ${({ disabled, theme }) =>
     disabled ? theme.color.waterloo : theme.color.scienceBlue};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    width: 5px;
+    height: 8px;
+    margin-left: 0;
+  }
 `;
 
 export const Counter = styled.p`
@@ -53,6 +92,16 @@ export const Counter = styled.p`
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 10px;
+    line-height: 24px;
+    gap: 2px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    margin: 0;
+  }
 `;
 
 export const Page = styled.span`
@@ -60,4 +109,9 @@ export const Page = styled.span`
   font-weight: 600;
   line-height: 1.5;
   color: ${({ theme }) => theme.color.woodsmoke};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 10px;
+    line-height: 24px;
+  }
 `;
