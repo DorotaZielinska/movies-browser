@@ -20,6 +20,14 @@ export const Spinner = styled(spinnerIcon)`
 export const Image = styled(image)`
   background-color: ${({ theme }) => theme.color.whisper};
   align-self: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    width: 320px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    max-width: 500px;
+  }
 `;
 export const Wrapper = styled.section`
   display: flex;
@@ -33,4 +41,16 @@ export const Title = styled.h2`
   font-weight: 600;
   line-height: 1.2;
   color: ${({ theme }) => theme.color.black};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
 `;
