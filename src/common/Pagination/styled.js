@@ -9,6 +9,7 @@ export const Container = styled.div`
   margin: 40px 0 100px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    margin: 32px 0 100;
     gap: 8px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
@@ -20,8 +21,8 @@ export const Wrapper = styled.div`
   display: flex;
   gap: 12px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    gap: 4px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    gap: 8;
   }
 `;
 
