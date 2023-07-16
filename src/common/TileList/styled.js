@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MovieTileList = styled.article`
-  max-width: 324;
+  width: 324;
   height: 100%;
   background-color: ${({ theme }) => theme.color.white};
   padding: 16px;
