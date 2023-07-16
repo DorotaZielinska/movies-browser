@@ -1,4 +1,4 @@
-import { call, put, select, takeLatest } from "redux-saga/effects";
+import { call, delay, put, select, takeLatest } from "redux-saga/effects";
 import {
   fetchMoviesListLoad,
   fetchMoviesListSuccess,
@@ -13,7 +13,7 @@ function* getPopularMoviesHandler() {
     const page = yield select(selectPage);
     const genres = yield call(getGenres);
     const data = yield call(getPopularMovies, page);
-
+    yield delay(1000);
     yield put(fetchMoviesListSuccess({ data, genres }));
   } catch (error) {
     yield put(fetchMoviesListError());
@@ -25,7 +25,7 @@ function* getSearchMoviesHandler({ payload: query }) {
     const page = yield select(selectPage);
     const genres = yield call(getGenres);
     const data = yield call(getSearch, { query, page, genres });
-
+    yield delay(1000);
     yield put(fetchMoviesListSuccess({ data, genres }));
   } catch (error) {
     yield put(fetchMoviesListError());
