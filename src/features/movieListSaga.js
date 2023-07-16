@@ -24,7 +24,7 @@ function* getSearchMoviesHandler({ payload: query }) {
   try {
     const page = yield select(selectPage);
     const genres = yield call(getGenres);
-    const data = yield call(getSearch, { query, page, genres });
+    const data = yield call(getSearch, { query, page });
     yield delay(1000);
     yield put(fetchMoviesListSuccess({ data, genres }));
   } catch (error) {
