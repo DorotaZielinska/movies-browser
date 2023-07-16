@@ -23,10 +23,13 @@ export const Image = styled(image)`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     width: 320px;
+    height: 200px;
+    margin-top: 0px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     max-width: 500px;
+    height: 300px;
   }
 `;
 export const Wrapper = styled.section`
