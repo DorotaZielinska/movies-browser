@@ -11,7 +11,11 @@ export const MovieListTitle = styled.h1`
     margin: 16px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    margin: 16px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     margin-top: 24px;
     margin-bottom: 12px;
   }
@@ -25,11 +29,18 @@ export const MoviesList = styled.ul`
   grid-gap: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}) {
-    grid-gap: 4px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
     margin: 16px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+    margin: 16px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     display: flex;
     flex-direction: column;
     grid-gap: 16px;
