@@ -48,7 +48,7 @@ const MovieList = () => {
   return status === "error" ? (
     <Error />
   ) : status === "loading" ? (
-    <Loading query={query} totalResults={totalResults} />
+    <Loading query={query} />
   ) : totalResults === 0 ? (
     <NotFound query={query} />
   ) : (
