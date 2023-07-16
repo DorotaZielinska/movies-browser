@@ -10,10 +10,14 @@ export const MovieTileList = styled.article`
   display: grid;
   grid-auto-rows: auto 1fr;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     grid-template-columns: auto 1fr;
     grid-gap: 0px 16px;
     width: auto;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    width: 288px;
   }
 `;
 
@@ -23,7 +27,7 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     justify-content: flex-start;
   }
 `;
@@ -35,7 +39,7 @@ export const StyledTitle = styled.h1`
   margin-bottom: 8px;
   line-height: 1.3;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     font-size: 16px;
     margin: 0 0 4px;
   }
@@ -47,7 +51,7 @@ export const StyledSubTitle = styled.h2`
   line-height: 1.5;
   color: ${({ theme }) => theme.color.waterloo};
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     font-size: 13px;
     line-height: 1.3;
   }

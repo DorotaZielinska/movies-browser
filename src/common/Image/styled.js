@@ -10,7 +10,7 @@ export const ImageWrapper = styled.div`
   width: 292px;
   height: 434px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     max-width: 114px;
     max-height: 169px;
   }

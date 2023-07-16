@@ -18,7 +18,7 @@ export const Genre = styled.li`
   margin: 8px 0 0 8px;
   line-height: 1.4;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     font-size: 10px;
     padding: 4px 8px;
     line-height: 1.1;
