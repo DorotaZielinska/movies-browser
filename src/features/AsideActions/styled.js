@@ -46,11 +46,13 @@ export const Title = styled.h2`
     font-size: 14px;
     font-weight: 500;
     line-height: 1.3;
+    margin-left: 16px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     font-size: 22px;
     font-weight: 500;
     line-height: 1.3;
+    margin-left: 16px;
   }
 `;
