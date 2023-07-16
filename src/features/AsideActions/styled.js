@@ -21,7 +21,7 @@ export const Image = styled(image)`
   background-color: ${({ theme }) => theme.color.whisper};
   align-self: center;
 `;
-export const Container = styled.section`
+export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
 `;

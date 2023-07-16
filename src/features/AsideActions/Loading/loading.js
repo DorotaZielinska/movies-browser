@@ -1,9 +1,12 @@
 import { Container } from "../../../common/Container";
 import { Spinner, Title } from "../styled";
 
-export const Loading = () => (
+export const Loading = ({ query, totalResults }) => (
   <Container>
-    <Title>{`Search results for ""`} </Title>
+    <Title>
+      {" "}
+      {query ? `Search results for "${query}" (${totalResults})` : ""}
+    </Title>
     <Spinner />
   </Container>
 );

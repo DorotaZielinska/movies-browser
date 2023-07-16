@@ -1,27 +1,26 @@
 import { useHistory, useLocation } from "react-router-dom";
 
 export const useQueryParameter = (key) => {
-    const location = useLocation();
-    const searchParams = new URLSearchParams(location.search);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
 
-    return searchParams.get(key);
+  return searchParams.get(key);
 };
 
 export const useReplaceQueryParameter = () => {
-    const location = useLocation();
-    const history = useHistory();
+  const location = useLocation();
+  const history = useHistory();
 
-    return (key, value, peopleMatch, moviesMatch) => {
-        const searchParams = new URLSearchParams(location.search);
+  return (key, value, peopleMatch, moviesMatch) => {
+    const searchParams = new URLSearchParams(location.search);
 
-        if (value === undefined) {
-            searchParams.delete(key);
-        } else {
-            searchParams.set(key, value);
-        }
+    if (value === undefined) {
+      searchParams.delete(key);
+    } else {
+      searchParams.set(key, value);
+    }
 
-        const newSearch = searchParams.toString();
-        history.push(`/${moviesMatch ? 'movies' : peopleMatch}?${newSearch}`);
-    };
-
+    const newSearch = searchParams.toString();
+    history.push(`/${moviesMatch ? "movies" : peopleMatch}?${newSearch}`);
+  };
 };

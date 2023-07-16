@@ -1,8 +1,11 @@
-import { Container, Image, Title } from "../styled";
+import { Image, Title, Wrapper } from "../styled";
+import { Container } from "../../../common/Container";
 
-export const NotFound = ({ props }) => (
+export const NotFound = ({ query }) => (
   <Container>
-    <Title>{`Sorry, there are no results for "${props}"`}</Title>
-    <Image />
+    <Title>{`Sorry, there are no results for "${query}"`}</Title>
+    <Wrapper>
+      <Image />
+    </Wrapper>
   </Container>
 );
