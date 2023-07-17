@@ -15,6 +15,15 @@ export const Spinner = styled(spinnerIcon)`
       transform: rotate(360deg);
     }
   }
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    width: 75px;
+    height: 75px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    width: 35px;
+    height: 35px;
+  }
 `;
 
 export const Image = styled(image)`
@@ -45,10 +54,14 @@ export const Title = styled.h2`
   line-height: 1.2;
   color: ${({ theme }) => theme.color.black};
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 24px;
+ }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     font-size: 14px;
     font-weight: 500;
     line-height: 1.3;
+
     margin-left: 16px;
   }
 
