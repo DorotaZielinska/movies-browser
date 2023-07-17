@@ -1,11 +1,12 @@
 import { Container } from "../../Container";
-import { CharacterName, PersonName, Wrapper, Content, PersonPoster } from "./styled";
+import { CharacterName, PersonName, Wrapper, Content } from "./styled";
+import { PersonImage } from "./Image";
 
-export const PeopleListTile = ({name, poster}) => {
+export const PeopleListTile = ({ name, poster }) => {
   return (
     <Container>
       <Wrapper>
-        <PersonPoster poster={poster}/>
+        <PersonImage poster={poster} />
         <Content>
           <PersonName>{name}</PersonName>
           <CharacterName></CharacterName>
