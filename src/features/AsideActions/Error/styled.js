@@ -1,14 +1,7 @@
 import styled from "styled-components";
 import { ReactComponent as warningIcon } from "./warning.svg";
+import { NavLink } from "react-router-dom";
 
-export const Content = styled.p`
-  font-size: 14px;
-  font-family: Open Sans;
-  color: ${({ theme }) => theme.color.white};
-  font-weight: 700;
-  line-height: 19px;
-  margin: 0;
-`;
 export const Container = styled.div`
   display: flex;
   gap: 24px;
@@ -18,15 +11,21 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Info = styled.span`
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1.3;
-`;
 export const Warning = styled(warningIcon)`
   display: block;
   margin: 0 auto;
   margin-top: 180px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    width: 75px;
+    height: 75px;
+    margin-top: 90px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    width: 35px;
+    height: 35px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -34,14 +33,53 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.color.woodsmoke};
   font-weight: 600;
   line-height: 1.2;
-  margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: 14px;
+  }
 `;
 
-export const Button = styled.button`
+export const Info = styled.p`
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 14px;
+    text-align: center;
+  }
+`;
+
+export const Link = styled(NavLink)`
   display: flex;
   align-items: center;
   border: none;
   background-color: ${({ theme }) => theme.color.scienceBlue};
   padding: 16px 24px;
   border-radius: 5px;
+  text-decoration-line: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    padding: 8px 12px;
+  }
+`;
+
+export const LinkContent = styled.p`
+  font-size: 14px;
+  font-family: Open Sans;
+  color: ${({ theme }) => theme.color.white};
+  font-weight: 700;
+  line-height: 1.9;
+  margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-weight: 500;
+    line-height: 1.4;
+  }
 `;
