@@ -33,11 +33,11 @@ const peopleListSlice = createSlice({
   },
 });
 export const {
-    fetchPeopleListSuccess,
-    fetchPeopleListLoad,
-    fetchPeopleListError,
-    changePage,
-    fetchSearchPeopleLoad,
+  fetchPeopleListSuccess,
+  fetchPeopleListLoad,
+  fetchPeopleListError,
+  changePage,
+  fetchSearchPeopleLoad,
 } = peopleListSlice.actions;
 
 export const selectPeopleListState = (state) => state.peopleList;

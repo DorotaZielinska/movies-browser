@@ -1,17 +1,16 @@
 import { call, delay, put, select, takeLatest } from "redux-saga/effects";
 import {
-    fetchPeopleListSuccess,
-    fetchPeopleListLoad,
-    fetchPeopleListError,
-    fetchSearchPeopleLoad,
-    selectPage,
+  fetchPeopleListSuccess,
+  fetchPeopleListLoad,
+  fetchPeopleListError,
+  fetchSearchPeopleLoad,
+  selectPage,
 } from "./peopleSlice";
 import { getPopularPeople, getSearchPeople } from "../getDataApi";
 
 function* getPopularPeopleHandler() {
   try {
     const page = yield select(selectPage);
-    
     const data = yield call(getPopularPeople, page);
     yield delay(1000);
     yield put(fetchPeopleListSuccess({ data }));
@@ -23,7 +22,6 @@ function* getPopularPeopleHandler() {
 function* getSearchPeopleHandler({ payload: query }) {
   try {
     const page = yield select(selectPage);
-    
     const data = yield call(getSearchPeople, { query, page });
     yield delay(1000);
     yield put(fetchPeopleListSuccess({ data }));
