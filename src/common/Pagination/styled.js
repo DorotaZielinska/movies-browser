@@ -9,10 +9,7 @@ export const Container = styled.div`
   margin: 40px 0 100px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    margin: 32px 0 100;
-    gap: 8px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    margin: 32px 0 100px;
     gap: 8px;
   }
 `;
@@ -21,8 +18,8 @@ export const Wrapper = styled.div`
   display: flex;
   gap: 12px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-    gap: 8;
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    gap: 8px;
   }
 `;
 
@@ -96,11 +93,8 @@ export const Counter = styled.p`
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     font-size: 10px;
     line-height: 24px;
-    gap: 2px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     margin: 0;
+    gap: 2px;
   }
 `;
 
