@@ -19,6 +19,7 @@ export const MovieListTitle = styled.h1`
     margin-left: 16px;
     margin-top: 24px;
     margin-bottom: 12px;
+    font-size: 18px;
   }
 `;
 
