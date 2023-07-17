@@ -3,7 +3,7 @@ import debounce from "lodash/debounce";
 import { useCallback, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { ItemPeopleList, PeopleListTitle } from "./styled";
+import { ItemPeopleList, PeopleListTitle, PeopleList } from "./styled";
 import { PeopleListTile } from "../../common/TileList/TilePeople/index";
 import { Container } from "../../common/Container";
 import {
@@ -19,7 +19,7 @@ import { Loading } from "../AsideActions/Loading/loading";
 import { NotFound } from "../AsideActions/NotFound/notFound";
 import { Error } from "../AsideActions/Error/error";
 
-export const PeopleList = () => {
+export const PeopleLists = () => {
   const popularPeople = useSelector(selectPeopleList);
   const status = useSelector(selectStatus);
   const dispatch = useDispatch();
@@ -61,7 +61,7 @@ export const PeopleList = () => {
           : "Popular People"}
       </PeopleListTitle>
 
-      {/* <PeopleList>
+      <PeopleList>
         
         {popularPeople.map((people) => (
           <ItemPeopleList key={people.id}>
@@ -72,7 +72,7 @@ export const PeopleList = () => {
             />
           </ItemPeopleList>
         ))}
-      </PeopleList> */}
+      </PeopleList>
     </Container>
   );
 };
