@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
         padding-top: 6px;
     };
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.small}){
+    @media(max-width: ${({ theme }) => theme.breakpoint.large}){
         padding-left: 0;
         padding-top: 17px;  
     };
@@ -44,7 +44,7 @@ export const Input = styled.input`
         width: 100%;
     };
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.small}){
+    @media(max-width: ${({ theme }) => theme.breakpoint.large}){
         height: 44px;
         padding-left: 40px;
         background-position: 16px center;

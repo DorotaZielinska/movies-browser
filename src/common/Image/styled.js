@@ -10,7 +10,7 @@ align-items: center;
 width: 292px;
 height: 434px;
 
-@media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+@media (max-width: ${({ theme }) => theme.breakpoint.large}) {
         max-width: 114px;
         max-height: 169px;
     };

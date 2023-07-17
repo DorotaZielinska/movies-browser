@@ -7,7 +7,7 @@ export const MovieListTitle = styled.h1`
     line-height: 1.2;
     color: ${({ theme }) => theme.color.woodsmoke};
     
-    @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
         margin-left: 16px;
         margin-top:24px;
         margin-bottom: 12px;
@@ -21,7 +21,7 @@ export const MoviesList = styled.ul`
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 24px;
     
-    @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
         grid-template-columns: 1fr;
         padding-right: 13px;
         grid-gap: 16px;
