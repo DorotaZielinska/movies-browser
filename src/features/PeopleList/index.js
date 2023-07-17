@@ -18,6 +18,7 @@ import { searchQueryParamName } from "../../common/Navigation/Search/searchQuery
 import { Loading } from "../AsideActions/Loading/loading";
 import { NotFound } from "../AsideActions/NotFound/notFound";
 import { Error } from "../AsideActions/Error/error";
+import { Pagination } from "../../common/Pagination";
 
 export const PeopleLists = () => {
   const popularPeople = useSelector(selectPeopleList);
@@ -44,9 +45,6 @@ export const PeopleLists = () => {
     }
   }, [dispatch, query, debouncedLoad, page]);
 
-
-  console.log(popularPeople);
-  console.log(totalResults);
   return status === "error" ? (
     <Error />
   ) : status === "loading" ? (
@@ -60,9 +58,7 @@ export const PeopleLists = () => {
           ? `Search results for "${query}" (${totalResults})`
           : "Popular People"}
       </PeopleListTitle>
-
       <PeopleList>
-        
         {popularPeople.map((people) => (
           <ItemPeopleList key={people.id}>
             <PeopleListTile
@@ -73,6 +69,7 @@ export const PeopleLists = () => {
           </ItemPeopleList>
         ))}
       </PeopleList>
+      <Pagination />
     </Container>
   );
 };
