@@ -7,12 +7,15 @@ export const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 292px;
-  height: 434px;
+  aspect-ratio: 2 /3;
+  position: relative;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    width: 215px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     width: 114px;
-    height: 169px;
   }
 `;
 
@@ -24,6 +27,7 @@ export const Poster = styled.div.attrs(
       },
     }
 )`
+  position: absolute;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,7 +39,6 @@ export const Poster = styled.div.attrs(
     noMoviePoster &&
     css`
       background-image: url(${camera});
-      width: 100px;
-      height: 100px;
+      background-size: 50%;
     `}
 `;
