@@ -30,7 +30,7 @@ export const PeopleList = styled.ul`
 `;
 
 export const ItemPeopleList = styled.li`
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     max-width: 136px;
     
   }

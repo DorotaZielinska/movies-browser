@@ -8,7 +8,7 @@ export const Wrapper = styled.article`
   border-radius: 5px;
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     max-height: 245px;
     padding: 8px;
   }
@@ -26,7 +26,7 @@ export const PersonName = styled.h2`
   margin-top: 12px;
   margin-bottom: auto;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     font-size: 14px;
     margin-bottom: 15px;
   }
