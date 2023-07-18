@@ -1,24 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const movieDetailsSlice = createSlice({
-    name: "movieDetails",
-    initialState: {
-        movieId: 0,
-        details: [],
-        credits: [],
-        status: "loading",
+  name: "movieDetails",
+  initialState: {
+    movieId: "",
+    details: [],
+    credits: [],
+    status: "loading",
+  },
+  reducers: {
+    fetchMovieDetails: (state, { payload: details, credits }) => {
+      state.details = details;
+      state.credits = credits;
     },
-    reducers: {
-        fetchMovieDetails: (state, { payload:movie} ) => {
-            state.details = movie.details;
-            state.credits = movie.credits;
-        },
-        getMovieId: (state, { payload }) => {
-            state.status = "loading";
-            state.movieId = payload.movieId;
-        },
+    getMovieId: (state, { payload: id }) => {
+      state.status = "loading";
+      state.movieId = id;
     },
-})
+  },
+});
 
 export const { fetchMovieDetails, getMovieId } = movieDetailsSlice.actions;
 
