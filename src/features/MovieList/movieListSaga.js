@@ -6,7 +6,7 @@ import {
   selectPage,
   fetchSearchMoviesLoad,
 } from "./movieListSlice";
-import { getGenres, getPopularMovies, getSearch } from "./getDataApi";
+import { getGenres, getPopularMovies, getSearch } from "../getDataApi";
 
 function* getPopularMoviesHandler() {
   try {

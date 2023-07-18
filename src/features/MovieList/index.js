@@ -13,7 +13,7 @@ import {
   selectPage,
   fetchSearchMoviesLoad,
   selectTotalResult,
-} from "../movieListSlice";
+} from "../MovieList/movieListSlice";
 import { Loading } from "../AsideActions/Loading/loading";
 import { Error } from "../AsideActions/Error/error";
 import { NotFound } from "../AsideActions/NotFound/notFound";
