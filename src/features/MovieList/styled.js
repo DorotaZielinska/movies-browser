@@ -7,7 +7,11 @@ export const MovieListTitle = styled.h1`
   line-height: 1.2;
   color: ${({ theme }) => theme.color.woodsmoke};
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.desktop}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
+    margin: 16px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
     margin: 16px;
   }
 
@@ -29,6 +33,10 @@ export const MoviesList = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 24px;
+ 
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
+    margin: 16px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}) {
     grid-template-columns: repeat(3, 1fr);
