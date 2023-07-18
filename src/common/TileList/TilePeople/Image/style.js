@@ -7,12 +7,14 @@ export const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 177px;
-  height: 264px;
+  /* width: 177px;
+  height: 264px; */
+  aspect-ratio: 2 /3;
+  position: relative;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    max-width: 120px;
-    max-height: 178px;
+    /* max-width: 120px; */
+    /* max-height: 178px; */
   }
 `;
 
@@ -24,6 +26,7 @@ export const Poster = styled.div.attrs(
       },
     }
 )`
+  position: absolute;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

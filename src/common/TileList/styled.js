@@ -16,7 +16,7 @@ export const MovieTileList = styled.article`
     max-width: 320px;
     margin-left: 16px;
     margin-right: 16px;
-
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     width: 288px;
   }
@@ -57,7 +57,6 @@ export const StyledSubTitle = styled.h2`
   color: ${({ theme }) => theme.color.waterloo};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
-
     font-size: 13px;
     line-height: 1.3;
   }
