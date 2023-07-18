@@ -1,5 +1,7 @@
-import styled, { css } from "styled-components";
-import noPoster from "./icon.svg";
+import styled from "styled-components";
+import { ReactComponent as NoPoster } from "./icon.svg";
+
+export const NoPerson = styled(NoPoster)``;
 
 export const ImageWrapper = styled.div`
   background-color: ${({ theme }) => theme.color.silver};
@@ -7,15 +9,8 @@ export const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 177px;
-  height: 264px; */
   aspect-ratio: 2 /3;
   position: relative;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    /* max-width: 120px; */
-    /* max-height: 178px; */
-  }
 `;
 
 export const Poster = styled.div.attrs(
@@ -31,14 +26,13 @@ export const Poster = styled.div.attrs(
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 5px;
-  width: 100%;
-  height: 100%;
+  inset: 0;
 
-  ${({ noMoviePoster }) =>
-    noMoviePoster &&
-    css`
-      background-image: url(${noPoster});
-      width: 100px;
-      height: 100px;
-    `}
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
+    inset: -5;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    inset: 0;
+  }
 `;

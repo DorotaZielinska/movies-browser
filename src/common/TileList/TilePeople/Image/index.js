@@ -1,12 +1,12 @@
-import { ImageWrapper, Poster } from "./style";
+import { ImageWrapper, Poster, NoPerson } from "./style";
 
 export const PersonImage = ({ poster }) => {
-  const images = "https://image.tmdb.org/t/p/w154";
+  const images = "https://image.tmdb.org/t/p/w185";
 
   return (
     <ImageWrapper>
       {poster === null ? (
-        <Poster noMoviePoster />
+        <NoPerson />
       ) : (
         <Poster background={`${images}${poster}`} />
       )}
