@@ -11,10 +11,8 @@ function* fetchMovieDetailsHandler() {
     const id = yield select(selectMovieId);
     const details = yield call(getMovieDetails, { movieId: id });
     const credits = yield call(getMovieCredits, { movieId: id });
-    yield put(fetchMovieDetails({ details, credits }));
-  } catch (error) {
-    yield put();
-  }
+    yield put(fetchMovieDetails(details, credits));
+  } catch (error) {}
 }
 
 export function* watchFetchMovieDetails() {
