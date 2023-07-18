@@ -5,7 +5,7 @@ import searchIcon from "../Images/search.svg";
 export const Wrapper = styled.div`
     padding-left: 387px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.desktop}){
+    @media(max-width: ${({ theme }) => theme.breakpoint.desktopMax}){
         padding-left: 16px;
         padding-right: 16px;
         padding-top: 16px;
@@ -36,7 +36,7 @@ export const Input = styled.input`
     background-position: 24px center;
     background-size: 24px 24px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.desktop}){
+    @media(max-width: ${({ theme }) => theme.breakpoint.desktopMax}){
         padding-left: 64px;
         padding-right: 16px;
         padding-top: 24px;
