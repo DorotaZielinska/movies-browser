@@ -3,7 +3,7 @@ import { ReactComponent as starIcon } from "./images/star.svg";
 
 export const PosterContainer = styled.div`
   width: 1928px;
-  height: 770px;
+  height: auto;
 `;
 
 export const Wrapper = styled.div`
@@ -81,13 +81,12 @@ export const MainInfo = styled.div`
   grid-template-rows: repeat(2, auto);
 
   position: absolute;
-  top: 538px;
+  top: 838px;
   left: 276px;
 `;
 
 export const Rating = styled.div`
   display: flex;
-
   gap: 8px;
   font-size: 30px;
   font-weight: 500;
