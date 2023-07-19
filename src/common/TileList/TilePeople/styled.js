@@ -24,16 +24,13 @@ export const PersonName = styled.h2`
   font-weight: 500;
   line-height: 1.3;
   margin-top: 12px;
-  margin-bottom: auto;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktop}) {
+    font-size: 18px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     font-size: 14px;
-    margin-bottom: 15px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    font-size: 14px;
-    margin-bottom: 15px;
   }
 `;
 
