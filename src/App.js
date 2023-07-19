@@ -9,13 +9,9 @@ function App() {
       <HashRouter>
         <Navigation toMovies={"/movies"} toPeople={"/people"} />
         <Switch>
-          <Route path="/movies/:id">
-            <MovieDetails />
-          </Route>
+          <Route path="/movies/:id" component={MovieDetails} />
           <Route path="/people"></Route>
-          <Route path="/movies">
-            <MovieList />
-          </Route>
+          <Route path="/movies" component={MovieList} />
           <Route patch="/">
             <Redirect to="/movies" />
           </Route>
