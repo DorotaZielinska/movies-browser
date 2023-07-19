@@ -59,3 +59,10 @@ export const StyledSubTitle = styled.h2`
 export const GetDetailsLink = styled(Link)`
   text-decoration: none;
 `;
+
+export const Description = styled.span`
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: ${({ theme }) => theme.color.stormGray};
+`;
