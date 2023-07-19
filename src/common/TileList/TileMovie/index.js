@@ -1,7 +1,7 @@
 
-import { Genres } from "../Genres"
-import { MovieImage } from "../Image";
-import { Rating } from "../Rating"
+import { Genres } from "../../Genres"
+import { MovieImage } from "../../Image";
+import { Rating } from "../../Rating"
 import { Content, MovieTileList, StyledSubTitle, StyledTitle } from "./styled"
  
 export const TileList = ({ title, year, genres, vote, votes, poster }) => {

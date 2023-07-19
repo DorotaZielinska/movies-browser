@@ -4,7 +4,7 @@ import { useCallback, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import { Container } from "../../common/Container";
-import { TileList } from "../../common/TileList";
+import { TileList } from "../../common/TileList/TileMovie";
 import { ItemMoviesList, MovieListTitle, MoviesList } from "./styled";
 import {
   selectStatus,
@@ -13,7 +13,7 @@ import {
   selectPage,
   fetchSearchMoviesLoad,
   selectTotalResult,
-} from "../movieListSlice";
+} from "../MovieList/movieListSlice";
 import { Loading } from "../AsideActions/Loading/loading";
 import { Error } from "../AsideActions/Error/error";
 import { NotFound } from "../AsideActions/NotFound/notFound";

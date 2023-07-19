@@ -12,10 +12,11 @@ export const MovieTileList = styled.article`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     grid-template-columns: auto 1fr;
-    grid-gap: 0px 16px;
-    width: auto;
+    grid-gap: 16px;
+    max-width: 320px;
+    margin-left: 16px;
+    margin-right: 16px;
   }
-
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     width: 288px;
   }

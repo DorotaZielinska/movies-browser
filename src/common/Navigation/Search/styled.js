@@ -6,19 +6,23 @@ export const Wrapper = styled.div`
     padding-left: 387px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.desktopMax}){
-        padding-left: 16px;
+        padding-left: 20%;
         padding-right: 16px;
         padding-top: 16px;
         padding-bottom: 16px;
         width: 100%;
     };
 
+    @media(max-width: ${({ theme }) => theme.breakpoint.desktop}){
+       padding-left: 10%;
+    };
+
     @media(max-width: ${({ theme }) => theme.breakpoint.ipod}){      
+        padding-left: 0;
         padding-top: 6px;
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoint.large}){
-        padding-left: 0;
         padding-top: 17px;  
     };
 
@@ -37,10 +41,6 @@ export const Input = styled.input`
     background-size: 24px 24px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.desktopMax}){
-        padding-left: 64px;
-        padding-right: 16px;
-        padding-top: 24px;
-        padding-bottom: 16px;
         width: 100%;
     };
 
