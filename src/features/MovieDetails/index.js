@@ -21,7 +21,9 @@ import {
   Votes,
   Wrapper,
 } from "./styled";
+import { MovieDetailsTile } from "../../common/TileList/MovieDetailsTile";
 const image = "https://image.tmdb.org/t/p/original/";
+const movieImage = "https://image.tmdb.org/t/p/w400/";
 
 export const MovieDetails = () => {
   const { id } = useParams();
@@ -61,7 +63,19 @@ export const MovieDetails = () => {
         </PosterContainer>
       </Wrapper>
       <Container>
-        <p>{details.overview}</p>
+        <MovieDetailsTile
+          content={details.overview}
+          poster={`${movieImage}${details.poster_path}`}
+          title={details.title}
+          production={`${details.production_countries[0].name}`}
+          releaseDate={details.release_date}
+          year={details.release_date}
+          vote={details.vote_average.toFixed(1)}
+          votes={details.vote_count}
+          genres={details.genres.map((genre) => (
+            <span key={genre.id}>{genre.name}</span>
+          ))}
+        />
       </Container>
     </>
   );
