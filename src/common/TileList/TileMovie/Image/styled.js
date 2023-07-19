@@ -1,5 +1,4 @@
-import styled, { css } from "styled-components";
-import camera from "../../../Navigation/Images/camera.svg";
+import styled from "styled-components";
 import { ReactComponent as NoPoster } from "./icon.svg";
 
 export const NoMoviePoster = styled(NoPoster)``;
