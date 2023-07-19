@@ -1,4 +1,4 @@
-import { ImageWrapper, Poster, NoPerson } from "./style";
+import { ImageWrapper, Poster, NoPerson } from "./styled";
 
 export const PersonImage = ({ poster }) => {
   const images = "https://image.tmdb.org/t/p/w185";
