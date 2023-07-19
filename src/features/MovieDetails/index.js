@@ -10,7 +10,17 @@ import {
 import { Loading } from "../AsideActions/Loading/loading";
 import { Error } from "../AsideActions/Error/error";
 import { Container } from "../../common/Container";
-import { Poster, PosterGradient, Title, Wrapper } from "./styled";
+import {
+  MainInfo,
+  PosterContainer,
+  Poster,
+  PosterGradient,
+  Rating,
+  Star,
+  Title,
+  Votes,
+  Wrapper,
+} from "./styled";
 const image = "https://image.tmdb.org/t/p/original/";
 
 export const MovieDetails = () => {
@@ -36,17 +46,22 @@ export const MovieDetails = () => {
   ) : (
     <>
       <Wrapper>
-        <Container>
+        <PosterContainer>
           <Poster src={`${image}${details.backdrop_path}`} alt="poster" />
-          <Title>{details.title}</Title>
-          <PosterGradient />
-        </Container>
+          <PosterGradient />{" "}
+          <MainInfo>
+            <Title>{details.title}</Title>
+            <Rating>
+              <Star />
+              {details.vote_average.toFixed(1)}
+              <span>/10</span>
+            </Rating>
+            <Votes>{details.vote_count}votes</Votes>
+          </MainInfo>
+        </PosterContainer>
       </Wrapper>
       <Container>
-        {/* hello {id} */}
-
         <p>{details.overview}</p>
-        {details.vote_average}
       </Container>
     </>
   );
