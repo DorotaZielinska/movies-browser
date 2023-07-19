@@ -3,10 +3,10 @@ import {
   fetchMoviesListLoad,
   fetchMoviesListSuccess,
   fetchMoviesListError,
-  selectPage,
   fetchSearchMoviesLoad,
 } from "./movieListSlice";
 import { getGenres, getPopularMovies, getSearch } from "../getDataApi";
+import { selectPage } from "../../common/Pagination/paginationSlice";
 
 function* getPopularMoviesHandler() {
   try {

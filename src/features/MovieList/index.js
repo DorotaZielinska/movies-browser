@@ -10,7 +10,6 @@ import {
   selectStatus,
   selectMoviesList,
   fetchMoviesListLoad,
-  selectPage,
   fetchSearchMoviesLoad,
   selectTotalResult,
 } from "../MovieList/movieListSlice";
@@ -19,6 +18,7 @@ import { Error } from "../AsideActions/Error/error";
 import { NotFound } from "../AsideActions/NotFound/notFound";
 import { Pagination } from "../../common/Pagination";
 import { searchQueryParamName } from "../../common/Navigation/Search/searchQueryParamName";
+import { selectPage } from "../../common/Pagination/paginationSlice";
 
 const MovieList = () => {
   const popularMovies = useSelector(selectMoviesList);

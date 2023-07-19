@@ -9,7 +9,6 @@ import { Container } from "../../common/Container";
 import {
   selectPeopleList,
   selectStatus,
-  selectPage,
   selectTotalResult,
   fetchSearchPeopleLoad,
   fetchPeopleListLoad,
@@ -19,6 +18,7 @@ import { Loading } from "../AsideActions/Loading/loading";
 import { NotFound } from "../AsideActions/NotFound/notFound";
 import { Error } from "../AsideActions/Error/error";
 import { Pagination } from "../../common/Pagination";
+import { selectPage } from "../../common/Pagination/paginationSlice";
 
 export const PeopleLists = () => {
   const popularPeople = useSelector(selectPeopleList);
