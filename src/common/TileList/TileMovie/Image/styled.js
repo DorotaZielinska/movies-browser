@@ -1,5 +1,8 @@
 import styled, { css } from "styled-components";
 import camera from "../../../Navigation/Images/camera.svg";
+import { ReactComponent as NoPoster } from "./icon.svg";
+
+export const NoMoviePoster = styled(NoPoster)``;
 
 export const ImageWrapper = styled.div`
   background-color: ${({ theme }) => theme.color.silver};
@@ -34,18 +37,18 @@ export const Poster = styled.div.attrs(
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 5px;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   transition: transform 0.5s ease;
 
   &:hover {
     transform: scale(1.08);
   }
 
-  ${({ noMoviePoster }) =>
-    noMoviePoster &&
-    css`
-      background-image: url(${camera});
-      background-size: 50%;
-    `}
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
+    inset: -5;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    inset: 0;
+  }
 `;
