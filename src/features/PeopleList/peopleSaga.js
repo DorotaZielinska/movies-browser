@@ -4,9 +4,9 @@ import {
   fetchPeopleListLoad,
   fetchPeopleListError,
   fetchSearchPeopleLoad,
-  selectPage,
 } from "./peopleSlice";
 import { getPopularPeople, getSearchPeople } from "../getDataApi";
+import { selectPage } from "../../common/Pagination/paginationSlice";
 
 function* getPopularPeopleHandler() {
   try {
