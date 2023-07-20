@@ -1,6 +1,7 @@
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Navigation } from "./common/Navigation";
 import MovieList from "./features/MovieList";
+import { PeopleLists } from "./features/PeopleList";
 import { MovieDetails } from "./features/MovieDetails/index";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
           <Route path="/movies/:id" component={MovieDetails} />
           <Route path="/people"></Route>
           <Route path="/movies" component={MovieList} />
+          <Route path="/people" component={PeopleLists} />
           <Route patch="/">
             <Redirect to="/movies" />
           </Route>
