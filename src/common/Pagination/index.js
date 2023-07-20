@@ -9,7 +9,7 @@ import {
   Page,
 } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
-import { changePage, selectPage } from "../../features/movieListSlice";
+import { changePage, selectPage } from "./paginationSlice";
 
 export const Pagination = () => {
   const page = useSelector(selectPage);

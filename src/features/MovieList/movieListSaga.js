@@ -3,10 +3,10 @@ import {
   fetchMoviesListLoad,
   fetchMoviesListSuccess,
   fetchMoviesListError,
-  selectPage,
   fetchSearchMoviesLoad,
 } from "./movieListSlice";
-import { getGenres, getPopularMovies, getSearch } from "./getDataApi";
+import { getGenres, getPopularMovies, getSearch } from "../getDataApi";
+import { selectPage } from "../../common/Pagination/paginationSlice";
 
 function* getPopularMoviesHandler() {
   try {
@@ -24,7 +24,7 @@ function* getSearchMoviesHandler({ payload: query }) {
   try {
     const page = yield select(selectPage);
     const genres = yield call(getGenres);
-    const data = yield call(getSearch, { query, page, genres });
+    const data = yield call(getSearch, { query, page });
     yield delay(1000);
     yield put(fetchMoviesListSuccess({ data, genres }));
   } catch (error) {

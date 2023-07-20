@@ -4,21 +4,21 @@ import { useCallback, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import { Container } from "../../common/Container";
-import { TileList } from "../../common/TileList";
+import { TileList } from "../../common/TileList/TileMovie";
 import { ItemMoviesList, MovieListTitle, MoviesList } from "./styled";
 import {
   selectStatus,
   selectMoviesList,
   fetchMoviesListLoad,
-  selectPage,
   fetchSearchMoviesLoad,
   selectTotalResult,
-} from "../movieListSlice";
+} from "../MovieList/movieListSlice";
 import { Loading } from "../AsideActions/Loading/loading";
 import { Error } from "../AsideActions/Error/error";
 import { NotFound } from "../AsideActions/NotFound/notFound";
 import { Pagination } from "../../common/Pagination";
 import { searchQueryParamName } from "../../common/Navigation/Search/searchQueryParamName";
+import { selectPage } from "../../common/Pagination/paginationSlice";
 
 const MovieList = () => {
   const popularMovies = useSelector(selectMoviesList);

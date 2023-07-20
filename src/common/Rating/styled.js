@@ -7,7 +7,7 @@ export const RatingContainer = styled.div`
   gap: 12px;
   align-items: center;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     gap: 8px 7px;
     margin-top: 8px;
   }
@@ -15,7 +15,7 @@ export const RatingContainer = styled.div`
 
 export const IconWrapper = styled.div`
   svg {
-    @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
       width: 16px;
       height: 16px;
     }
@@ -28,7 +28,7 @@ export const Vote = styled.span`
   line-height: 1.5;
   color: ${({ theme }) => theme.color.woodsmoke};
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     font-size: 13px;
     line-height: 1.3;
   }
@@ -41,7 +41,7 @@ export const Votes = styled.span`
   line-height: 1.5;
   color: ${({ theme }) => theme.color.waterloo};
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     font-size: 13px;
     line-height: 1.3;
   }

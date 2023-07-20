@@ -13,9 +13,11 @@ export const theme = {
     black: "#000000",
   },
   breakpoint: {
+    desktopMax: "1368px",
     desktop: "1200px",
     ipod: "1024px",
-    small: "767px",
-    mobile: "320px",
+    large: "767px",
+    medium: "450px",
+    small: "320px",
   },
 };
