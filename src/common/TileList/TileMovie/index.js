@@ -1,29 +1,56 @@
-
-import { Genres } from "../../Genres"
+import { Genres } from "../../Genres";
 import { MovieImage } from "../../Image";
-import { Rating } from "../../Rating"
-import { Content, MovieTileList, StyledSubTitle, StyledTitle } from "./styled"
- 
-export const TileList = ({ title, year, genres, vote, votes, poster }) => {
-    const getYear = (string) => {
-        return string.split("-")[0];
-    }
+import { Rating } from "../../Rating";
+import { Content, MovieTileList, StyledSubTitle, StyledTitle } from "./styled";
 
-    return(
-        (
-            <MovieTileList>
-                <MovieImage poster={poster}/>
-                <Content>
-                    <div>
-                        <StyledTitle>{title}</StyledTitle>
-                        {year && <StyledSubTitle>{getYear(year)}</StyledSubTitle>}
-                        <Genres genres={genres} />
-                    </div>
-                    <div>
-                        <Rating vote={vote} votes={votes} />
-                    </div>
-                </Content>
-            </MovieTileList>
-        )
-    )
-}
+export const TileList = ({ title, year, genres, vote, votes, poster }) => {
+  const getYear = (string) => {
+    return string.split("-")[0];
+  };
+
+  return (
+    <MovieTileList>
+      <MovieImage poster={poster} />
+      <Content>
+        <div>
+          <StyledTitle>{title}</StyledTitle>
+          {year && <StyledSubTitle>{getYear(year)}</StyledSubTitle>}
+          <Genres genres={genres} />
+        </div>
+        <div>
+          <Rating vote={vote} votes={votes} />
+        </div>
+      </Content>
+    </MovieTileList>
+  );
+};
+
+export const PeopleMovieTileList = ({
+  poster,
+  title,
+  year,
+  character,
+  genres,
+  vote,
+  votes,
+}) => {
+  const getYear = (string) => {
+    return string.split("-")[0];
+  };
+
+  return (
+    <MovieTileList>
+      <MovieImage poster={poster} />
+      <Content>
+        <div>
+          <StyledTitle>{title}</StyledTitle>
+          {year && <StyledSubTitle>{`${character} ${getYear(year)} `}</StyledSubTitle>}
+          <Genres genres={genres} />
+        </div>
+        <div>
+          <Rating vote={vote} votes={votes} />
+        </div>
+      </Content>
+    </MovieTileList>
+  );
+};
