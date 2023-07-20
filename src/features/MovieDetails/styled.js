@@ -73,7 +73,6 @@ export const Title = styled.h1`
   margin-bottom: 24px;
   font-weight: 600;
   line-height: 1.2;
-
   color: ${({ theme }) => theme.color.white};
 `;
 export const MainInfo = styled.div`
@@ -108,4 +107,19 @@ export const Description = styled.span`
   font-weight: 400;
   line-height: 1.2;
   color: ${({ theme }) => theme.color.stormGray};
+`;
+
+export const Slash = styled.span`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  align-self: last baseline;
+`;
+export const Genre = styled.span`
+  background-color: ${({ theme }) => theme.color.mystic};
+  color: ${({ theme }) => theme.color.woodsmoke};
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 8px 16px;
+  line-height: 1.4;
 `;
