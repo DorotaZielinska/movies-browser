@@ -102,3 +102,10 @@ export const Votes = styled.p`
   color: ${({ theme }) => theme.color.white};
 `;
 export const Star = styled(starIcon)``;
+
+export const Description = styled.span`
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: ${({ theme }) => theme.color.stormGray};
+`;
