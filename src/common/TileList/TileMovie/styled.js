@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const MovieTileList = styled.article`
@@ -57,4 +58,7 @@ export const StyledSubTitle = styled.h2`
     font-size: 13px;
     line-height: 1.3;
   }
+`;
+export const GetDetailsLink = styled(Link)`
+  text-decoration: none;
 `;
