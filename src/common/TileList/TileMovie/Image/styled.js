@@ -42,12 +42,4 @@ export const Poster = styled.div.attrs(
   &:hover {
     transform: scale(1.08);
   }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
-    inset: -5;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    inset: 0;
-  }
 `;

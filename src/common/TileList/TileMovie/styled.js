@@ -16,7 +16,6 @@ export const MovieTileList = styled.article`
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     width: 288px;
-    max-height: 201px;
   }
 `;
 
