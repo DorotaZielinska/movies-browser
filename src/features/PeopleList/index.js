@@ -18,7 +18,7 @@ import { Loading } from "../AsideActions/Loading/loading";
 import { NotFound } from "../AsideActions/NotFound/notFound";
 import { Error } from "../AsideActions/Error/error";
 import { Pagination } from "../../common/Pagination";
-import { selectPage } from "../../common/Pagination/paginationSlice";
+import { resetPage, selectPage } from "../../common/Pagination/paginationSlice";
 
 export const PeopleLists = () => {
   const popularPeople = useSelector(selectPeopleList);
@@ -44,6 +44,10 @@ export const PeopleLists = () => {
       dispatch(fetchPeopleListLoad(page));
     }
   }, [dispatch, query, debouncedLoad, page]);
+
+  useEffect(() => {
+    dispatch(resetPage());
+  }, [dispatch]);
 
   return status === "error" ? (
     <Error />

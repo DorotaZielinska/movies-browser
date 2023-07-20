@@ -18,7 +18,7 @@ import { Error } from "../AsideActions/Error/error";
 import { NotFound } from "../AsideActions/NotFound/notFound";
 import { Pagination } from "../../common/Pagination";
 import { searchQueryParamName } from "../../common/Navigation/Search/searchQueryParamName";
-import { selectPage } from "../../common/Pagination/paginationSlice";
+import { resetPage, selectPage } from "../../common/Pagination/paginationSlice";
 
 const MovieList = () => {
   const popularMovies = useSelector(selectMoviesList);
@@ -44,6 +44,10 @@ const MovieList = () => {
       dispatch(fetchMoviesListLoad(page));
     }
   }, [dispatch, query, debouncedLoad, page]);
+
+  useEffect(() => {
+    dispatch(resetPage());
+  }, [dispatch]);
 
   return status === "error" ? (
     <Error />
