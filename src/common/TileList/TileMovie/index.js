@@ -1,9 +1,15 @@
 import { Genres } from "../../Genres";
 import { MovieImage } from "./Image/index";
 import { Rating } from "../../Rating";
-import { Content, MovieTileList, StyledSubTitle, StyledTitle } from "./styled";
+import {
+  Content,
+  MovieTileList,
+  StyledSubTitle,
+  StyledTitle,
+  GetDetailsLink,
+} from "./styled";
 
-export const TileList = ({ title, year, genres, vote, votes, poster }) => {
+export const TileList = ({ title, year, genres, vote, votes, poster, id }) => {
   const getYear = (string) => {
     return string.split("-")[0];
   };
