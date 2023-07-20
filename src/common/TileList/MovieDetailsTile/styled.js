@@ -33,14 +33,7 @@ export const Year = styled.span`
   line-height: 1, 2;
 `;
 
-export const Description = styled.span`
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.2;
-  color: ${({ theme }) => theme.color.stormGray};
-`;
-
-export const Production = styled.p`
+export const Info = styled.p`
   margin: 0;
 `;
 
