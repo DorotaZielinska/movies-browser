@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const MovieTileList = styled.article`
-  width: 324;
+  max-width: auto;
   height: 100%;
   background-color: ${({ theme }) => theme.color.white};
   padding: 16px;
@@ -14,9 +14,6 @@ export const MovieTileList = styled.article`
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     grid-template-columns: auto 1fr;
     grid-gap: 16px;
-    max-width: 320px;
-    margin-left: 16px;
-    margin-right: 16px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     width: 288px;

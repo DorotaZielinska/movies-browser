@@ -11,6 +11,8 @@ export const ImageWrapper = styled.div`
   align-items: center;
   aspect-ratio: 2 /3;
   position: relative;
+  overflow:hidden;
+  cursor: pointer;
 `;
 
 export const Poster = styled.div.attrs(
@@ -27,6 +29,11 @@ export const Poster = styled.div.attrs(
   background-size: cover;
   border-radius: 5px;
   inset: 0;
+  transition: transform 0.5s ease ;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
     inset: -5;
