@@ -11,7 +11,6 @@ function App() {
         <Navigation toMovies={"/movies"} toPeople={"/people"} />
         <Switch>
           <Route path="/movies/:id" component={MovieDetails} />
-          <Route path="/people"></Route>
           <Route path="/movies" component={MovieList} />
           <Route path="/people" component={PeopleLists} />
           <Route patch="/">
