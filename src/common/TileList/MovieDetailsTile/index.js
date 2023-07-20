@@ -1,8 +1,7 @@
 import {
-  Description,
   Details,
   MovieDescription,
-  Production,
+  Info,
   Title,
   Wrapper,
   Year,
@@ -15,8 +14,8 @@ export const MovieDetailsTile = ({
   content,
   title,
   year,
-  production,
-  releaseDate,
+  place,
+  date,
   vote,
   votes,
   genres,
@@ -30,10 +29,10 @@ export const MovieDetailsTile = ({
       <Details>
         <Title>{title}</Title>
         {year && <Year>{getYear(year)}</Year>}
-        <Production>
-          <Description>Production:</Description> {production}
-          <br /> <Description>Release date:</Description> {releaseDate}
-        </Production>
+        <Info>
+          {place}
+          <br /> {date}
+        </Info>
         <span> {genres}</span>
         <Rating vote={`${vote}/10`} votes={votes} />
         <MovieDescription>{content}</MovieDescription>
