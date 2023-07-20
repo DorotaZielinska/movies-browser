@@ -20,6 +20,9 @@ import {
   Title,
   Votes,
   Wrapper,
+  Description,
+  Slash,
+  Genre,
 } from "./styled";
 import { MovieDetailsTile } from "../../common/TileList/MovieDetailsTile";
 const image = "https://image.tmdb.org/t/p/original/";
@@ -56,9 +59,9 @@ export const MovieDetails = () => {
             <Rating>
               <Star />
               {details.vote_average.toFixed(1)}
-              <span>/10</span>
+              <Slash>/10</Slash>
             </Rating>
-            <Votes>{details.vote_count}votes</Votes>
+            <Votes>{details.vote_count} votes</Votes>
           </MainInfo>
         </PosterContainer>
       </Wrapper>
@@ -67,13 +70,29 @@ export const MovieDetails = () => {
           content={details.overview}
           poster={`${movieImage}${details.poster_path}`}
           title={details.title}
-          production={`${details.production_countries[0].name}`}
-          releaseDate={details.release_date}
+          place={
+            <>
+              <Description>Production: </Description>
+              {details.production_countries
+                .map((country) => country.name)
+                .join(", ")}
+            </>
+          }
+          date={
+            <>
+              <Description>Release date: </Description>
+              {details.release_date.split("-").reverse().join("-")}
+            </>
+          }
           year={details.release_date}
-          vote={details.vote_average.toFixed(1)}
-          votes={details.vote_count}
+          vote={
+            <>
+              {details.vote_average.toFixed(1)} <Slash>/10</Slash>
+            </>
+          }
+          votes={<>{details.vote_count}</>}
           genres={details.genres.map((genre) => (
-            <span key={genre.id}>{genre.name}</span>
+            <Genre key={genre.id}>{genre.name}</Genre>
           ))}
         />
       </Container>
