@@ -41,12 +41,12 @@ export const Genres = styled.div`
   display: flex;
   font-size: 14px;
   font-weight: 400;
-  padding: 8px 16px;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
+  margin: 0;
 `;
 
-export const MovieDescription = styled.span`
+export const About = styled.span`
   font-size: 20px;
   font-weight: 400;
   line-height: 1.6;
