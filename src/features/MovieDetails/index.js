@@ -90,7 +90,7 @@ export const MovieDetails = () => {
               {details.vote_average.toFixed(1)} <Slash>/10</Slash>
             </>
           }
-          votes={<>{details.vote_count}</>}
+          votes={<>{details.vote_count} votes</>}
           genres={details.genres.map((genre) => (
             <Genre key={genre.id}>{genre.name}</Genre>
           ))}
