@@ -42,6 +42,14 @@ export const List = styled.ul`
     padding-bottom: 8px;
     margin: 0;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    flex-grow: 2;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    padding-left: 19px;
+  }
 `;
 
 export const Item = styled.li`
