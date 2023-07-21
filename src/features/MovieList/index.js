@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import debounce from "lodash/debounce";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 import { Container } from "../../common/Container";
@@ -28,9 +28,11 @@ const MovieList = () => {
   const location = useLocation();
   const query = new URLSearchParams(location.search).get(searchQueryParamName);
   const totalResults = useSelector(selectTotalResult);
+  const isLoad = useRef(true);
 
   const debouncedLoad = useCallback(
     debounce((query) => {
+      isLoad.current = false;
       dispatch(fetchSearchMoviesLoad(query));
     }, 1000),
     [dispatch]
@@ -48,7 +50,7 @@ const MovieList = () => {
   useEffect(() => {
     dispatch(resetPage());
   }, [dispatch]);
-
+  
   return status === "error" ? (
     <Error />
   ) : status === "loading" ? (
@@ -58,7 +60,7 @@ const MovieList = () => {
   ) : (
     <Container>
       <MovieListTitle>
-        {query
+        {!isLoad.current
           ? `Search results for "${query}" (${totalResults})`
           : "Popular Movies"}
       </MovieListTitle>

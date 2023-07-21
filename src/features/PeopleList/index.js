@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import debounce from "lodash/debounce";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 import { ItemPeopleList, PeopleListTitle, PeopleList } from "./styled";
@@ -28,9 +28,11 @@ export const PeopleLists = () => {
   const location = useLocation();
   const query = new URLSearchParams(location.search).get(searchQueryParamName);
   const totalResults = useSelector(selectTotalResult);
+  const isLoad = useRef(true);
 
   const debouncedLoad = useCallback(
     debounce((query) => {
+      isLoad.current = false;
       dispatch(fetchSearchPeopleLoad(query));
     }, 1000),
     [dispatch]
@@ -58,7 +60,7 @@ export const PeopleLists = () => {
   ) : (
     <Container>
       <PeopleListTitle>
-        {query
+        {!isLoad.current
           ? `Search results for "${query}" (${totalResults})`
           : "Popular People"}
       </PeopleListTitle>
