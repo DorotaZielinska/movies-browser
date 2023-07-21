@@ -6,6 +6,13 @@ export const PosterContainer = styled.div`
   height: 769px;
   position: relative;
   z-index: -1;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    max-width: 320px;
+    max-height: 148px;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -62,6 +69,11 @@ export const PosterGradient = styled.div`
       rgba(0, 0, 0, 0.74) 95.61%,
       rgb(0, 0, 0) 100%
     );
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    max-width: 320px;
+    max-height: 148px;
+  }
 `;
 
 export const Poster = styled.img`
@@ -71,6 +83,12 @@ export const Poster = styled.img`
   object-fit: cover;
   position: relative;
   z-index: -1;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    max-width: 262px;
+    max-height: 148px;
+    align-self: center;
+  }
 `;
 
 export const Title = styled.h1`
@@ -78,33 +96,70 @@ export const Title = styled.h1`
   margin-bottom: 24px;
   font-weight: 600;
   line-height: 1.2;
+  margin: 0;
   color: ${({ theme }) => theme.color.white};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    max-width: 260px;
+  }
 `;
 export const MainInfo = styled.div`
   display: grid;
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(3 auto);
   position: absolute;
   bottom: 3%;
   left: 5%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    display: inline;
+    left: 50px;
+    bottom: 100px;
+    position: relative;
+  }
 `;
 
 export const Rating = styled.div`
-  display: flex;
   gap: 8px;
   font-size: 30px;
   font-weight: 500;
   line-height: 1.3;
   color: ${({ theme }) => theme.color.white};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    display: inline;
+    max-width: 55px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
 `;
 
-export const Votes = styled.p`
+export const Votes = styled.span`
   margin-top: 16px;
   font-size: 16px;
   font-weight: 400;
   line-height: 19.2px;
   color: ${({ theme }) => theme.color.white};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 0 8px;
+    max-width: 100px;
+  }
 `;
-export const Star = styled(starIcon)``;
+export const Star = styled(starIcon)`
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+`;
 
 export const Description = styled.span`
   font-size: 18px;
@@ -118,6 +173,13 @@ export const Slash = styled.span`
   font-weight: 400;
   line-height: 1.2;
   align-self: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-left: 2px;
+  }
 `;
 export const Genre = styled.span`
   background-color: ${({ theme }) => theme.color.mystic};
