@@ -1,5 +1,17 @@
-import { Details, About, Info, Title, Wrapper, Year, Genres } from "./styled";
-import { Rating } from "../../Rating";
+import {
+  Details,
+  About,
+  Info,
+  Title,
+  Wrapper,
+  Year,
+  Genres,
+  Rating,
+  Star,
+  Vote,
+  Votes,
+} from "./styled";
+
 import { MovieImage } from "./Image";
 
 export const MovieDetailsTile = ({
@@ -27,7 +39,11 @@ export const MovieDetailsTile = ({
           <br /> {date}
         </Info>
         <Genres> {genres}</Genres>
-        <Rating vote={vote} votes={votes} />
+        <Rating>
+          <Star />
+          <Vote>{vote} </Vote>
+          <Votes>{votes}</Votes>
+        </Rating>
         <About>{content}</About>
       </Details>
     </Wrapper>
