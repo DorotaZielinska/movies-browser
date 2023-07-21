@@ -43,6 +43,7 @@ export const PeopleLists = () => {
       debouncedLoad(query);
     } else {
       debouncedLoad.cancel();
+      isLoad.current = true;
       dispatch(fetchPeopleListLoad(page));
     }
   }, [dispatch, query, debouncedLoad, page]);

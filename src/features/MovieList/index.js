@@ -43,6 +43,7 @@ const MovieList = () => {
       debouncedLoad(query);
     } else {
       debouncedLoad.cancel();
+      isLoad.current = true;
       dispatch(fetchMoviesListLoad(page));
     }
   }, [dispatch, query, debouncedLoad, page]);
