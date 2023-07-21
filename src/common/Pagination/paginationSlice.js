@@ -9,9 +9,12 @@ const paginationSlice = createSlice({
     changePage: (state, { payload: action }) => {
       state.page = action;
     },
+    resetPage: (state) => {
+      state.page = 1;
+    },
   },
 });
-export const { changePage } = paginationSlice.actions;
+export const { changePage, resetPage } = paginationSlice.actions;
 
 export const selectPaginationState = (state) => state.pagination;
 export const selectPage = (state) => selectPaginationState(state).page;

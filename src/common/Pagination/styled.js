@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin: 40px 0 100px;
+  
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     margin: 32px 0 100px;
@@ -17,6 +18,7 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   gap: 12px;
+  
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     gap: 8px;
@@ -28,7 +30,8 @@ export const Button = styled.button`
   border-radius: 5px;
   padding: 8px 16px;
   background-color: ${({ theme }) => theme.color.pattensBlue};
-
+  cursor: pointer;
+  
   &:disabled {
     background-color: ${({ theme }) => theme.color.mystic};
     color: ${({ theme }) => theme.color.woodsmoke};

@@ -1,10 +1,13 @@
 import { useRouteMatch } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import { Wrapper, Input } from "./styled";
 import { searchQueryParamName } from "./searchQueryParamName";
 import { useQueryParameter, useReplaceQueryParameter } from "./queryParameter";
+import { resetPage } from "../../Pagination/paginationSlice";
 
 export const Search = () => {
+  const dispatch = useDispatch();
   const moviesMatch = useRouteMatch("/movies");
   const peopleMatch = useRouteMatch("/people");
   const placeholder = moviesMatch
@@ -21,6 +24,7 @@ export const Search = () => {
       peopleMatch ? "people" : undefined,
       moviesMatch ? "movies" : undefined
     );
+    dispatch(resetPage());
   };
 
   return (
