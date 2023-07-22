@@ -59,17 +59,17 @@ export const getSearchPeople = async ({ query, page }) => {
   return await response.data;
 };
 
-export const getPeopleDetails = async () => {
+export const getPeopleDetails = async (personId) => {
   const response = await axios.get(
-    `${URL}/person/personId?api_key=${API_KEY}&language=en-US`
+    `${URL}/person/${personId}?api_key=${API_KEY}`
   );
 
   return await response.data;
 };
 
-export const getPeopleMovieCredits = async (personId) => {
+export const getPeopleMovieCredits = async ({personId}) => {
   const response = await axios.get(
-    `${URL}person/${personId}/movie_credits?api_key=${API_KEY}&language=en-US`
+    `${URL}person/${personId}/movie_credits?api_key=${API_KEY}`
   );
  
   return await response.data;
