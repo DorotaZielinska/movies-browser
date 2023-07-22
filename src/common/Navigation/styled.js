@@ -25,6 +25,10 @@ export const NavigationWrapper = styled.nav`
     flex-wrap: wrap;
     padding-left: 16px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    justify-content: space-between;
+  }
 `;
 
 export const List = styled.ul`
@@ -44,11 +48,11 @@ export const List = styled.ul`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
-    flex-grow: 2;
+    padding-right: 16px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    padding-left: 19px;
+    padding-left: 16px;
   }
 `;
 
