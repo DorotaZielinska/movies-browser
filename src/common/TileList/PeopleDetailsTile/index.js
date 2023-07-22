@@ -11,26 +11,25 @@ import {
 
 export const ActorDescriptionTile = ({
   title,
-  year,
   poster,
-  place,
-  content,
+  overview,
+  dateOfBirth,
+  placeOfBirth,
 }) => {
   return (
     <Container>
       <ActorDetailsTile>
         <PersonDetailsImage poster={poster} />
         <ActorContent>
-          <ActorTitle>Dorota Hoops</ActorTitle>
-         <InfoDetails>
-         <ActorSubTitle>Date of Birth: 2021-25-32</ActorSubTitle>
-         </InfoDetails>
-         <InfoDetails>
-         <ActorSubTitle>Klorps, kalaka, dlald</ActorSubTitle>
-         </InfoDetails>
+          <ActorTitle>title={title}</ActorTitle>
+          <InfoDetails>
+            <ActorSubTitle>dateOfBirth={dateOfBirth}</ActorSubTitle>
+          </InfoDetails>
+          <InfoDetails>
+            <ActorSubTitle>placeOfBirth={placeOfBirth}</ActorSubTitle>
+          </InfoDetails>
         </ActorContent>
-        <DescriptionPeople>lorem ipusumloremLiu Yifei was born in Wuhan, Hubei, Province of China on August 25th, 1987. She began modeling at the age of 8 and was trained in singing, dancing and the piano. Moving to the United States at 10 with her mother, Liu lived there for four years.
-             </DescriptionPeople>
+        <DescriptionPeople>{overview}</DescriptionPeople>
       </ActorDetailsTile>
     </Container>
   );
