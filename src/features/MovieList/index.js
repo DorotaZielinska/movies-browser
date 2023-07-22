@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import debounce from "lodash/debounce";
-import { useCallback, useEffect, useState, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 import { Container } from "../../common/Container";
