@@ -3,9 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const peopleDetailsSlice = createSlice({
   name: "peopleDetails",
   initialState: {
-    personId: null,
-    details: null,
-    credits: null,
+    personId: 0,
+    details: [],
+    credits: [],
     cast: [],
     crew: [],
     genres:[],
@@ -30,7 +30,7 @@ const peopleDetailsSlice = createSlice({
 
     getPersonId: (state, { payload }) => {
       state.status = "loading";
-      state.personId = payload.id;
+      state.personId = payload.personId;
     },
 
   //  resetPeopleDetails: (state) => {
@@ -58,5 +58,6 @@ export const selectDetailsStatus = (state) => selectPeopleDetailsState(state).st
 export const selectPeopleCrew = (state) => selectPeopleDetailsState(state).crew;
 export const selectPeopleCast = (state) => selectPeopleDetailsState(state).cast;
 export const selectGenres = (state) => selectPeopleDetailsState(state).genres;
+export const selectStatus = (state) => selectPeopleDetailsState(state).status;
 
 export default peopleDetailsSlice.reducer;
