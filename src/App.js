@@ -20,7 +20,7 @@ function App() {
           <Route path="/movies/:id" component={MovieDetails} />
           <Route path={`/movies&page=${page}`} component={MovieList} />
           <Route path={`/people&page=${page}`} component={PeopleLists} />
-          <Route patch="/">
+          <Route path="/">
             <Redirect to={`/movies&page=${page}`} />
           </Route>
         </Switch>
