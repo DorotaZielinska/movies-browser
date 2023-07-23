@@ -107,14 +107,27 @@ export const Description = styled.span`
   font-weight: 400;
   line-height: 1.2;
   color: ${({ theme }) => theme.color.stormGray};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    display: none;
+  }
 `;
 
-export const Slash = styled.span`
-  font-size: 16px;
+export const Date = styled.span`
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
-  align-self: last baseline;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+  }
 `;
+
+export const Country = styled(Date)``;
+
 export const Genre = styled.span`
   background-color: ${({ theme }) => theme.color.mystic};
   color: ${({ theme }) => theme.color.woodsmoke};
@@ -122,12 +135,37 @@ export const Genre = styled.span`
   font-size: 14px;
   padding: 8px 16px;
   line-height: 1.4;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    display: block;
+    font-size: 10px;
+    padding: 4px 8px;
+  }
 `;
+
+export const Slash = styled.span`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  align-self: last baseline;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    display: none;
+  }
+`;
+
 export const Vote = styled.span`
   font-size: 22px;
   font-weight: 500;
   line-height: 1.3;
   margin-right: 8px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-right: 0;
+  }
 `;
 
 export const TotalVotes = styled.span`
@@ -135,12 +173,11 @@ export const TotalVotes = styled.span`
   font-weight: 400;
   line-height: 1.2;
   color: ${({ theme }) => theme.color.black};
-`;
 
-export const Date = styled.span`
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.2;
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: ${({ theme }) => theme.color.waterloo};
+  }
 `;
-
-export const Country = styled(Date)``;

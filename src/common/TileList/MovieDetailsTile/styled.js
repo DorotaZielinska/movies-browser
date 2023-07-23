@@ -10,6 +10,13 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.color.white};
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
   color: ${({ theme }) => theme.color.black};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    display: grid;
+    grid-template-columns: 114px auto;
+    gap: 16px;
+    padding: 16px;
+  }
 `;
 
 export const Details = styled.div`
@@ -18,6 +25,11 @@ export const Details = styled.div`
   padding: 8px 0;
   gap: 24px;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    gap: 8px;
+    padding: 0;
+  }
 `;
 
 export const Title = styled.h1`
@@ -25,12 +37,26 @@ export const Title = styled.h1`
   font-weight: 600;
   line-height: 1.2;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: -4px;
+  }
 `;
 
 export const Year = styled.span`
   font-size: 22px;
   font-weight: 400;
-  line-height: 1, 2;
+  line-height: 1.2;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: ${({ theme }) => theme.color.waterloo};
+  }
 `;
 
 export const Info = styled.p`
@@ -44,10 +70,26 @@ export const Genres = styled.div`
   align-items: center;
   gap: 16px;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.1;
+    gap: 8px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
 `;
 
 export const About = styled.span`
   font-size: 20px;
   font-weight: 400;
   line-height: 1.6;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    margin-left: -126px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
 `;
