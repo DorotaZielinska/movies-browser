@@ -12,7 +12,7 @@ export const NavigationContainer = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
-    padding-top: 24px;
+    padding-top: 16px;
   }
 `;
 
@@ -24,6 +24,10 @@ export const NavigationWrapper = styled.nav`
   @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
     flex-wrap: wrap;
     padding-left: 16px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    justify-content: space-between;
   }
 `;
 
@@ -41,6 +45,14 @@ export const List = styled.ul`
     padding-top: 8px;
     padding-bottom: 8px;
     margin: 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    padding-right: 16px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    padding-left: 16px;
   }
 `;
 
