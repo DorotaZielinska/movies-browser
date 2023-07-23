@@ -48,9 +48,9 @@ export const PeopleLists = () => {
     }
   }, [dispatch, query, debouncedLoad, page]);
 
-  useEffect(() => {
-    dispatch(resetPage());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(resetPage());
+  // }, [dispatch]);
 
   return status === "error" ? (
     <Error />
