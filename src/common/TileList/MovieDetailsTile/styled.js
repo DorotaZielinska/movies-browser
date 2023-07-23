@@ -12,6 +12,12 @@ export const Wrapper = styled.div`
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
   color: ${({ theme }) => theme.color.black};
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     margin-top: 0;
     display: flex;
