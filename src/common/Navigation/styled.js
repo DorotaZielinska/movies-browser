@@ -12,7 +12,7 @@ export const NavigationContainer = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
-    padding-top: 24px;
+    padding-top: 16px;
   }
 `;
 
