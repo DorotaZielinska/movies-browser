@@ -123,3 +123,24 @@ export const Genre = styled.span`
   padding: 8px 16px;
   line-height: 1.4;
 `;
+export const Vote = styled.span`
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-right: 8px;
+`;
+
+export const TotalVotes = styled.span`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: ${({ theme }) => theme.color.black};
+`;
+
+export const Date = styled.span`
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+`;
+
+export const Country = styled(Date)``;
