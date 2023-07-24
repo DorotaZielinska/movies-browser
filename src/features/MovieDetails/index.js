@@ -86,9 +86,9 @@ export const MovieDetails = () => {
                   .join(", ")}
               </Country>
               <CountryShort>
-                {details.production_countries.map(
-                  (country) => country.iso_3166_1
-                )}
+                {details.production_countries
+                  .map((country) => country.iso_3166_1)
+                  .join(", ")}
               </CountryShort>
             </>
           }

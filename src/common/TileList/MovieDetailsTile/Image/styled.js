@@ -10,6 +10,16 @@ export const ImageWrapper = styled.div`
   width: 312px;
   height: 464px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    max-width: 160px;
+    max-height: 250px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    max-width: 130px;
+    max-height: 190px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     max-width: 114px;
     max-height: 169px;
