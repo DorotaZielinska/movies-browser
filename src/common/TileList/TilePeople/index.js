@@ -1,11 +1,10 @@
 import { Container } from "../../Container";
-import { CharacterName, PersonName, Wrapper, Content } from "./styled";
+import { CharacterName, PersonName, Wrapper, Content, GetDetailsPeopleLink } from "./styled";
 import { PersonImage } from "./Image";
-import { GetDetailsLink } from "../TileMovie/styled";
 
 export const PeopleListTile = ({ name, poster, id }) => {
   return (
-    <GetDetailsLink to={`/people/${id}`} key={id}>
+    <GetDetailsPeopleLink to={`/people/${id}`} key={id}>
       <Container>
         <Wrapper>
           <PersonImage poster={poster} />
@@ -15,6 +14,6 @@ export const PeopleListTile = ({ name, poster, id }) => {
           </Content>
         </Wrapper>
       </Container>
-    </GetDetailsLink>
+    </GetDetailsPeopleLink>
   );
 };
