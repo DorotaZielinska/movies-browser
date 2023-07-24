@@ -13,9 +13,9 @@ export const ImageWrapper = styled.div`
   cursor: pointer;
   width: 399px;
 
-  //@media (max-width: ${({ theme }) => theme.breakpoint.large}) {
- //   width: 260px;
- // }
+  @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
+    width: 260px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     width: 215px;
@@ -42,15 +42,11 @@ export const Poster = styled.div.attrs(
   inset: 0;
   transition: transform 0.5s ease;
 
-  &:hover {
-    transform: scale(1.1);
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
+    inset: -5;
   }
 
-  // @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
-  //  inset: -5;
-  // }
-
-  // @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-  //  inset: 0;
-  //}
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    inset: 0;
+  }
 `;
