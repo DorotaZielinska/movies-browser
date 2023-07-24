@@ -33,13 +33,21 @@ export const TileList = ({ title, year, genres, vote, votes, poster, id }) => {
   );
 };
 
-export const MovieTileListPeople = ({ title, year, genres, vote, votes, poster, id }) => {
+export const MovieTileListPeople = ({
+  title,
+  year,
+  genres,
+  vote,
+  votes,
+  poster,
+  id,
+}) => {
   const getYear = (string) => {
     return string.split("-")[0];
   };
 
   return (
-    <GetDetailsLink to={`/people/${id}`} key={id}>
+    <GetDetailsLink to={`/movies/${id}`} key={id}>
       <MovieTileList>
         <MovieImage poster={poster} />
         <Content>
