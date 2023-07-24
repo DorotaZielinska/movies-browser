@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   align-items: center;
   position: relative;
   overflow: hidden;
+  margin-bottom: 64px;
 `;
 
 export const PosterGradient = styled.div`
@@ -78,7 +79,6 @@ export const Title = styled.h1`
 export const MainInfo = styled.div`
   display: grid;
   grid-template-rows: repeat(2, auto);
-
   position: absolute;
   top: 838px;
   left: 276px;
@@ -115,6 +115,7 @@ export const Slash = styled.span`
   line-height: 1.2;
   align-self: last baseline;
 `;
+
 export const Genre = styled.span`
   background-color: ${({ theme }) => theme.color.mystic};
   color: ${({ theme }) => theme.color.woodsmoke};
@@ -122,4 +123,24 @@ export const Genre = styled.span`
   font-size: 14px;
   padding: 8px 16px;
   line-height: 1.4;
+`;
+
+export const SectionTitle = styled.h2`
+  margin: 64px 0 32px;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+`;
+
+export const CastList = styled.ul`
+  padding: 0px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 24px;
+  justify-content: center;
+`;
+
+export const CrewList = styled(CastList)`
+  margin-bottom: 336px;
 `;
