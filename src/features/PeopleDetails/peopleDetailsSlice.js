@@ -4,11 +4,10 @@ const peopleDetailsSlice = createSlice({
   name: "peopleDetails",
   initialState: {
     personId: 0,
-    details: [],
-    credits: [],
+    details: {},
     cast: [],
     crew: [],
-    genres:[],
+    genres: [],
     status: "loading",
   },
   reducers: {
@@ -18,9 +17,8 @@ const peopleDetailsSlice = createSlice({
 
     fetchPeopleDetailsSuccess: (state, { payload }) => {
       state.details = payload.details;
-      state.credits = payload.credits;
-      state.cast = payload.cast;
-      state.crew = payload.crew;
+      state.cast = payload.credits.cast;
+      state.crew = payload.credits.crew;
       state.genres = payload.genres;
       state.status = "success";
     },
@@ -29,16 +27,8 @@ const peopleDetailsSlice = createSlice({
     },
 
     getPersonId: (state, { payload }) => {
-      state.status = "loading";
       state.personId = payload.personId;
     },
-
-  //  resetPeopleDetails: (state) => {
-    //  state.movieId = null;
-  //    state.details = null;
- //     state.credits = null;
-  //    state.status = "loading";
-  //  },
   },
 });
 
@@ -47,14 +37,17 @@ export const {
   getPersonId,
   fetchPeopleDetailsSuccess,
   fetchPeopleDetailsError,
- // resetPeopleDetails,
 } = peopleDetailsSlice.actions;
 
 export const selectPeopleDetailsState = (state) => state.peopleDetails;
-export const selectPersonId = (state) => selectPeopleDetailsState(state).personId;
-export const selectPeopleDetails = (state) => selectPeopleDetailsState(state).details;
-export const selectPeopleCredits = (state) => selectPeopleDetailsState(state).credits;
-export const selectDetailsStatus = (state) => selectPeopleDetailsState(state).status;
+export const selectPersonId = (state) =>
+  selectPeopleDetailsState(state).personId;
+export const selectPeopleDetails = (state) =>
+  selectPeopleDetailsState(state).details;
+export const selectPeopleCredits = (state) =>
+  selectPeopleDetailsState(state).credits;
+export const selectDetailsStatus = (state) =>
+  selectPeopleDetailsState(state).status;
 export const selectPeopleCrew = (state) => selectPeopleDetailsState(state).crew;
 export const selectPeopleCast = (state) => selectPeopleDetailsState(state).cast;
 export const selectGenres = (state) => selectPeopleDetailsState(state).genres;
