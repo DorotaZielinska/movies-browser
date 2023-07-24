@@ -126,7 +126,18 @@ export const Date = styled.span`
   }
 `;
 
-export const Country = styled(Date)``;
+export const Country = styled(Date)`
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    display: none;
+  }
+`;
+
+export const CountryShort = styled(Date)`
+  display: none;
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    display: inline;
+  }
+`;
 
 export const Genre = styled.span`
   background-color: ${({ theme }) => theme.color.mystic};

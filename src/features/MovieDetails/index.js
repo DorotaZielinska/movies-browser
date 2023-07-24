@@ -27,6 +27,7 @@ import {
   Date,
   TotalVotes,
   Vote,
+  CountryShort,
 } from "./styled";
 import { MovieDetailsTile } from "../../common/TileList/MovieDetailsTile";
 
@@ -84,6 +85,11 @@ export const MovieDetails = () => {
                   .map((country) => country.name)
                   .join(", ")}
               </Country>
+              <CountryShort>
+                {details.production_countries.map(
+                  (country) => country.iso_3166_1
+                )}
+              </CountryShort>
             </>
           }
           date={
