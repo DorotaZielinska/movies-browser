@@ -58,3 +58,20 @@ export const ListPeopleDetails = styled.ul`
 `;
 
 export const ItemPeopleDetails = styled.li``;
+
+export const SubtitleBirth = styled.span`
+font-size: 18px;
+font-weight: 400;
+line-height: 1.2;
+margin: 0;
+ margin-top: 8px;
+color: ${({ theme }) => theme.color.stormGray};
+
+@media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    font-size: 15px;
+  }
+
+@media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    font-size: 12px;
+  }
+`;
