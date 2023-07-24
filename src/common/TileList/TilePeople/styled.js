@@ -23,7 +23,7 @@ export const PersonName = styled.h2`
   font-size: 22px;
   font-weight: 500;
   line-height: 1.3;
-  margin-top: 12px;
+  margin: 12px 0 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}) {
     font-size: 18px;
@@ -42,5 +42,5 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 64px;
+  height: 105px;
 `;
