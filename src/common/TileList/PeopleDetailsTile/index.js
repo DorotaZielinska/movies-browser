@@ -7,6 +7,7 @@ import {
   ActorTitle,
   DescriptionPeople,
   InfoDetails,
+  PlaceSubTitle,
 } from "./styled";
 
 export const ActorDescriptionTile = ({
@@ -21,12 +22,12 @@ export const ActorDescriptionTile = ({
       <ActorDetailsTile>
         <PersonDetailsImage poster={poster} />
         <ActorContent>
-          <ActorTitle>title={title}</ActorTitle>
+          <ActorTitle>{title}</ActorTitle>
           <InfoDetails>
-            <ActorSubTitle>dateOfBirth={dateOfBirth}</ActorSubTitle>
+            <ActorSubTitle>{dateOfBirth}</ActorSubTitle>
           </InfoDetails>
           <InfoDetails>
-            <ActorSubTitle>placeOfBirth={placeOfBirth}</ActorSubTitle>
+            <PlaceSubTitle>{placeOfBirth}</PlaceSubTitle>
           </InfoDetails>
         </ActorContent>
         <DescriptionPeople>{overview}</DescriptionPeople>
