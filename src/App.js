@@ -13,9 +13,9 @@ function App() {
         <Switch>
           <Route path="/movies/:id" component={MovieDetails} />
           <Route path="/movies" component={MovieList} />
-          <Route path="/people" component={PeopleLists} />
           <Route path="/people/:id" component={PeopleDetails} />
-          <Route patch="/">
+           <Route path="/people" component={PeopleLists} /> 
+          <Route path="/">
             <Redirect to="/movies" />
           </Route>
         </Switch>
