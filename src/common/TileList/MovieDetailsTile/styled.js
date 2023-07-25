@@ -121,6 +121,13 @@ export const About = styled.span`
   font-weight: 400;
   line-height: 1.6;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     margin-left: -160px;
     font-size: 18px;

@@ -150,14 +150,17 @@ export const Genre = styled.span`
   padding: 8px 16px;
   line-height: 1.4;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
     display: block;
     font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     padding: 4px 8px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
-    display: block;
     font-size: 10px;
     padding: 4px 8px;
   }
