@@ -149,6 +149,7 @@ export const About = styled.span`
 `;
 export const Rating = styled.div`
   display: flex;
+  align-items: center;
   gap: 8px;
   font-size: 22px;
   font-weight: 500;
@@ -157,6 +158,11 @@ export const Rating = styled.div`
 export const Star = styled(starIcon)`
   width: 24px;
   height: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const Vote = styled.span`
