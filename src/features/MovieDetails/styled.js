@@ -41,6 +41,10 @@ export const Wrapper = styled.div`
   overflow: hidden;
   margin-bottom: 64px;
   z-index: 1;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    margin-bottom: 0;
+  }
 `;
 
 export const PosterGradient = styled.div`

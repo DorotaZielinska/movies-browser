@@ -121,7 +121,6 @@ export const MovieDetails = () => {
           ))}
         />
       </Container>
-
       <Container>
         <SectionTitle>Cast</SectionTitle>
         <CastList>
