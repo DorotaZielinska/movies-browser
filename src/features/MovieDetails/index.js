@@ -112,6 +112,7 @@ export const MovieDetails = () => {
               <TotalVotes>{details.vote_count} </TotalVotes>
             </>
           }
+
           genres={details.genres.map((genre) => (
             <Genre key={genre.id}>{genre.name}</Genre>
           ))}
