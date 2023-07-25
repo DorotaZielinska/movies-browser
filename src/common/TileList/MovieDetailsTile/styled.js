@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
     grid-template-columns: 160px auto;
     gap: 16px;
     padding: 16px;
+    margin: 16px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
@@ -23,7 +24,6 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    margin: 16px;
     grid-template-columns: 114px auto;
   }
 `;
