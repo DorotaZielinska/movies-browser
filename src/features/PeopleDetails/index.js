@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+//import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container } from "../../common/Container";
@@ -11,42 +11,30 @@ import {
 } from "./peopleDetailsSlice";
 import { Loading } from "../AsideActions/Loading/loading";
 import { Error } from "../AsideActions/Error/error";
+import { useParams } from "react-router-dom";
 
 export const PeopleDetails = () => {
   const { id } = useParams();
+  console.log("id", useParams);
   const dispatch = useDispatch();
   const status = useSelector(selectDetailsStatus);
-  const details = useSelector(selectPeopleDetails);
-  const screenWidth = window.innerWidth;
-
+  const details = useSelector(state => selectPeopleDetails(state,id));
   useEffect(() => {
-    dispatch(getPersonId({ personId: id }));
-  }, [id, dispatch]);
+    dispatch(getPersonId(id));
+  }, [dispatch, id]);
 
   return status === "error" ? (
     <Error />
-  ) : status === "loading" ? (
+  ) : status === "loading" || !details ? (
     <Loading />
   ) : (
     <Container>
       <ActorDescriptionTile
         poster={details.profile_path}
-        title={details.name}
-        dateOfBirth={
-          <>
-            <SubtitleBirth>
-              {screenWidth < 450 ? "Birth: " : "Date of Birth: "}
-            </SubtitleBirth>
-            {details.birthday.split("-").reverse().join(".")}
-          </>
-        }
-        placeOfBirth={
-          <>
-            <SubtitleBirth>Place of birth: </SubtitleBirth>
-            {details.place_of_birth}
-          </>
-        }
-        overview={details.biography}
+        name={details.name}
+        birthday={details.birthday}
+        birthPlace={details.place_of_birth}
+        biography={details.biography}
       />
     </Container>
   );

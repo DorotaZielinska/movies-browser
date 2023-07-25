@@ -3,12 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 const peopleDetailsSlice = createSlice({
   name: "peopleDetails",
   initialState: {
+    status: "loading",
     personId: 0,
     details: {},
     cast: [],
     crew: [],
     genres: [],
-    status: "loading",
+    credits: [],
   },
   reducers: {
     fetchPeopleDetailsLoad: (state) => {
@@ -17,17 +18,19 @@ const peopleDetailsSlice = createSlice({
 
     fetchPeopleDetailsSuccess: (state, { payload }) => {
       state.details = payload.details;
-      state.cast = payload.credits.cast;
-      state.crew = payload.credits.crew;
+      state.cast = payload.cast;
+      state.crew = payload.crew;
       state.genres = payload.genres;
+      state.credits = payload.credits;
       state.status = "success";
     },
     fetchPeopleDetailsError: (state) => {
       state.status = "error";
     },
 
-    getPersonId: (state, { payload }) => {
-      state.personId = payload.personId;
+    getPersonId: (state, action) => {
+     console.log("personId",action)
+      state.personId = action.payload;
     },
   },
 });
@@ -51,6 +54,5 @@ export const selectDetailsStatus = (state) =>
 export const selectPeopleCrew = (state) => selectPeopleDetailsState(state).crew;
 export const selectPeopleCast = (state) => selectPeopleDetailsState(state).cast;
 export const selectGenres = (state) => selectPeopleDetailsState(state).genres;
-export const selectStatus = (state) => selectPeopleDetailsState(state).status;
 
 export default peopleDetailsSlice.reducer;

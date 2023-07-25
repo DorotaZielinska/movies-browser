@@ -1,3 +1,4 @@
+import { SubtitleBirth } from "../../../features/PeopleDetails/styled";
 import { Container } from "../../Container";
 import { PersonDetailsImage } from "./Image";
 import {
@@ -11,26 +12,32 @@ import {
 } from "./styled";
 
 export const ActorDescriptionTile = ({
-  title,
+  name,
+  birthday,
   poster,
-  overview,
-  dateOfBirth,
-  placeOfBirth,
+  biography,
+  birthPlace,
 }) => {
+
   return (
     <Container>
       <ActorDetailsTile>
         <PersonDetailsImage poster={poster} />
         <ActorContent>
-          <ActorTitle>{title}</ActorTitle>
-          <InfoDetails>
-            <ActorSubTitle>{dateOfBirth}</ActorSubTitle>
-          </InfoDetails>
-          <InfoDetails>
-            <PlaceSubTitle>{placeOfBirth}</PlaceSubTitle>
-          </InfoDetails>
+          <ActorTitle>{name}</ActorTitle>
+          {birthday && (
+            <InfoDetails>
+              <SubtitleBirth>Date of Birth: </SubtitleBirth>
+              <ActorSubTitle>{birthday}</ActorSubTitle>
+            </InfoDetails>
+          )}
+          {birthPlace && (
+            <InfoDetails>
+              <PlaceSubTitle>{birthPlace}</PlaceSubTitle>
+            </InfoDetails>
+          )}
         </ActorContent>
-        <DescriptionPeople>{overview}</DescriptionPeople>
+        {biography && <DescriptionPeople>{biography}</DescriptionPeople>}
       </ActorDetailsTile>
     </Container>
   );
