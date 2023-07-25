@@ -162,7 +162,7 @@ export const Title = styled.h1`
 `;
 export const MainInfo = styled.div`
   display: grid;
-  grid-template-rows: repeat(3 auto);
+  grid-template-rows: repeat(2, auto);
   position: absolute;
   bottom: 56px;
   left: 276;
@@ -237,20 +237,39 @@ export const Description = styled.span`
   font-weight: 400;
   line-height: 1.2;
   color: ${({ theme }) => theme.color.stormGray};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    display: none;
+  }
 `;
 
-export const Slash = styled.span`
-  margin-left: -1px;
-  font-size: 16px;
+export const Date = styled.span`
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
-  align-self: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.2;
-    margin-left: 2px;
+    font-size: 12px;
+  }
+`;
+
+export const Country = styled(Date)`
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    display: none;
+  }
+`;
+
+export const CountryShort = styled(Date)`
+  display: none;
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    display: inline;
   }
 `;
 
@@ -261,4 +280,62 @@ export const Genre = styled.span`
   font-size: 14px;
   padding: 8px 16px;
   line-height: 1.4;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
+    display: block;
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    padding: 4px 8px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+`;
+
+export const Slash = styled.span`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  align-self: last baseline;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    display: none;
+  }
+`;
+
+export const Vote = styled.span`
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-right: 8px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-right: 0;
+  }
+`;
+
+export const TotalVotes = styled.span`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: ${({ theme }) => theme.color.black};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: ${({ theme }) => theme.color.waterloo};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    font-size: 13px;
+  }
 `;
