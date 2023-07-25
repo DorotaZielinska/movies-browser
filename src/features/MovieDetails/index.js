@@ -27,6 +27,11 @@ import {
   CastList,
   SectionTitle,
   CrewList,
+  Country,
+  Date,
+  TotalVotes,
+  Vote,
+  CountryShort,
 } from "./styled";
 import { MovieDetailsTile } from "../../common/TileList/MovieDetailsTile";
 import { PeopleListTile } from "../../common/TileList/TilePeople";
@@ -75,27 +80,42 @@ export const MovieDetails = () => {
           content={details.overview}
           poster={details.poster_path}
           title={details.title}
+          year={details.release_date}
           place={
             <>
               <Description>Production: </Description>
-              {details.production_countries
-                .map((country) => country.name)
-                .join(", ")}
+              <Country>
+                {details.production_countries
+                  .map((country) => country.name)
+                  .join(", ")}
+              </Country>
+              <CountryShort>
+                {details.production_countries
+                  .map((country) => country.iso_3166_1)
+                  .join(", ")}
+              </CountryShort>
             </>
           }
           date={
             <>
               <Description>Release date: </Description>
-              {details.release_date.split("-").reverse().join("-")}
+              <Date>
+                {" "}
+                {details.release_date.split("-").reverse().join("-")}
+              </Date>
             </>
           }
-          year={details.release_date}
           vote={
             <>
-              {details.vote_average.toFixed(1)} <Slash>/10</Slash>
+              <Vote> {details.vote_average.toFixed(1)}</Vote> <Slash>/10</Slash>
             </>
           }
-          votes={<>{details.vote_count}</>}
+          votes={
+            <>
+              {" "}
+              <TotalVotes>{details.vote_count} votes </TotalVotes>
+            </>
+          }
           genres={details.genres.map((genre) => (
             <Genre key={genre.id}>{genre.name}</Genre>
           ))}
