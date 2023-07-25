@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import {
   getMovieId,
   resetMovieDetails,
+  selectCredits,
   selectDetails,
   selectMovieState,
 } from "./movieDetailsSlice";
@@ -23,6 +24,9 @@ import {
   Description,
   Slash,
   Genre,
+  CastList,
+  SectionTitle,
+  CrewList,
   Country,
   Date,
   TotalVotes,
@@ -30,15 +34,15 @@ import {
   CountryShort,
 } from "./styled";
 import { MovieDetailsTile } from "../../common/TileList/MovieDetailsTile";
-
+import { PeopleListTile } from "../../common/TileList/TilePeople";
 const image = "https://image.tmdb.org/t/p/original/";
-const movieImage = "https://image.tmdb.org/t/p/w400/";
 
 export const MovieDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const status = useSelector(selectMovieState);
   const details = useSelector(selectDetails);
+  const credits = useSelector(selectCredits);
 
   useEffect(() => {
     dispatch(getMovieId(id));
@@ -74,7 +78,7 @@ export const MovieDetails = () => {
       <Container>
         <MovieDetailsTile
           content={details.overview}
-          poster={`${movieImage}${details.poster_path}`}
+          poster={details.poster_path}
           title={details.title}
           year={details.release_date}
           place={
@@ -116,6 +120,34 @@ export const MovieDetails = () => {
             <Genre key={genre.id}>{genre.name}</Genre>
           ))}
         />
+      </Container>
+      <Container>
+        <SectionTitle>Cast</SectionTitle>
+        <CastList>
+          {credits.cast.slice(0, 12).map((person) => (
+            <li key={person.id}>
+              <PeopleListTile
+                name={person.name}
+                poster={person.profile_path}
+                character={person.character}
+              />
+            </li>
+          ))}
+        </CastList>
+      </Container>
+      <Container>
+        <SectionTitle>Crew</SectionTitle>
+        <CrewList>
+          {credits.crew.slice(0, 6).map((person) => (
+            <li key={person.id}>
+              <PeopleListTile
+                name={person.name}
+                poster={person.profile_path}
+                character={person.job}
+              />
+            </li>
+          ))}
+        </CrewList>
       </Container>
     </>
   );
