@@ -270,7 +270,9 @@ export const CountryShort = styled(Date)`
   display: none;
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     display: inline;
-    
+  }
+`;
+
 export const Genre = styled.span`
   background-color: ${({ theme }) => theme.color.mystic};
   color: ${({ theme }) => theme.color.woodsmoke};
