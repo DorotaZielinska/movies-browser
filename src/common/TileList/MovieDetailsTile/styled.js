@@ -23,6 +23,7 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    margin: 16px;
     grid-template-columns: 114px auto;
   }
 `;
