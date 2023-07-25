@@ -32,6 +32,13 @@ const peopleDetailsSlice = createSlice({
      console.log("personId",action)
       state.personId = action.payload;
     },
+
+    resetPeopleDetails: (state) => {
+      state.personId = null;
+      state.details = null;
+      state.credits = null;
+      state.status = "loading";
+    },
   },
 });
 
@@ -40,6 +47,7 @@ export const {
   getPersonId,
   fetchPeopleDetailsSuccess,
   fetchPeopleDetailsError,
+  resetPeopleDetails
 } = peopleDetailsSlice.actions;
 
 export const selectPeopleDetailsState = (state) => state.peopleDetails;

@@ -6,7 +6,9 @@ import { ActorDescriptionTile } from "../../common/TileList/PeopleDetailsTile";
 import { SubtitleBirth } from "./styled";
 import {
   getPersonId,
+  resetPeopleDetails,
   selectDetailsStatus,
+  selectPeopleCredits,
   selectPeopleDetails,
 } from "./peopleDetailsSlice";
 import { Loading } from "../AsideActions/Loading/loading";
@@ -15,19 +17,27 @@ import { useParams } from "react-router-dom";
 
 export const PeopleDetails = () => {
   const { id } = useParams();
-  console.log("id", useParams);
+  console.log("id", id);
   const dispatch = useDispatch();
   const status = useSelector(selectDetailsStatus);
   const details = useSelector(state => selectPeopleDetails(state,id));
+  // const credits = useSelector(state => selectPeopleCredits(state,id));
   useEffect(() => {
     dispatch(getPersonId(id));
   }, [dispatch, id]);
 
+  useEffect(() => {
+    return () => {
+      dispatch(resetPeopleDetails());
+    };
+  }, [dispatch]);
+
   return status === "error" ? (
     <Error />
-  ) : status === "loading" || !details ? (
+  ) : status === "loading" || !details  ? (
     <Loading />
   ) : (
+   <>
     <Container>
       <ActorDescriptionTile
         poster={details.profile_path}
@@ -36,6 +46,7 @@ export const PeopleDetails = () => {
         birthPlace={details.place_of_birth}
         biography={details.biography}
       />
-    </Container>
+   </Container>
+   </>
   );
 };

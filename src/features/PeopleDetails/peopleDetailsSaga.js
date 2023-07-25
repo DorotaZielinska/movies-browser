@@ -6,11 +6,11 @@ function* fetchPeopleDetailsHandler() {
     try{
         yield delay(300);
         const id = yield select(selectPersonId);
-        console.log("id",selectPersonId)
+        // console.log("id",selectPersonId)
         const details = yield call(getPeopleDetails,  id);
-        const credits = yield call(getPeopleMovieCredits,  id);
-        console.log("fetchPeopleDetailsSuccess", credits, details)
-        yield put(fetchPeopleDetailsSuccess({ details, credits}));
+        // const credits = yield call(getPeopleMovieCredits,  id);
+        // console.log("fetchPeopleDetailsSuccess", credits, details)
+        yield put(fetchPeopleDetailsSuccess({ details }));
     } catch (error) {
         yield put(fetchPeopleDetailsError());
     }
