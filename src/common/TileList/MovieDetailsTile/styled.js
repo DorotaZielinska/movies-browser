@@ -166,7 +166,7 @@ export const Vote = styled.span`
 `;
 
 export const Votes = styled.span`
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
   align-self: center;
