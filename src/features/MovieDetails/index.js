@@ -109,10 +109,9 @@ export const MovieDetails = () => {
           votes={
             <>
               {" "}
-              <TotalVotes>{details.vote_count} </TotalVotes>
+              <TotalVotes>{details.vote_count} votes </TotalVotes>
             </>
           }
-
           genres={details.genres.map((genre) => (
             <Genre key={genre.id}>{genre.name}</Genre>
           ))}
