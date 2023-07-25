@@ -22,6 +22,8 @@ export const Image = styled(image)`
   width: 668px;
   height: 509px;
   align-self: center;
+  margin-top: 30px;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     max-height: 300px;
   }
