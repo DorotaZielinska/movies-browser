@@ -13,7 +13,6 @@ export const Wrapper = styled.div`
   color: ${({ theme }) => theme.color.black};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
-
     grid-template-columns: 160px auto;
     gap: 16px;
     padding: 16px;
@@ -25,10 +24,6 @@ export const Wrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     grid-template-columns: 114px auto;
-
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
   }
 `;
 
@@ -78,7 +73,6 @@ export const Year = styled.span`
   font-size: 22px;
   font-weight: 400;
   line-height: 1.2;
-
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     font-size: 17px;
