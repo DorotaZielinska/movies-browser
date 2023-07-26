@@ -1,4 +1,4 @@
-import { SubtitleBirth } from "../../../features/PeopleDetails/styled";
+import { TitlePeopleDetails } from "../../../features/PeopleDetails/styled";
 import { Container } from "../../Container";
 import { PersonDetailsImage } from "./Image";
 import {
@@ -18,7 +18,6 @@ export const ActorDescriptionTile = ({
   biography,
   birthPlace,
 }) => {
-
   return (
     <Container>
       <ActorDetailsTile>
@@ -27,7 +26,6 @@ export const ActorDescriptionTile = ({
           <ActorTitle>{name}</ActorTitle>
           {birthday && (
             <InfoDetails>
-              <SubtitleBirth>Date of Birth: </SubtitleBirth>
               <ActorSubTitle>{birthday}</ActorSubTitle>
             </InfoDetails>
           )}
@@ -41,4 +39,10 @@ export const ActorDescriptionTile = ({
       </ActorDetailsTile>
     </Container>
   );
+};
+
+export const MainHeader = ({ title }) => {
+  return (
+<TitlePeopleDetails>{title}</TitlePeopleDetails>
+  )
 };

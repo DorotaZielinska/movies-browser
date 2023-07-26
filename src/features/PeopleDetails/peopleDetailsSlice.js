@@ -29,7 +29,7 @@ const peopleDetailsSlice = createSlice({
     },
 
     getPersonId: (state, action) => {
-     console.log("personId",action)
+      console.log("personId", action);
       state.personId = action.payload;
     },
 
@@ -47,7 +47,7 @@ export const {
   getPersonId,
   fetchPeopleDetailsSuccess,
   fetchPeopleDetailsError,
-  resetPeopleDetails
+  resetPeopleDetails,
 } = peopleDetailsSlice.actions;
 
 export const selectPeopleDetailsState = (state) => state.peopleDetails;
