@@ -2,7 +2,7 @@ import { Container } from "../../Container";
 import { CharacterName, PersonName, Wrapper, Content, GetDetailsPeopleLink } from "./styled";
 import { PersonImage } from "./Image";
 
-export const PeopleListTile = ({ name, poster, id }) => {
+export const PeopleListTile = ({ name, poster, id, character }) => {
   return (
     <GetDetailsPeopleLink to={`/people/${id}`} key={id}>
       <Container>
@@ -10,7 +10,7 @@ export const PeopleListTile = ({ name, poster, id }) => {
           <PersonImage poster={poster} />
           <Content>
             <PersonName>{name}</PersonName>
-            <CharacterName></CharacterName>
+            <CharacterName>{character}</CharacterName>
           </Content>
         </Wrapper>
       </Container>

@@ -24,7 +24,7 @@ export const PersonName = styled.h2`
   font-size: 22px;
   font-weight: 500;
   line-height: 1.3;
-  margin-top: 12px;
+  margin: 12px 0 8px;
   color: ${({ theme }) => theme.color.woodsmoke};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}) {
