@@ -19,7 +19,11 @@ export const Spinner = styled(spinnerIcon)`
 
 export const Image = styled(image)`
   background-color: ${({ theme }) => theme.color.whisper};
+  width: 668px;
+  height: 509px;
   align-self: center;
+  margin-top: 30px;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     max-height: 300px;
   }

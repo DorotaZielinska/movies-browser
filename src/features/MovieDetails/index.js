@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import {
   getMovieId,
   resetMovieDetails,
+  selectCredits,
   selectDetails,
   selectMovieState,
 } from "./movieDetailsSlice";
@@ -23,16 +24,25 @@ import {
   Description,
   Slash,
   Genre,
+  CastList,
+  SectionTitle,
+  CrewList,
+  Country,
+  Date,
+  TotalVotes,
+  Vote,
+  CountryShort,
 } from "./styled";
 import { MovieDetailsTile } from "../../common/TileList/MovieDetailsTile";
+import { PeopleListTile } from "../../common/TileList/TilePeople";
 const image = "https://image.tmdb.org/t/p/original/";
-const movieImage = "https://image.tmdb.org/t/p/w400/";
 
 export const MovieDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const status = useSelector(selectMovieState);
   const details = useSelector(selectDetails);
+  const credits = useSelector(selectCredits);
 
   useEffect(() => {
     dispatch(getMovieId(id));
@@ -51,50 +61,95 @@ export const MovieDetails = () => {
   ) : (
     <>
       <Wrapper>
-        <PosterContainer>
-          <Poster src={`${image}${details.backdrop_path}`} alt="poster" />
-          <PosterGradient />{" "}
-          <MainInfo>
-            <Title>{details.title}</Title>
-            <Rating>
-              <Star />
-              {details.vote_average.toFixed(1)}
-              <Slash>/10</Slash>
-            </Rating>
-            <Votes>{details.vote_count} votes</Votes>
-          </MainInfo>
-        </PosterContainer>
+        {details.backdrop_path === null ? null : (
+          <PosterContainer>
+            <Poster src={`${image}${details.backdrop_path}`} alt="poster" />
+            <PosterGradient />{" "}
+            <MainInfo>
+              <Title>{details.title}</Title>
+              <Rating>
+                <Star />
+                {details.vote_average.toFixed(1)}
+                <Slash>/10</Slash>
+              </Rating>
+              <Votes>{details.vote_count} votes</Votes>
+            </MainInfo>
+          </PosterContainer>
+        )}
       </Wrapper>
       <Container>
         <MovieDetailsTile
           content={details.overview}
-          poster={`${movieImage}${details.poster_path}`}
+          poster={details.poster_path}
           title={details.title}
+          year={details.release_date}
           place={
             <>
               <Description>Production: </Description>
-              {details.production_countries
-                .map((country) => country.name)
-                .join(", ")}
+              <Country>
+                {details.production_countries
+                  .map((country) => country.name)
+                  .join(", ")}
+              </Country>
+              <CountryShort>
+                {details.production_countries
+                  .map((country) => country.iso_3166_1)
+                  .join(", ")}
+              </CountryShort>
             </>
           }
           date={
             <>
               <Description>Release date: </Description>
-              {details.release_date.split("-").reverse().join("-")}
+              <Date>
+                {" "}
+                {details.release_date.split("-").reverse().join(".")}
+              </Date>
             </>
           }
-          year={details.release_date}
           vote={
             <>
-              {details.vote_average.toFixed(1)} <Slash>/10</Slash>
+              <Vote> {details.vote_average.toFixed(1)}</Vote> <Slash>/10</Slash>
             </>
           }
-          votes={<>{details.vote_count}</>}
+          votes={
+            <>
+              {" "}
+              <TotalVotes>{details.vote_count} votes </TotalVotes>
+            </>
+          }
           genres={details.genres.map((genre) => (
             <Genre key={genre.id}>{genre.name}</Genre>
           ))}
         />
+      </Container>
+      <Container>
+        <SectionTitle>Cast</SectionTitle>
+        <CastList>
+          {credits.cast.map((person) => (
+            <li key={person.id}>
+              <PeopleListTile
+                name={person.name}
+                poster={person.profile_path}
+                character={person.character}
+              />
+            </li>
+          ))}
+        </CastList>
+      </Container>
+      <Container>
+        <SectionTitle>Crew</SectionTitle>
+        <CrewList>
+          {credits.crew.map((person) => (
+            <li key={person.id}>
+              <PeopleListTile
+                name={person.name}
+                poster={person.profile_path}
+                character={person.job}
+              />
+            </li>
+          ))}
+        </CrewList>
       </Container>
     </>
   );

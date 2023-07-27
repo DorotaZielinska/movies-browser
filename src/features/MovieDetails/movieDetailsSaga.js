@@ -1,5 +1,6 @@
 import { takeLatest, call, put, select, delay } from "redux-saga/effects";
 import {
+  fetchMovieCredits,
   fetchMovieDetails,
   fetchMovieDetailsSuccess,
   fetchMoviesListError,
@@ -14,7 +15,8 @@ function* fetchMovieDetailsHandler() {
     const id = yield select(selectMovieId);
     const details = yield call(getMovieDetails, { movieId: id });
     const credits = yield call(getMovieCredits, { movieId: id });
-    yield put(fetchMovieDetails(details, credits));
+    yield put(fetchMovieDetails(details));
+    yield put(fetchMovieCredits(credits));
     yield put(fetchMovieDetailsSuccess());
   } catch (error) {
     yield put(fetchMoviesListError());
