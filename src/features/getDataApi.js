@@ -63,9 +63,6 @@ export const getPeopleDetails = async (personId) => {
   const response = await axios.get(
     `${URL}/person/${personId}?api_key=${API_KEY}`
   );
-  if (response.status !== 200){
-    throw new Error(response.data.status_message);
-  }
 
   return await response.data;
 };
@@ -73,9 +70,7 @@ export const getPeopleDetails = async (personId) => {
 export const getPeopleMovieCredits = async (personId) => {
   const response = await axios.get(
     `${URL}person/${personId}/movie_credits?api_key=${API_KEY}`
-  ); if (response.status !== 200){
-    throw new Error(response.data.status_message);
-  }
+  ); 
 
   return await response.data;
 };
