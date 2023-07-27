@@ -8,7 +8,6 @@ import {
   getPersonId,
   resetPeopleDetails,
   selectDetailsStatus,
-  // selectPeopleCredits,
   selectPeopleDetails,
 } from "./peopleDetailsSlice";
 import { Loading } from "../AsideActions/Loading/loading";
@@ -16,13 +15,11 @@ import { Error } from "../AsideActions/Error/error";
 
 export const PeopleDetails = () => {
   const { id } = useParams();
-  console.log("id", id);
   const dispatch = useDispatch();
   const status = useSelector(selectDetailsStatus);
   const details = useSelector((state) => selectPeopleDetails(state, id));
-  //const credits = useSelector(state => selectPeopleCredits(state,id));
-
   const screenWidth = window.innerWidth;
+
   useEffect(() => {
     dispatch(getPersonId(id));
   }, [dispatch, id]);
@@ -35,7 +32,7 @@ export const PeopleDetails = () => {
 
   return status === "error" ? (
     <Error />
-  ) : status === "loading" ? (
+  ) : status === "loading" ||!details ? (
     <Loading />
   ) : (
     <>
@@ -46,14 +43,14 @@ export const PeopleDetails = () => {
           birthday={
             <>
               <SubtitleBirth>
-                {screenWidth <= 450 ? "Birth: " : "Date of Birth: "}{" "}
+                {screenWidth <= 450 ? "Birth: " : "Date of birth: "}{" "}
               </SubtitleBirth>
               {details.birthday.split("-").reverse().join(".")}
             </>
           }
           birthPlace={
             <>
-              <SubtitleBirth>Place of Birth: </SubtitleBirth>
+              <SubtitleBirth>Place of birth: </SubtitleBirth>
               {details.place_of_birth}
             </>
           }
