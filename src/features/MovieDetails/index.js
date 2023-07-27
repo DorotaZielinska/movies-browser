@@ -61,19 +61,21 @@ export const MovieDetails = () => {
   ) : (
     <>
       <Wrapper>
-        <PosterContainer>
-          <Poster src={`${image}${details.backdrop_path}`} alt="poster" />
-          <PosterGradient />{" "}
-          <MainInfo>
-            <Title>{details.title}</Title>
-            <Rating>
-              <Star />
-              {details.vote_average.toFixed(1)}
-              <Slash>/10</Slash>
-            </Rating>
-            <Votes>{details.vote_count} votes</Votes>
-          </MainInfo>
-        </PosterContainer>
+        {details.backdrop_path === null ? null : (
+          <PosterContainer>
+            <Poster src={`${image}${details.backdrop_path}`} alt="poster" />
+            <PosterGradient />{" "}
+            <MainInfo>
+              <Title>{details.title}</Title>
+              <Rating>
+                <Star />
+                {details.vote_average.toFixed(1)}
+                <Slash>/10</Slash>
+              </Rating>
+              <Votes>{details.vote_count} votes</Votes>
+            </MainInfo>
+          </PosterContainer>
+        )}
       </Wrapper>
       <Container>
         <MovieDetailsTile
