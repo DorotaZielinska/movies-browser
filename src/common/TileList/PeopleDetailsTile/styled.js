@@ -6,8 +6,8 @@ export const ActorDetailsTile = styled.article`
   background-color: ${({ theme }) => theme.color.white};
   padding: 40px;
   display: grid;
+  grid-template-columns: minmax(auto, 312px) 1fr;
   grid-template-rows: auto 1fr;
-  grid-template-columns: auto 1fr;
   grid-gap: 0 40px;
   color: ${({ theme }) => theme.color.black};
   margin-top: 56px;
@@ -15,20 +15,15 @@ export const ActorDetailsTile = styled.article`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
     grid-template-columns: minmax(auto, 215px) 1fr;
-
+    grid-gap: 16px;
+    padding: 16px;
     margin: 23px 14px 24px;
     box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     grid-template-columns: minmax(auto, 114px) 1fr;
-    grid-gap: 16px;
-    padding: 16px;
-    margin: 23px 14px 24px;
-    box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    margin: 23px 14px 24px;
+   
   }
 `;
 
@@ -111,7 +106,7 @@ export const DescriptionPeople = styled.span`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}) {
     font-size: 17px;
-    margin-top: 9px;
+    margin-top: 0px;
     grid-row: 3;
     grid-column: span 2;
   }

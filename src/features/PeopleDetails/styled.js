@@ -65,13 +65,17 @@ font-weight: 400;
 line-height: 1.2;
 margin: 0;
  margin-top: 8px;
+ margin-right: 10px;
 color: ${({ theme }) => theme.color.stormGray};
 
 @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     font-size: 15px;
+    margin-bottom: 4px;
+    margin-right: 4px;
   }
 
 @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     font-size: 12px;
+  
   }
 `;

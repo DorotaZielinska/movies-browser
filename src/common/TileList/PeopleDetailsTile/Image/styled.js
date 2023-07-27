@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { ReactComponent as NoPoster } from "../../TilePeople/Image/icon.svg";
 
 export const NoPerson = styled(NoPoster)``;
@@ -6,12 +6,19 @@ export const NoPerson = styled(NoPoster)``;
 export const ImageWrapper = styled.div`
   background-color: ${({ theme }) => theme.color.silver};
   border-radius: 5px;
-  grid-row: span 2 / auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   aspect-ratio: 2 /3;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  width: 399px;
+  
+  ${({ personDetails }) =>
+    personDetails &&
+    css`
+      width: 399px;
+      grid-row: span 2;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
     width: 260px;
@@ -24,6 +31,7 @@ export const ImageWrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     width: 116px;
   }
+  `}
 `;
 
 export const Poster = styled.div.attrs(
