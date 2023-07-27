@@ -45,7 +45,9 @@ export const PeopleDetails = () => {
               <SubtitleBirth>
                 {screenWidth <= 450 ? "Birth: " : "Date of birth: "}{" "}
               </SubtitleBirth>
-              {details.birthday.split("-").reverse().join(".")}
+              {details.birthday === null
+                ? null
+                : details.birthday.split("-").reverse().join(".")}
             </>
           }
           birthPlace={
