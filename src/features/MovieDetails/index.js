@@ -61,19 +61,21 @@ export const MovieDetails = () => {
   ) : (
     <>
       <Wrapper>
-        <PosterContainer>
-          <Poster src={`${image}${details.backdrop_path}`} alt="poster" />
-          <PosterGradient />{" "}
-          <MainInfo>
-            <Title>{details.title}</Title>
-            <Rating>
-              <Star />
-              {details.vote_average.toFixed(1)}
-              <Slash>/10</Slash>
-            </Rating>
-            <Votes>{details.vote_count} votes</Votes>
-          </MainInfo>
-        </PosterContainer>
+        {details.backdrop_path === null ? null : (
+          <PosterContainer>
+            <Poster src={`${image}${details.backdrop_path}`} alt="poster" />
+            <PosterGradient />{" "}
+            <MainInfo>
+              <Title>{details.title}</Title>
+              <Rating>
+                <Star />
+                {details.vote_average.toFixed(1)}
+                <Slash>/10</Slash>
+              </Rating>
+              <Votes>{details.vote_count} votes</Votes>
+            </MainInfo>
+          </PosterContainer>
+        )}
       </Wrapper>
       <Container>
         <MovieDetailsTile
@@ -101,7 +103,7 @@ export const MovieDetails = () => {
               <Description>Release date: </Description>
               <Date>
                 {" "}
-                {details.release_date.split("-").reverse().join("-")}
+                {details.release_date.split("-").reverse().join(".")}
               </Date>
             </>
           }
@@ -124,7 +126,7 @@ export const MovieDetails = () => {
       <Container>
         <SectionTitle>Cast</SectionTitle>
         <CastList>
-          {credits.cast.slice(0, 12).map((person) => (
+          {credits.cast.map((person) => (
             <li key={person.id}>
               <PeopleListTile
                 name={person.name}
@@ -138,7 +140,7 @@ export const MovieDetails = () => {
       <Container>
         <SectionTitle>Crew</SectionTitle>
         <CrewList>
-          {credits.crew.slice(0, 6).map((person) => (
+          {credits.crew.map((person) => (
             <li key={person.id}>
               <PeopleListTile
                 name={person.name}

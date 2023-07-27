@@ -241,6 +241,8 @@ export const Description = styled.span`
   font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
+  display: inline-block;
+  margin: 8px 3px 0 0;
   color: ${({ theme }) => theme.color.stormGray};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
@@ -303,10 +305,16 @@ export const Genre = styled.span`
 `;
 
 export const Slash = styled.span`
+  display: inline-block;
+  margin-bottom: 8px;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
   align-self: last baseline;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    margin-bottom: 3px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     display: none;
@@ -334,7 +342,7 @@ export const TotalVotes = styled.span`
   color: ${({ theme }) => theme.color.black};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 400;
     line-height: 1.3;
     color: ${({ theme }) => theme.color.waterloo};
@@ -350,6 +358,16 @@ export const SectionTitle = styled.h2`
   font-size: 36px;
   font-weight: 600;
   line-height: 1.2;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
+    margin-left: 16px;
+    margin-top: 21px;
+    font-size: 36px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    font-size: 20px;
+  }
 `;
 
 export const CastList = styled.ul`
@@ -359,6 +377,25 @@ export const CastList = styled.ul`
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 24px;
   justify-content: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
+    grid-template-columns: repeat(5, 1fr);
+    padding-right: 16px;
+    padding-left: 16px;
+    grid-gap: 16px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const CrewList = styled(CastList)`
