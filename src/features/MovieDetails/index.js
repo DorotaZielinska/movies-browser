@@ -124,7 +124,7 @@ export const MovieDetails = () => {
       <Container>
         <SectionTitle>Cast</SectionTitle>
         <CastList>
-          {credits.cast.slice(0, 12).map((person) => (
+          {credits.cast.map((person) => (
             <li key={person.id}>
               <PeopleListTile
                 name={person.name}
@@ -138,7 +138,7 @@ export const MovieDetails = () => {
       <Container>
         <SectionTitle>Crew</SectionTitle>
         <CrewList>
-          {credits.crew.slice(0, 6).map((person) => (
+          {credits.crew.map((person) => (
             <li key={person.id}>
               <PeopleListTile
                 name={person.name}

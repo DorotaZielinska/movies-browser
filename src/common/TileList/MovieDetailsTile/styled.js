@@ -21,10 +21,14 @@ export const Wrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     grid-template-columns: 130px auto;
+    margin: 16px 8px;
+    gap: 7px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     grid-template-columns: 114px auto;
+    gap: 16px;
+    margin: 16px;
   }
 `;
 
@@ -155,6 +159,7 @@ export const Rating = styled.div`
   font-weight: 500;
   line-height: 1.3;
 `;
+
 export const Star = styled(starIcon)`
   width: 24px;
   height: 24px;
@@ -169,11 +174,24 @@ export const Vote = styled.span`
   font-size: 22px;
   font-weight: 500;
   line-height: 1.3;
+  margin-top: 5px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    margin-top: 0;
+  }
 `;
 
 export const Votes = styled.span`
   font-size: 18px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.3;
   align-self: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    font-size: 28px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    font-size: 18.5px;
+  }
 `;

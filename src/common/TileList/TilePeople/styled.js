@@ -9,7 +9,8 @@ export const Wrapper = styled.article`
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
-    max-height: 245px;
+    max-height: 290px;
+    text-align: center;
     padding: 8px;
   }
 `;
