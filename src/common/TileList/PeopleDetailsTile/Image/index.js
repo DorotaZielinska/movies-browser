@@ -4,7 +4,7 @@ export const PersonDetailsImage = ({ poster }) => {
   const images = "https://image.tmdb.org/t/p/w300";
 
   return (
-    <ImageWrapper>
+    <ImageWrapper personDetails>
       {poster === null ? (
         <NoPerson />
       ) : (
