@@ -50,7 +50,6 @@ export const ActorTitle = styled.h1`
     font-size: 14px;
     font-weight: 500px;
     line-height: 1.3;
-   // margin: 0 0 16px;
   }
 `;
 
