@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.article`
@@ -25,6 +26,7 @@ export const PersonName = styled.h2`
   font-weight: 500;
   line-height: 1.3;
   margin: 12px 0 8px;
+  color: ${({ theme }) => theme.color.woodsmoke};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}) {
     font-size: 18px;
@@ -44,4 +46,8 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   height: 105px;
+`;
+
+export const GetDetailsPeopleLink = styled(Link)`
+  text-decoration: none; 
 `;
