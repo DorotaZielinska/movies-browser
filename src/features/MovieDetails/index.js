@@ -127,13 +127,12 @@ export const MovieDetails = () => {
         <SectionTitle>Cast</SectionTitle>
         <CastList>
           {credits.cast.map((person) => (
-            <li key={person.id}>
-              <PeopleListTile
-                name={person.name}
-                poster={person.profile_path}
-                character={person.character}
-              />
-            </li>
+            <PeopleListTile
+              id={person.id}
+              name={person.name}
+              poster={person.profile_path}
+              character={person.character}
+            />
           ))}
         </CastList>
       </Container>
@@ -141,13 +140,12 @@ export const MovieDetails = () => {
         <SectionTitle>Crew</SectionTitle>
         <CrewList>
           {credits.crew.map((person) => (
-            <li key={person.id}>
-              <PeopleListTile
-                name={person.name}
-                poster={person.profile_path}
-                character={person.job}
-              />
-            </li>
+            <PeopleListTile
+              id={person.id}
+              name={person.name}
+              poster={person.profile_path}
+              character={person.job}
+            />
           ))}
         </CrewList>
       </Container>
