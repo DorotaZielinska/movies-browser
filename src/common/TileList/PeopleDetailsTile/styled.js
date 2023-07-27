@@ -41,7 +41,8 @@ export const ActorTitle = styled.h1`
   margin-top: 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
-    margin-top: 0px;
+    margin-top: 4px;
+    margin-bottom: 16px;
     font-size: 22px;
   }
 
@@ -49,7 +50,7 @@ export const ActorTitle = styled.h1`
     font-size: 14px;
     font-weight: 500px;
     line-height: 1.3;
-    margin: 0 0 16px;
+   // margin: 0 0 16px;
   }
 `;
 
