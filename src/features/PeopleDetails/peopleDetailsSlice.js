@@ -56,7 +56,7 @@ export const selectPersonId = (state) =>
 export const selectPeopleDetails = (state) =>
   selectPeopleDetailsState(state).details;
 export const selectPeopleCredits = (state) =>
-  selectPeopleDetailsState(state).credits;
+ selectPeopleDetailsState(state).credits;
 export const selectDetailsStatus = (state) =>
   selectPeopleDetailsState(state).status;
 export const selectPeopleCrew = (state) => selectPeopleDetailsState(state).crew;
