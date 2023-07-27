@@ -103,7 +103,7 @@ export const MovieDetails = () => {
               <Description>Release date: </Description>
               <Date>
                 {" "}
-                {details.release_date.split("-").reverse().join("-")}
+                {details.release_date.split("-").reverse().join(".")}
               </Date>
             </>
           }
