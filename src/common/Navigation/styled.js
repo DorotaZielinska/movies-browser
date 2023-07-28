@@ -48,7 +48,7 @@ export const List = styled.ul`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
-    padding-right: 16px;
+    padding-right: 14px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
