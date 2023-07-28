@@ -37,7 +37,6 @@ export const Pagination = () => {
     let newUrl;
     if (location.pathname === "/movies") {
       newUrl = `/${"movies/page="}${page}`;
-      console.log(newUrl);
     } else if (location.pathname === "/people") {
       newUrl = `/${"people/page="}${page}`;
     }
