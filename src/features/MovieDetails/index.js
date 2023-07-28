@@ -35,9 +35,11 @@ import {
 } from "./styled";
 import { MovieDetailsTile } from "../../common/TileList/MovieDetailsTile";
 import { PeopleListTile } from "../../common/TileList/TilePeople";
+import { useState } from "react";
 const image = "https://image.tmdb.org/t/p/original/";
 
 export const MovieDetails = () => {
+  const [isLoading, setLoading] = useState(true);
   const { id } = useParams();
   const dispatch = useDispatch();
   const status = useSelector(selectMovieState);
@@ -53,6 +55,16 @@ export const MovieDetails = () => {
       dispatch(resetMovieDetails());
     };
   }, [dispatch]);
+
+  useEffect(() => {
+    const loadingTimeout = setTimeout(() => {
+      setLoading(false);
+    }, 400);
+
+    return () => {
+      clearTimeout(loadingTimeout);
+    };
+  }, []);
 
   return status === "loading" || !details ? (
     <Loading />
@@ -77,79 +89,83 @@ export const MovieDetails = () => {
           </PosterContainer>
         )}
       </Wrapper>
-      <Container>
-        <MovieDetailsTile
-          content={details.overview}
-          poster={details.poster_path}
-          title={details.title}
-          year={details.release_date}
-          place={
-            <>
-              <Description>Production: </Description>
-              <Country>
-                {details.production_countries
-                  .map((country) => country.name)
-                  .join(", ")}
-              </Country>
-              <CountryShort>
-                {details.production_countries
-                  .map((country) => country.iso_3166_1)
-                  .join(", ")}
-              </CountryShort>
-            </>
-          }
-          date={
-            <>
-              <Description>Release date: </Description>
-              <Date>
-                {" "}
-                {details.release_date.split("-").reverse().join(".")}
-              </Date>
-            </>
-          }
-          vote={
-            <>
-              <Vote> {details.vote_average.toFixed(1)}</Vote>
-              <Slash>/ 10</Slash>
-            </>
-          }
-          votes={
-            <>
-              {" "}
-              <TotalVotes>{details.vote_count} votes </TotalVotes>
-            </>
-          }
-          genres={details.genres.map((genre) => (
-            <Genre key={genre.id}>{genre.name}</Genre>
-          ))}
-        />
-      </Container>
-      <Container>
-        <SectionTitle>Cast</SectionTitle>
-        <CastList>
-          {credits.cast.map((person) => (
-            <PeopleListTile
-              id={person.id}
-              name={person.name}
-              poster={person.profile_path}
-              character={person.character}
+      {isLoading ? null : (
+        <>
+          <Container>
+            <MovieDetailsTile
+              content={details.overview}
+              poster={details.poster_path}
+              title={details.title}
+              year={details.release_date}
+              place={
+                <>
+                  <Description>Production: </Description>
+                  <Country>
+                    {details.production_countries
+                      .map((country) => country.name)
+                      .join(", ")}
+                  </Country>
+                  <CountryShort>
+                    {details.production_countries
+                      .map((country) => country.iso_3166_1)
+                      .join(", ")}
+                  </CountryShort>
+                </>
+              }
+              date={
+                <>
+                  <Description>Release date: </Description>
+                  <Date>
+                    {" "}
+                    {details.release_date.split("-").reverse().join(".")}
+                  </Date>
+                </>
+              }
+              vote={
+                <>
+                  <Vote> {details.vote_average.toFixed(1)}</Vote>
+                  <Slash>/ 10</Slash>
+                </>
+              }
+              votes={
+                <>
+                  {" "}
+                  <TotalVotes>{details.vote_count} votes </TotalVotes>
+                </>
+              }
+              genres={details.genres.map((genre) => (
+                <Genre key={genre.id}>{genre.name}</Genre>
+              ))}
             />
-          ))}
-        </CastList>
-      </Container>
-      <Container>
-        <SectionTitle>Crew</SectionTitle>
-        <CrewList>
-          {credits.crew.map((person) => (
-            <PeopleListTile
-              id={person.id}
-              name={person.name}
-              poster={person.profile_path}
-              character={person.job}
-            />
-          ))}
-        </CrewList>
-      </Container>
+          </Container>
+          <Container>
+            <SectionTitle>Cast</SectionTitle>
+            <CastList>
+              {credits.cast.map((person) => (
+                <PeopleListTile
+                  id={person.id}
+                  name={person.name}
+                  poster={person.profile_path}
+                  character={person.character}
+                />
+              ))}
+            </CastList>
+          </Container>
+          <Container>
+            <SectionTitle>Crew</SectionTitle>
+            <CrewList>
+              {credits.crew.map((person) => (
+                <PeopleListTile
+                  id={person.id}
+                  name={person.name}
+                  poster={person.profile_path}
+                  character={person.job}
+                />
+              ))}
+            </CrewList>
+          </Container>
+        </>
+      )}
     </>
   );
 };
