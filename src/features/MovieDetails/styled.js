@@ -11,10 +11,34 @@ const fadeIn = keyframes`
 `;
 
 export const BackgroundSpace = styled.div`
-  height: auto;
+  width: fit-content;
+  height: 770px;
   background-color: black;
-  position: "relative";
-  z-index: -3;
+  z-index: -1;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
+    height: 770px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktop}) {
+    height: 675px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
+    height: 506px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    height: 285px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    height: 214px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    height: 147px;
+  }
 `;
 
 export const PosterContainer = styled.div`
@@ -57,6 +81,7 @@ export const Wrapper = styled.div`
   overflow: hidden;
   margin-bottom: 64px;
   z-index: 1;
+  max-height: fit-content;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     margin-bottom: 0;
