@@ -5,8 +5,8 @@ const moviesListSlice = createSlice({
   initialState: {
     movies: [],
     genres: [],
-    totalPages: 0,
-    totalResults: 1,
+    totalPages: 1,
+    totalResults: "",
     status: "loading",
   },
   reducers: {
