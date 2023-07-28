@@ -10,15 +10,35 @@ import {
 } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
 import { changePage, selectPage } from "./paginationSlice";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { selectTotalPages } from "../../features/MovieList/movieListSlice";
 
 export const Pagination = () => {
   const page = useSelector(selectPage);
   const dispatch = useDispatch();
+  const pageState = useSelector(selectTotalPages);
   const screenWidth = window.innerWidth;
   const nextPage = page + 1;
   const prevPage = page - 1;
-  const lastPage = 500;
+  const lastPage = pageState;
   const firstPage = 1;
+  const location = useLocation();
+
+  useEffect(() => {
+    let newUrl;
+    if (location.pathname === "/movies") {
+      newUrl = `/${"movies/page="}${page}`;
+      console.log(newUrl);
+    } else {
+      newUrl = `/${"people/page="}${page}`;
+    }
+    window.history.pushState({ page }, "", newUrl);
+
+    return () => {
+      window.history.replaceState({ page }, window.location.href);
+    };
+  }, [page, location.pathname]);
 
   return (
     <Container>
@@ -47,7 +67,7 @@ export const Pagination = () => {
         <span>Page</span>
         <Page>{page}</Page>
         <span>of</span>
-        <Page>500</Page>
+        <Page>{`${lastPage >= 500 ? 500 : lastPage}`}</Page>
       </Counter>
       <Wrapper>
         <Button
