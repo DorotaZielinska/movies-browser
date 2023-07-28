@@ -1,5 +1,21 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { ReactComponent as starIcon } from "./images/star.svg";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+export const BackgroundSpace = styled.div`
+  height: auto;
+  background-color: black;
+  position: "relative";
+  z-index: -3;
+`;
 
 export const PosterContainer = styled.div`
   max-width: 1368px;
@@ -93,12 +109,12 @@ export const PosterGradient = styled.div`
 `;
 
 export const Poster = styled.img`
-  z-index: 1;
+  z-index: -1;
   max-width: 1368px;
   max-height: 769px;
   object-fit: cover;
   position: relative;
-  z-index: -1;
+  animation: ${fadeIn} 3s linear;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
     max-width: 1368px;
