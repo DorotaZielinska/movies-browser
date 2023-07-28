@@ -70,7 +70,7 @@ export const MovieDetails = () => {
               <Rating>
                 <Star />
                 {details.vote_average.toFixed(1)}
-                <Slash>/10</Slash>
+                <Slash>/ 10</Slash>
               </Rating>
               <Votes>{details.vote_count} votes</Votes>
             </MainInfo>
@@ -109,7 +109,8 @@ export const MovieDetails = () => {
           }
           vote={
             <>
-              <Vote> {details.vote_average.toFixed(1)}</Vote> <Slash>/10</Slash>
+              <Vote> {details.vote_average.toFixed(1)}</Vote>
+              <Slash>/ 10</Slash>
             </>
           }
           votes={
