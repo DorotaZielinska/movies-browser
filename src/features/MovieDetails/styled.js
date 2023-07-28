@@ -1,33 +1,73 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { ReactComponent as starIcon } from "./images/star.svg";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+export const BackgroundSpace = styled.div`
+  width: fit-content;
+  height: 770px;
+  background-color: black;
+  z-index: -1;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
+    height: 770px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktop}) {
+    height: 675px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
+    height: 506px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    height: 285px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    height: 214px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    height: 147px;
+  }
+`;
 
 export const PosterContainer = styled.div`
   max-width: 1368px;
-  max-height: 769px;
+  max-height: fit-content;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}) {
     max-width: 1200px;
-    max-height: 767px;
+    max-height: fit-content;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
     max-width: 1024px;
-    max-height: 600px;
+    max-height: fit-content;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     max-width: auto;
-    max-height: 400px;
+    max-height: fit-content;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     max-width: 450px;
-    max-height: 300px;
+    max-height: fit-content;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     max-width: 320px;
-    max-height: 148px;
+    max-height: fit-content;
   }
 `;
 
@@ -41,6 +81,7 @@ export const Wrapper = styled.div`
   overflow: hidden;
   margin-bottom: 64px;
   z-index: 1;
+  max-height: fit-content;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
     margin-bottom: 0;
@@ -61,17 +102,17 @@ export const PosterGradient = styled.div`
       rgb(0, 0, 0) 14%,
       rgba(0, 0, 0, 0.87) 15.16%,
       rgba(0, 0, 0, 0.72) 17.7%,
-      rgba(0, 0, 0, 0.29) 21.28%,
-      rgba(0, 0, 0, 0.16) 24.16%,
-      rgba(0, 0, 0, 0) 27%
+      rgba(0, 0, 0, 0.29) 25.28%,
+      rgba(0, 0, 0, 0.16) 35.16%,
+      rgba(0, 0, 0, 0) 45%
     ),
     linear-gradient(
       270deg,
       rgb(0, 0, 0) 12.58%,
-      rgba(0, 0, 0, 0.98) 13.88%,
-      rgba(0, 0, 0, 0.97) 15.31%,
-      rgba(0, 0, 0, 0) 19.78%,
-      rgba(0, 0, 0, 0.23) 17.83%,
+      rgba(0, 0, 0, 0.98) 12.88%,
+      rgba(0, 0, 0, 0.97) 11.31%,
+      rgba(0, 0, 0, 0) 42.78%,
+      rgba(0, 0, 0, 0.23) 87.83%,
       rgba(0, 0, 0, 0) 18%
     ),
     linear-gradient(
@@ -84,7 +125,7 @@ export const PosterGradient = styled.div`
     linear-gradient(
       203deg,
       rgba(0, 0, 0, 0) 80%,
-      rgba(0, 0, 0, 0.11) 84.64%,
+      rgba(0, 0, 0, 0.11) 82.64%,
       rgba(0, 0, 0, 0.24) 91.16%,
       rgba(0, 0, 0, 0.49) 96%,
       rgba(0, 0, 0, 0.74) 95.61%,
@@ -93,12 +134,12 @@ export const PosterGradient = styled.div`
 `;
 
 export const Poster = styled.img`
-  z-index: 1;
+  z-index: -1;
   max-width: 1368px;
   max-height: 769px;
   object-fit: cover;
   position: relative;
-  z-index: -1;
+  animation: ${fadeIn} 3s linear;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
     max-width: 1368px;
@@ -336,7 +377,7 @@ export const Vote = styled.span`
 `;
 
 export const TotalVotes = styled.span`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
   color: ${({ theme }) => theme.color.black};

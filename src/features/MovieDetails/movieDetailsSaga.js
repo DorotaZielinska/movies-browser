@@ -11,7 +11,7 @@ import { getMovieCredits, getMovieDetails } from "../getDataApi";
 
 function* fetchMovieDetailsHandler() {
   try {
-    yield delay(500);
+    yield delay(300);
     const id = yield select(selectMovieId);
     const details = yield call(getMovieDetails, { movieId: id });
     const credits = yield call(getMovieCredits, { movieId: id });
