@@ -170,7 +170,7 @@ export const MainInfo = styled.div`
   grid-template-rows: repeat(2, auto);
   position: absolute;
   bottom: 56px;
-  left: 276;
+  left: 276px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktopMax}) {
     left: 16px;
