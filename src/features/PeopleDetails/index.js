@@ -4,10 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Loading } from "../AsideActions/Loading/loading";
 import { Error } from "../AsideActions/Error/error";
 import { Container } from "../../common/Container";
-import {
-  ActorDescriptionTile,
-  MainHeader,
-} from "../../common/TileList/PeopleDetailsTile";
+import { ActorDescriptionTile } from "../../common/TileList/PeopleDetailsTile";
 import {
   ItemPeopleDetails,
   ListPeopleDetails,
@@ -20,7 +17,6 @@ import {
   selectDetailsStatus,
   selectPeopleCast,
   selectPeopleCredits,
-  selectPeopleCrew,
   selectPeopleDetails,
 } from "./peopleDetailsSlice";
 import { MovieTileListPeople } from "../../common/TileList/TileMovie";
@@ -31,9 +27,8 @@ export const PeopleDetails = () => {
   const status = useSelector(selectDetailsStatus);
   const details = useSelector((state) => selectPeopleDetails(state, id));
   const cast = useSelector((state) => selectPeopleCast(state, id));
-  // const crew = useSelector((state) => selectPeopleCrew(state, id));
   const credits = useSelector((state) => selectPeopleCredits(state, id));
-  console.log("credits", selectPeopleCredits);
+
   const screenWidth = window.innerWidth;
 
   useEffect(() => {
@@ -77,9 +72,8 @@ export const PeopleDetails = () => {
             biography={details.biography}
           />
         </>
-
         <>
-          <TitlePeopleDetails>{`Movies - cast ()`}</TitlePeopleDetails>
+          <TitlePeopleDetails>{`Movies - cast (${cast.length})`}</TitlePeopleDetails>
           <ListPeopleDetails>
             {cast.map((movie) => (
               <ItemPeopleDetails key={movie.credit_id}>
@@ -98,7 +92,7 @@ export const PeopleDetails = () => {
           </ListPeopleDetails>
         </>
         <>
-          <TitlePeopleDetails>{`Movies - crew ()`}</TitlePeopleDetails>
+          <TitlePeopleDetails>{`Movies - crew (${credits.crew.length})`}</TitlePeopleDetails>
           <ListPeopleDetails>
             {credits.crew.map((movie) => (
               <ItemPeopleDetails key={movie.credit_id}>
