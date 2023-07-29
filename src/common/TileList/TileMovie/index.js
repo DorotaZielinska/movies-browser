@@ -41,6 +41,7 @@ export const MovieTileListPeople = ({
   votes,
   poster,
   id,
+  character,
 }) => {
   const getYear = (string) => {
     return string.split("-")[0];
@@ -52,8 +53,8 @@ export const MovieTileListPeople = ({
         <MovieImage poster={poster} />
         <Content>
           <div>
-            <StyledTitle>{title}</StyledTitle>
-            {year && <StyledSubTitle>{getYear(year)}</StyledSubTitle>}
+            <StyledTitle  >{title}</StyledTitle>
+            {character && year && <StyledSubTitle>{character}{getYear(year)}</StyledSubTitle>}
             <Genres genres={genres} />
           </div>
           <div>
