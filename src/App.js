@@ -8,7 +8,7 @@ import { PeopleDetails } from "./features/PeopleDetails";
 function App() {
   return (
     <>
-      <BrowserRouter basename="Movies-Browser">
+      <BrowserRouter>
         <Navigation toMovies={"/movies"} toPeople={"/people"} />
         <Switch>
           <Route path="/movies/:id" component={MovieDetails} />{" "}
