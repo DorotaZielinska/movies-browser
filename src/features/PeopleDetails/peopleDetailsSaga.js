@@ -13,7 +13,8 @@ function* fetchPeopleDetailsHandler() {
     yield delay(300);
     const id = yield select(selectPersonId);
     const details = yield call(getPeopleDetails, id);
-    yield put(fetchPeopleDetailsSuccess({ details, }));
+    const credits = yield call (getPeopleMovieCredits, id)
+    yield put(fetchPeopleDetailsSuccess({ details,credits }));
   } catch (error) {
     yield put(fetchPeopleDetailsError());
   }
