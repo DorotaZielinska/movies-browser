@@ -1,11 +1,13 @@
-import { Wrapper, Title, CameraIcon } from "./styled";
+import { Wrapper, Title, CameraIcon, StyledHomeButton } from "./styled";
 
-export const NavigationLogo = () => {
+export const NavigationLogo = ({toMovies}) => {
 
     return (
-        <Wrapper>
+        <StyledHomeButton to={toMovies}>
+            <Wrapper>
            <CameraIcon />
             <Title>Movies Browser</Title>
         </Wrapper>
+        </StyledHomeButton>
     );
 };

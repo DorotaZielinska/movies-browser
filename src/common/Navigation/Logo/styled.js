@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 import { ReactComponent as Camera } from "../Images/camera.svg";
+import { Link } from "react-router-dom";
+
+export const StyledHomeButton = styled(Link)`
+text-decoration: none;
+color: ${({ theme }) => theme.color.white};
+`;
 
 export const Wrapper = styled.div`
     display: flex;

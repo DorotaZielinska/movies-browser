@@ -9,7 +9,7 @@ export const Navigation = ({ toMovies, toPeople }) => {
         <NavigationContainer>
             <Container>
                 <NavigationWrapper>
-                    <NavigationLogo />
+                    <NavigationLogo toMovies={toMovies} />
                     <List>
                         <Item>
                             <StyledNavLink to={toMovies}>Movies</StyledNavLink>
