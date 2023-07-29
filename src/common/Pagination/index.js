@@ -10,6 +10,8 @@ import {
 } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
 import { changePage, selectPage } from "./paginationSlice";
+import { useReplaceQueryParameter } from "../Navigation/Search/queryParameter";
+import { pageQueryParamName } from "../Navigation/Search/searchQueryParamName";
 
 export const Pagination = () => {
   const page = useSelector(selectPage);
@@ -20,12 +22,20 @@ export const Pagination = () => {
   const lastPage = 500;
   const firstPage = 1;
 
+  const replaceQueryParameter =  useReplaceQueryParameter();
+  const toPage = (currentPage) =>{
+    replaceQueryParameter([
+      {  key: pageQueryParamName,
+      value: currentPage,}
+    ]);
+  }
+
   return (
     <Container>
       <Wrapper>
         <Button
           disabled={page <= 1}
-          onClick={() => dispatch(changePage(firstPage))}
+          onClick={() => dispatch(changePage(toPage(1)))}
         >
           <ButtonText>
             <BackIcon disabled={page <= 1} />

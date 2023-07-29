@@ -1,28 +1,33 @@
-import { useRouteMatch } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { Wrapper, Input } from "./styled";
-import { searchQueryParamName } from "./searchQueryParamName";
+import { pageQueryParamName, searchQueryParamName } from "./searchQueryParamName";
 import { useQueryParameter, useReplaceQueryParameter } from "./queryParameter";
 import { resetPage } from "../../Pagination/paginationSlice";
 
 export const Search = () => {
   const dispatch = useDispatch();
-  const moviesMatch = useRouteMatch("/movies");
-  const peopleMatch = useRouteMatch("/people");
-  const placeholder = moviesMatch
-    ? "Search for movies..."
-    : "Search for people...";
+ // const moviesMatch = useRouteMatch("/movies");
+ // const peopleMatch = useRouteMatch("/people");
+ // const placeholder = moviesMatch
+  //  ? "Search for movies..."
+  //  : "Search for people...";
+  const location = useLocation();
 
   const query = useQueryParameter(searchQueryParamName);
   const replaceQueryParameter = useReplaceQueryParameter();
 
   const onInputChange = ({ target }) => {
-    replaceQueryParameter(
-      searchQueryParamName,
-      target.value.trim() !== "" ? target.value : undefined,
-      peopleMatch ? "people" : undefined,
-      moviesMatch ? "movies" : undefined
+    replaceQueryParameter([{
+      key:searchQueryParamName,
+      value:  target.value.trim() !== "" ? target.value : undefined,
+    }, {
+      key: pageQueryParamName,
+      value:1,
+    },
+  ] //  peopleMatch ? "people" : undefined,
+    //  moviesMatch ? "movies" : undefined
     );
     dispatch(resetPage());
   };
@@ -31,7 +36,10 @@ export const Search = () => {
     <>
       <Wrapper>
         <Input
-          placeholder={placeholder}
+          placeholder={`${location.pathname.includes("movie")
+        ? "Search for movies..."
+        : "Search for people..."
+        }`}
           value={query || ""}
           onChange={onInputChange}
         />

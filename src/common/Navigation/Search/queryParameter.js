@@ -11,16 +11,25 @@ export const useReplaceQueryParameter = () => {
   const location = useLocation();
   const history = useHistory();
 
-  return (key, value, peopleMatch, moviesMatch) => {
+  return (keyValue) => {
     const searchParams = new URLSearchParams(location.search);
-
+for(const {key, value} of keyValue) {
     if (value === undefined) {
-      searchParams.delete(key);
-    } else {
-      searchParams.set(key, value);
-    }
-
-    const newSearch = searchParams.toString();
-    history.push(`/${moviesMatch ? "movies" : peopleMatch}?${newSearch}`);
+       searchParams.delete(key);
+     } else {
+     searchParams.set(key, value);
+     }
+}
+    // if (value === undefined) {
+    //   searchParams.delete(key);
+    // } else {
+    //   searchParams.set(key, value);
+    // }
+    history.push(
+      `/${location.pathname.split("/")[1]}?${searchParams.toString()}`
+    );
+    //const newSearch = searchParams.toString();
+   // history.push(`/${location.pathname.split("/")}?${newSearch}`
+   // );
   };
 };
