@@ -18,8 +18,8 @@ const peopleDetailsSlice = createSlice({
 
     fetchPeopleDetailsSuccess: (state, { payload }) => {
       state.details = payload.details;
-      state.cast = payload.cast;
-      state.crew = payload.crew;
+      state.cast = payload.credits.cast;
+      state.crew = payload.credits.crew;
       state.genres = payload.genres;
       state.credits = payload.credits;
       state.status = "success";
@@ -55,11 +55,12 @@ export const selectPersonId = (state) =>
 export const selectPeopleDetails = (state) =>
   selectPeopleDetailsState(state).details;
 export const selectPeopleCredits = (state) =>
- selectPeopleDetailsState(state).credits;
+  selectPeopleDetailsState(state).credits;
 export const selectDetailsStatus = (state) =>
   selectPeopleDetailsState(state).status;
 export const selectPeopleCrew = (state) => selectPeopleDetailsState(state).crew;
 export const selectPeopleCast = (state) => selectPeopleDetailsState(state).cast;
-export const selectGenres = (state) => selectPeopleDetailsState(state).genres;
+export const selectGenresDetails = (state) =>
+  selectPeopleDetailsState(state).genres;
 
 export default peopleDetailsSlice.reducer;
