@@ -8,6 +8,7 @@ export const Wrapper = styled.article`
   height: 100%;
   border-radius: 5px;
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
+  text-align: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
     max-height: 290px;
