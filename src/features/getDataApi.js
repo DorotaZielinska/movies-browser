@@ -69,7 +69,7 @@ export const getPeopleDetails = async (personId) => {
 
 export const getPeopleMovieCredits = async (personId) => {
   const response = await axios.get(
-    `${URL}person/${personId}/movie_credits?api_key=${API_KEY}`
+    `${URL}/person/${personId}/movie_credits?api_key=${API_KEY}`
   ); 
 
   return await response.data;

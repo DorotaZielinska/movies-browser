@@ -5,14 +5,16 @@ import {
   getPersonId,
   selectPersonId,
 } from "./peopleDetailsSlice";
-import { getPeopleDetails } from "../getDataApi";
+import { getGenres, getPeopleDetails, getPeopleMovieCredits } from "../getDataApi";
 
 function* fetchPeopleDetailsHandler() {
   try {
     yield delay(300);
     const id = yield select(selectPersonId);
+    const genres = yield call(getGenres)
     const details = yield call(getPeopleDetails, id);
-    yield put(fetchPeopleDetailsSuccess({ details, }));
+    const credits = yield call (getPeopleMovieCredits, id)
+    yield put(fetchPeopleDetailsSuccess({ details,credits, genres }));
   } catch (error) {
     yield put(fetchPeopleDetailsError());
   }

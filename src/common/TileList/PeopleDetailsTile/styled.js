@@ -116,3 +116,5 @@ export const DescriptionPeople = styled.span`
     margin: 0;
   }
 `;
+
+

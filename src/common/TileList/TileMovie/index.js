@@ -9,6 +9,7 @@ import {
   GetDetailsLink,
 } from "./styled";
 
+
 export const TileList = ({ title, year, genres, vote, votes, poster, id }) => {
   const getYear = (string) => {
     return string.split("-")[0];
@@ -41,6 +42,7 @@ export const MovieTileListPeople = ({
   votes,
   poster,
   id,
+  character,
 }) => {
   const getYear = (string) => {
     return string.split("-")[0];
@@ -52,9 +54,9 @@ export const MovieTileListPeople = ({
         <MovieImage poster={poster} />
         <Content>
           <div>
-            <StyledTitle>{title}</StyledTitle>
-            {year && <StyledSubTitle>{getYear(year)}</StyledSubTitle>}
-            <Genres genres={genres} />
+            <StyledTitle  >{title}</StyledTitle>
+            {character && year && <StyledSubTitle>{`${character} (${getYear(year)})`}</StyledSubTitle>}
+           <Genres genres={genres} />
           </div>
           <div>
             <Rating vote={vote} votes={votes} />
