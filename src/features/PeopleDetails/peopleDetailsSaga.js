@@ -1,12 +1,11 @@
 import { select, put, delay, takeLatest, call } from "redux-saga/effects";
 import {
   fetchPeopleDetailsError,
-  fetchPeopleDetailsLoad,
   fetchPeopleDetailsSuccess,
   getPersonId,
   selectPersonId,
 } from "./peopleDetailsSlice";
-import { getPeopleDetails, getPeopleMovieCredits } from "../getDataApi";
+import { getPeopleDetails } from "../getDataApi";
 
 function* fetchPeopleDetailsHandler() {
   try {
