@@ -21,9 +21,9 @@ function* getPopularPeopleHandler() {
 
 function* getSearchPeopleHandler({ payload: query }) {
   try {
+    yield delay(800);
     const page = yield select(selectPage);
     const data = yield call(getSearchPeople, { query, page });
-    yield delay(1000);
     yield put(fetchPeopleListSuccess({ data }));
   } catch (error) {
     yield put(fetchPeopleListError());
