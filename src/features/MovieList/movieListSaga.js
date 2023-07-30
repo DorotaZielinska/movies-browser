@@ -22,10 +22,10 @@ function* getPopularMoviesHandler() {
 
 function* getSearchMoviesHandler({ payload: query }) {
   try {
+    yield delay(800);
     const page = yield select(selectPage);
     const genres = yield call(getGenres);
     const data = yield call(getSearch, { query, page });
-    yield delay(1000);
     yield put(fetchMoviesListSuccess({ data, genres }));
   } catch (error) {
     yield put(fetchMoviesListError());

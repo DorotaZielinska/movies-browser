@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import debounce from "lodash/debounce";
-import { useCallback, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 import { Container } from "../../common/Container";
@@ -30,23 +29,15 @@ const MovieList = () => {
   const totalResults = useSelector(selectTotalResult);
   const isLoad = useRef(true);
 
-  const debouncedLoad = useCallback(
-    debounce((query) => {
-      isLoad.current = false;
-      dispatch(fetchSearchMoviesLoad(query));
-    }, 1000),
-    [dispatch]
-  );
-
   useEffect(() => {
     if (query !== "" && query !== null) {
-      debouncedLoad(query);
+      isLoad.current=false;
+      dispatch(fetchSearchMoviesLoad(query));
     } else {
-      debouncedLoad.cancel();
       isLoad.current = true;
       dispatch(fetchMoviesListLoad(page));
     }
-  }, [dispatch, query, debouncedLoad, page]);
+  }, [dispatch, query, page]);
 
   useEffect(() => {
     dispatch(resetPage());

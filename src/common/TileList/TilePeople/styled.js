@@ -42,13 +42,6 @@ export const CharacterName = styled.span`
   color: ${({ theme }) => theme.color.waterloo};
 `;
 
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 105px;
-`;
-
 export const GetDetailsPeopleLink = styled(Link)`
   text-decoration: none; 
 `;
