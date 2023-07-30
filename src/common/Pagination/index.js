@@ -10,15 +10,38 @@ import {
 } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
 import { changePage, selectPage } from "./paginationSlice";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { selectTotalPages } from "../../features/MovieList/movieListSlice";
+import { selectTotalPeoplePages } from "../../features/PeopleList/peopleSlice";
 
 export const Pagination = () => {
   const page = useSelector(selectPage);
   const dispatch = useDispatch();
+  const pageMovieState = useSelector(selectTotalPages);
+  const pagePeopleState = useSelector(selectTotalPeoplePages);
   const screenWidth = window.innerWidth;
+  const firstPage = 1;
   const nextPage = page + 1;
   const prevPage = page - 1;
-  const lastPage = 500;
-  const firstPage = 1;
+  let lastPage;
+
+  const location = useLocation();
+  if (location.pathname === "/movies") {
+    lastPage = pageMovieState > 500 ? 500 : pageMovieState;
+  } else if (location.pathname === "/people") {
+    lastPage = pagePeopleState > 500 ? 500 : pagePeopleState;
+  }
+
+  useEffect(() => {
+    let newUrl;
+    if (location.pathname === "/movies") {
+      newUrl = `/${"Movies-Browser/movies/page:"}${page}`;
+    } else if (location.pathname === "/people") {
+      newUrl = `/${"Movies-Browser/people/page:"}${page}`;
+    }
+    window.history.pushState({ page }, "", newUrl);
+  }, [page, location.pathname]);
 
   return (
     <Container>
@@ -47,26 +70,26 @@ export const Pagination = () => {
         <span>Page</span>
         <Page>{page}</Page>
         <span>of</span>
-        <Page>500</Page>
+        <Page>{`${lastPage >= 500 ? 500 : lastPage}`}</Page>
       </Counter>
       <Wrapper>
         <Button
-          disabled={page >= 500}
+          disabled={page >= lastPage}
           onClick={() => dispatch(changePage(nextPage))}
         >
           <ButtonText>
             {screenWidth <= 767 ? "" : "Next"}
-            <NextIcon disabled={page >= 500} />
+            <NextIcon disabled={page >= lastPage} />
           </ButtonText>
         </Button>
         <Button
-          disabled={page >= 500}
+          disabled={page >= 500 || page === lastPage}
           onClick={() => dispatch(changePage(lastPage))}
         >
           <ButtonText>
             {screenWidth <= 767 ? "" : "Last"}
-            <NextIcon disabled={page >= 500} />
-            {screenWidth <= 767 ? <NextIcon disabled={page >= 500} /> : ""}
+            <NextIcon disabled={page >= lastPage} />
+            {screenWidth <= 767 ? <NextIcon disabled={page <= 500} /> : ""}
           </ButtonText>
         </Button>
       </Wrapper>
