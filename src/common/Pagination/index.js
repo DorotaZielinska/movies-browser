@@ -36,11 +36,12 @@ export const Pagination = () => {
   useEffect(() => {
     let newUrl;
     if (location.pathname === "/movies") {
-      newUrl = `/${"Movies-Browser/movies/page:"}${page}`;
+      newUrl = `/${"Movies-Browser/popular/movies&language=en-US&page="}${page}`;
+      window.history.pushState({ page }, "", newUrl);
     } else if (location.pathname === "/people") {
-      newUrl = `/${"Movies-Browser/people/page:"}${page}`;
+      newUrl = `/${"Movies-Browser/popular/people&language=en-US&page="}${page}`;
+      window.history.pushState({ page }, "", newUrl);
     }
-    window.history.pushState({ page }, "", newUrl);
   }, [page, location.pathname]);
 
   return (
