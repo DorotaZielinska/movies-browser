@@ -122,6 +122,22 @@ export const Genres = styled.div`
   }
 `;
 
+export const Space = styled.div`
+  height: 10px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
+    height: 100px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
+    height: 70px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}) {
+    height: 50px;
+  }
+`;
+
 export const About = styled.span`
   font-size: 20px;
   font-weight: 400;
@@ -135,14 +151,14 @@ export const About = styled.span`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
-    margin-left: -160px;
+    margin-left: -177px;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.6;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.medium}) {
-    margin-left: -145px;
+    margin-left: -137px;
     font-size: 16px;
   }
 
