@@ -10,6 +10,7 @@ import {
   Star,
   Vote,
   Votes,
+  Space,
 } from "./styled";
 
 import { MovieImage } from "./Image";
@@ -28,6 +29,7 @@ export const MovieDetailsTile = ({
   const getYear = (string) => {
     return string.split("-")[0];
   };
+
   return (
     <Wrapper>
       <MovieImage poster={poster} />
@@ -38,7 +40,7 @@ export const MovieDetailsTile = ({
           {place}
           <br /> {date}
         </Info>
-        <Genres> {genres}</Genres>
+        {genres.length > 0 ? <Genres> {genres}</Genres> : <Space />}
         <Rating>
           <Star />
           <Vote>{vote} </Vote>
