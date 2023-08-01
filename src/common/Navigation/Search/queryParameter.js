@@ -21,6 +21,6 @@ export const useReplaceQueryParameter = () => {
     }
 
     const newSearch = searchParams.toString();
-    history.push(`/${moviesMatch ? "movies" : peopleMatch}?${newSearch}`);
+    history.push(`/${moviesMatch ? "popular/movies&language=en-US&page=" : peopleMatch}?${newSearch}`);
   };
 };
