@@ -27,7 +27,7 @@ export const Pagination = () => {
   let lastPage;
 
   const location = useLocation();
-  if (location.pathname === "/movies") {
+  if (location.pathname === "/popular/movies&language=en-US&page=") {
     lastPage = pageMovieState > 500 ? 500 : pageMovieState;
   } else if (location.pathname === "/people") {
     lastPage = pagePeopleState > 500 ? 500 : pagePeopleState;
@@ -38,7 +38,7 @@ export const Pagination = () => {
     if (location.pathname === "/movies") {
       newUrl = `/${"Movies-Browser/popular/movies&language=en-US&page="}${page}`;
       window.history.pushState({ page }, "", newUrl);
-    } else if (location.pathname === "/people") {
+    } else if (location.pathname === "/popular/people&language=en-US&page=") {
       newUrl = `/${"Movies-Browser/popular/people&language=en-US&page="}${page}`;
       window.history.pushState({ page }, "", newUrl);
     }
