@@ -5,7 +5,7 @@
 
 ## Contributors:
 This is a group project co-created with:
-- [Mirek Sobota](https://github.com/MirekSobota))
+- [Mirek Sobota](https://github.com/MirekSobota)
 - [Pawel Owiesek](https://github.com/PawelOwiesek)
 - [Dorota Zielinska](https://github.com/DorotaZielinska)
 
