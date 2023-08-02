@@ -4,8 +4,8 @@
 [See Movies Browser](https://www.movies-browser.nl)   
 
 ## Contributors:
-This is a group project co-created with
-- [Mirek Sobota](https://github.com/MirekSobota)
+This is a group project co-created with:
+- [Mirek Sobota](https://github.com/MirekSobota))
 - [Pawel Owiesek](https://github.com/PawelOwiesek)
 - [Dorota Zielinska](https://github.com/DorotaZielinska)
 
@@ -18,6 +18,7 @@ This is a group project co-created with
 [The Movie Database](https://www.themoviedb.org/)
 
 ## Description
+
 This web application was created as part of the YouCode programming course and is created by team work of three contributors. You can search for your favorite movies and actors based on their popularity, and you can find some of information about the movies, actors, and other part of production team which was involved in creation of movie. 
 
 # Getting Started with Create React App
