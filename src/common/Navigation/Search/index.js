@@ -8,8 +8,8 @@ import { resetPage } from "../../Pagination/paginationSlice";
 
 export const Search = () => {
   const dispatch = useDispatch();
-  const moviesMatch = useRouteMatch("/popular/movies&language=en-US&page=");
-  const peopleMatch = useRouteMatch("/popular/people&language=en-US&page=");
+  const moviesMatch = useRouteMatch("/movies");
+  const peopleMatch = useRouteMatch("/people");
   const placeholder = moviesMatch
     ? "Search for movies..."
     : "Search for people...";
