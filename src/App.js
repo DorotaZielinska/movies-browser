@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navigation toMovies={"/movies"} toPeople={"people"} />
+        <Navigation toMovies={"/movies"} toPeople={"/people"} />
         <Switch>
           <Route path="/movies/:id" component={MovieDetails} />{" "}
           <Route path="/movies" component={MovieList} />
