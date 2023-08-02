@@ -8,15 +8,15 @@ import { PeopleDetails } from "./features/PeopleDetails";
 function App() {
   return (
     <>
-      <BrowserRouter >
-        <Navigation toMovies={"/popular/movies&language=en-US&page="} toPeople={"/popular/people&language=en-US&page="} />
+      <BrowserRouter>
+        <Navigation toMovies={"/movies"} toPeople={"people"} />
         <Switch>
           <Route path="/movies/:id" component={MovieDetails} />{" "}
-          <Route path="/popular/movies&language=en-US&page=" component={MovieList} />
+          <Route path="/movies" component={MovieList} />
           <Route path="/people/:id" component={PeopleDetails} />{" "}
-          <Route path="/popular/people&language=en-US&page=" component={PeopleLists} />
+          <Route path="/people" component={PeopleLists} />
           <Route path="/">
-            <Redirect to="/popular/movies&language=en-US&page=" />
+            <Redirect to="/movies" />
           </Route>
         </Switch>
       </BrowserRouter>

@@ -27,18 +27,18 @@ export const Pagination = () => {
   let lastPage;
 
   const location = useLocation();
-  if (location.pathname === "/popular/movies&language=en-US&page=") {
+  if (location.pathname === "/movies") {
     lastPage = pageMovieState > 500 ? 500 : pageMovieState;
-  } else if (location.pathname === "/popular/people&language=en-US&page=") {
+  } else if (location.pathname === "/people") {
     lastPage = pagePeopleState > 500 ? 500 : pagePeopleState;
   }
 
   useEffect(() => {
     let newUrl;
-    if (location.pathname === "/popular/movies&language=en-US&page=") {
+    if (location.pathname === "/movies") {
       newUrl = `/${"popular/movies&language=en-US&page="}${page}`;
       window.history.pushState({ page }, "", newUrl);
-    } else if (location.pathname === "/popular/people&language=en-US&page=") {
+    } else if (location.pathname === "/people") {
       newUrl = `/${"popular/people&language=en-US&page="}${page}`;
       window.history.pushState({ page }, "", newUrl);
     }
