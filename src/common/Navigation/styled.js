@@ -24,9 +24,6 @@ export const NavigationWrapper = styled.nav`
   @media (max-width: ${({ theme }) => theme.breakpoint.ipod}) {
     flex-wrap: wrap;
     padding-left: 16px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.large}) {
     justify-content: space-between;
   }
 `;

@@ -10,7 +10,8 @@ export const Wrapper = styled.div`
         padding-right: 16px;
         padding-top: 16px;
         padding-bottom: 16px;
-        width: 100%;
+       // width: 100%;
+       flex-grow: 2;
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoint.desktop}){
@@ -20,6 +21,7 @@ export const Wrapper = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoint.ipod}){      
         padding-left: 0;
         padding-top: 6px;
+        width: 100%;
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoint.large}){
@@ -29,7 +31,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Input = styled.input`
-    width: 432px;
+    min-width: 432px;
     height: 48px;
     border-radius: 33px;
     border: 1px solid ${({ theme }) => theme.color.mystic};
@@ -41,7 +43,7 @@ export const Input = styled.input`
     background-size: 24px 24px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.desktopMax}){
-        width: 100%;
+        min-width: 100%;
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoint.large}){
